@@ -11,6 +11,10 @@ F__home_*.blend
 
 # Large video renders (keep local, too big for GitHub)
 renders/*.mp4
+renders/*.mpg
+
+# Large presentation base64 files (regenerable from images)
+presentation/b64/
 
 # Archive binaries (keep on disk, not in git)
 archive/**/*.glb

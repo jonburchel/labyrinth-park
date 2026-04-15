@@ -93,28 +93,15 @@ print("=" * 60)
 print("apply_textures_v2: assigning materials by object name")
 print("=" * 60)
 
-# 1. Marble floor (atrium only)
-print("\n--- Marble floor ---")
-marble_img = _load_img("atrium_marble_star_basecolor.png")
-marble_mat = _make_textured_mat("MarbleFloor", marble_img,
-                                 projection="FLAT", scale=(1.0, 1.0, 1.0),
-                                 roughness=0.15, metallic=0.0)
-for n in ("atrium_floor",):
-    ok = _assign_mat(n, marble_mat)
+# 1. Atrium + motorcourt engraved white inlay floor
+print("\n--- Atrium + motorcourt engraved floor ---")
+floor_img = _load_img("hex_inlay_white_basecolor.png")
+floor_mat = _make_textured_mat("HexInlayFloor", floor_img,
+                                projection="FLAT", scale=(1.0, 1.0, 1.0),
+                                roughness=0.2, metallic=0.0)
+for n in ("atrium_floor", "motorcourt_floor"):
+    ok = _assign_mat(n, floor_mat)
     print(f"  {n}: {'OK' if ok else 'not found'}")
-
-# 1b. Motorcourt floor (ouroboros tile)
-print("\n--- Motorcourt floor (ouroboros) ---")
-ouro_img = _load_img("ouroboros_courtyard_basecolor.png")
-if ouro_img:
-    ouro_mat = _make_textured_mat("OuroborosFloor", ouro_img,
-                                   projection="FLAT", scale=(1.0, 1.0, 1.0),
-                                   roughness=0.2, metallic=0.0)
-    ok = _assign_mat("motorcourt_floor", ouro_mat)
-    print(f"  motorcourt_floor: {'OK' if ok else 'not found'}")
-else:
-    ok = _assign_mat("motorcourt_floor", marble_mat)
-    print(f"  motorcourt_floor: fallback to marble")
 
 # 2. Driveway concrete
 print("\n--- Driveway ---")
@@ -276,8 +263,8 @@ if plant_img:
     ok = _assign_mat("plant_wall", plant_mat)
     print(f"  plant_wall: {'OK' if ok else 'object not found (expected)'}")
 
-# 8. Sky (procedural HOSEK_WILKIE, no banding)
-print("\n--- Sky (procedural) ---")
+# 8. Sky / world panorama
+print("\n--- Sky / world panorama ---")
 world = bpy.context.scene.world
 if world is None:
     world = bpy.data.worlds.new("World")
@@ -285,33 +272,36 @@ if world is None:
 world.use_nodes = True
 wn = world.node_tree.nodes
 wl = world.node_tree.links
-for node in list(wn):
-    if node.type in ("TEX_ENVIRONMENT", "TEX_IMAGE", "TEX_COORD", "MAPPING", "TEX_SKY"):
-        wn.remove(node)
-bg = None
-wo = None
-for node in wn:
-    if node.type == "BACKGROUND":
-        bg = node
-    elif node.type == "OUTPUT_WORLD":
-        wo = node
-if bg is None:
-    bg = wn.new("ShaderNodeBackground")
-    bg.location = (0, 0)
-if wo is None:
-    wo = wn.new("ShaderNodeOutputWorld")
-    wo.location = (300, 0)
-    wl.new(bg.outputs["Background"], wo.inputs["Surface"])
-sky = wn.new("ShaderNodeTexSky")
-sky.location = (-300, 0)
-sky.sky_type = "HOSEK_WILKIE"
-sky.sun_elevation = 0.785  # ~45 degrees
-sky.sun_rotation = 0.0
-sky.turbidity = 2.5
-sky.ground_albedo = 0.3
-wl.new(sky.outputs["Color"], bg.inputs["Color"])
-bg.inputs["Strength"].default_value = 1.0
-print("  Procedural sky: HOSEK_WILKIE, 45° elevation")
+wn.clear()
+wo = wn.new("ShaderNodeOutputWorld")
+wo.location = (400, 0)
+bg = wn.new("ShaderNodeBackground")
+bg.location = (120, 0)
+wl.new(bg.outputs["Background"], wo.inputs["Surface"])
+world_img = _load_img("blue_ridge_world_equirect.png")
+if world_img:
+    tc = wn.new("ShaderNodeTexCoord")
+    tc.location = (-620, 0)
+    mp = wn.new("ShaderNodeMapping")
+    mp.location = (-430, 0)
+    env = wn.new("ShaderNodeTexEnvironment")
+    env.location = (-220, 0)
+    env.image = world_img
+    wl.new(tc.outputs["Generated"], mp.inputs["Vector"])
+    wl.new(mp.outputs["Vector"], env.inputs["Vector"])
+    wl.new(env.outputs["Color"], bg.inputs["Color"])
+    bg.inputs["Strength"].default_value = 1.0
+    print("  World panorama: blue_ridge_world_equirect.png")
+else:
+    sky = wn.new("ShaderNodeTexSky")
+    sky.location = (-220, 0)
+    sky.sky_type = "HOSEK_WILKIE"
+    sky.sun_elevation = 0.72
+    sky.turbidity = 2.2
+    sky.ground_albedo = 0.25
+    wl.new(sky.outputs["Color"], bg.inputs["Color"])
+    bg.inputs["Strength"].default_value = 1.0
+    print("  World panorama missing, fallback procedural sky")
 
 print("\n" + "=" * 60)
 print("apply_textures_v2: DONE")

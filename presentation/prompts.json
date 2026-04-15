@@ -1,0 +1,52 @@
+[
+  {
+    "prompt": "Architectural concept rendering, photorealistic, warm afternoon light, Piedmont North Carolina rolling green hills with distant blue mountain ridges. A modern concrete and glass home emerges from the crest of a manicured grass hill, only the upper level visible as angular concrete planes and floor-to-ceiling glass, with tall formal hedgerows extending in a wide V-shape from both sides of the facade framing the house. The hill slopes down behind. Lush green lawn in foreground. No people. Elegant, serene, the house appears to grow from the earth itself. Board-formed concrete texture, clean modernist lines.",
+    "filename": "01_exterior_hill.png",
+    "aspect_ratio": "16:9"
+  },
+  {
+    "prompt": "Architectural concept rendering, photorealistic, dramatic perspective. A sunken motorcourt carved 12 feet below a green lawn, open sky above. Battered natural stone walls on three sides with thin sheets of water cascading gently down them into narrow channels at the base. A sleek concrete and glass entrance portal ahead. The lawn edges are visible above, with grass growing to the very edge of the drop. Warm afternoon sunlight streams down into the court. Modern luxury, cast concrete surfaces, subtle water reflections on the polished floor. Piedmont North Carolina setting.",
+    "filename": "02_motorcourt.png",
+    "aspect_ratio": "16:9"
+  },
+  {
+    "prompt": "Architectural concept rendering, photorealistic, interior view looking up through a soaring 45-foot hexagonal atrium void. Lush tropical garden at the base with a large banyan tree centerpiece, ferns, palms, and a stone fountain. A dramatic waterfall cascades down one concrete wall. Glass walls on multiple sides reveal green landscape beyond. Warm natural light filtering through the glass roof. Multiple levels visible with concrete balconies and walkways. Polished marble floor with star pattern. The space feels like a cathedral of light and nature, a wondrous cave of green embedded in concrete.",
+    "filename": "03_atrium_interior.png",
+    "aspect_ratio": "3:4"
+  },
+  {
+    "prompt": "Architectural concept rendering, photorealistic, bird's eye aerial view of a private estate compound set within dense deciduous forest in the North Carolina Piedmont. A roughly circular clearing with a manicured green lawn surrounds modern concrete structures at the center. Formal hedge maze sections extend outward in geometric patterns. A winding naturalistic stream threads through the property. A precast concrete perimeter wall is barely visible, hidden between layers of tall hedges. Rolling green terrain, warm golden afternoon light, distant blue ridges on the horizon. Two distinct hexagonal structures visible, connected by landscape.",
+    "filename": "04_aerial_compound.png",
+    "aspect_ratio": "1:1"
+  },
+  {
+    "prompt": "Landscape architecture concept, photorealistic, warm light. A formal rose garden enclosed by tall precisely trimmed boxwood hedges 8 feet high. The garden is elevated on a gentle ridge, giving a sense of being above the surrounding landscape. Beds of climbing roses in deep reds, pinks, and whites on stone trellises. A hidden entrance through a tall hedge portico arch reveals the inner garden. Gravel paths between rose beds. Classical but not fussy. A sense of secrecy and discovery. Piedmont NC native plantings visible beyond the hedge tops. No people.",
+    "filename": "05_rose_garden.png",
+    "aspect_ratio": "4:3"
+  },
+  {
+    "prompt": "Landscape architecture concept, photorealistic, soft overcast light. A wild English cottage garden with abundant butterfly-attracting wildflowers, foxglove, lavender, echinacea, and ornamental grasses spilling over stone borders. A rustic round wooden pavilion with a copper roof sits on a steep bank overlooking a naturalistic stream below with mossy boulders. Tall native ferns carpet the ground beneath mature oak and hickory trees. Piedmont North Carolina forest setting. A sense of wildness carefully curated, romantic, alive with pollinators. No people.",
+    "filename": "06_nature_garden.png",
+    "aspect_ratio": "4:3"
+  },
+  {
+    "prompt": "Landscape architecture concept, photorealistic, golden hour light. A formal sculpture garden on a manicured green lawn, surrounded by tall architectural hedge walls precisely trimmed. Several modern abstract sculptures on low stone plinths arranged along a curving path. The hedges are 8 feet tall, creating outdoor rooms. Clean grass, crisp edges. One gap in the hedge reveals a long hedge corridor stretching into the distance, creating mystery. Piedmont NC deciduous trees visible above the hedges. Elegant, minimal, sophisticated. No people.",
+    "filename": "07_culture_garden.png",
+    "aspect_ratio": "4:3"
+  },
+  {
+    "prompt": "Landscape concept, photorealistic, dappled afternoon sunlight filtering through a leafy canopy. A long corridor between two tall precisely trimmed hedge walls, 8 feet high, stretching into the distance and curving gently out of sight. The path is smooth crushed stone. Shadows play across the path. A sense of mystery, not knowing what lies around the bend. The hedge walls are deep green and perfectly maintained. Through a gap in the hedge, a fleeting glimpse of a distant lawn and structure. Labyrinth atmosphere, contemplative, beautiful. Piedmont forest canopy visible above.",
+    "filename": "08_labyrinth_corridor.png",
+    "aspect_ratio": "9:16"
+  },
+  {
+    "prompt": "Architectural concept rendering, photorealistic, warm late afternoon. A luxurious infinity-edge pool terrace nestled between two modern concrete and glass buildings. Naturalistic landscaping with ornamental grasses and ferns surrounds the pool area. A stone BBQ area with pergola. A naturalistic stream visible beyond flowing past. One building is larger with a dramatic 3-story glass atrium wall visible, the other is a smaller single-story hexagonal structure. An ivy-covered retaining wall connects them, hiding the shared infrastructure below. Piedmont NC forest backdrop with blue ridges. Serene, luxurious, integrated with nature.",
+    "filename": "09_pool_terrace.png",
+    "aspect_ratio": "16:9"
+  },
+  {
+    "prompt": "Architectural concept rendering, photorealistic, cinematic perspective. A car approaches along a narrow lane flanked by tall formal hedgerows on both sides, 12 feet high, creating a green tunnel effect. Ahead, the hedges part to reveal a circular gravel turnabout with two elegant low stone fountains flanking the drive. Beyond the turnabout, through a gap in the hedge, a distant modern concrete home is visible on a green hilltop, angular glass catching the sunlight. The road continues downward after the turnabout. Rolling Piedmont NC landscape, warm golden hour light. A sense of anticipation and reveal. Cinematic arrival sequence.",
+    "filename": "10_arrival_sequence.png",
+    "aspect_ratio": "16:9"
+  }
+]

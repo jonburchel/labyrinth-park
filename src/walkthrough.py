@@ -39,7 +39,7 @@ output_path = os.path.abspath(args[0]) if args else os.path.abspath("renders/cin
 os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
 
 scene = bpy.context.scene
-FPS = 30
+FPS = int(scene.render.fps) if int(scene.render.fps) > 0 else 30
 
 # ---------------------------------------------------------------------------
 # Unit helpers
@@ -386,16 +386,18 @@ for obj in (cam_obj, look_target):
 scene.frame_start = 1
 scene.frame_end   = TOTAL_FRAMES
 scene.render.fps  = FPS
+scene.frame_step  = 1
+if scene.render.engine == "CYCLES":
+    scene.cycles.use_denoising = True
+    if hasattr(scene.cycles, "denoiser"):
+        scene.cycles.denoiser = "OPENIMAGEDENOISE"
 
 # ---------------------------------------------------------------------------
-# Output settings (keep user's engine/samples/GPU, only set output path)
+# Output settings (keep user's existing render settings, only set output path)
 # ---------------------------------------------------------------------------
 frames_dir = output_path + "_frames"
 os.makedirs(frames_dir, exist_ok=True)
 scene.render.filepath = os.path.join(frames_dir, "")
-scene.render.image_settings.file_format    = "PNG"
-scene.render.image_settings.color_mode     = "RGBA"
-scene.render.image_settings.compression    = 15
 
 # ---------------------------------------------------------------------------
 # Summary

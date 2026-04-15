@@ -635,7 +635,9 @@ def _add_terrain(
     driveway_curve_length = float(config.get("driveway_curve_length", 50.0))
     approach_slope = float(config.get("driveway_approach_slope", 0.02))
     slab_t = float(config.get("slab_thickness", 1.0))
-    z_base = lower_ground - terrain_drop
+    rear_flat_extension = 23.0
+    rear_drop_slope = 1.0
+    rear_drop_total = max(terrain_drop, 40.0)
 
     house_points = plan.master_triangle + plan.hex_vertices + [p for wing in plan.wing_polygons.values() for p in wing]
     min_x = min(p[0] for p in house_points)
@@ -664,6 +666,9 @@ def _add_terrain(
         (plan.extension_vertices[1][1] + plan.extension_vertices[2][1]) * 0.5,
     )
     y_low = wing_c_outer_mid[1]
+    y_flat_end = y_low + rear_flat_extension
+    rear_min_z = lower_ground - rear_drop_total
+    z_base = min(lower_ground - terrain_drop, rear_min_z - 5.0)
 
     cutout_list = [
         Polygon(plan.hex_vertices),
@@ -682,7 +687,11 @@ def _add_terrain(
     )
 
     def _base_terrain_z(x: float, y: float) -> float:
-        return _terrain_profile(y, y_break, y_low, upper_ground, lower_ground)
+        if y <= y_low:
+            return _terrain_profile(y, y_break, y_low, upper_ground, lower_ground)
+        if y <= y_flat_end:
+            return lower_ground
+        return max(rear_min_z, lower_ground - rear_drop_slope * (y - y_flat_end))
 
     drive_dx = drive_end[0] - drive_start[0]
     drive_dy = drive_end[1] - drive_start[1]
@@ -1093,9 +1102,16 @@ def _add_side_courtyards(
         (plan.extension_vertices[1][1] + plan.extension_vertices[2][1]) * 0.5,
     )
     y_low = wing_c_outer_mid[1]
+    y_flat_end = y_low + 23.0
+    rear_drop_slope = 1.0
+    rear_min_z = lower_ground - max(terrain_drop, 40.0)
 
     def terrain_z(x: float, y: float) -> float:
-        return _terrain_profile(y, y_break, y_low, upper_ground, lower_ground)
+        if y <= y_low:
+            return _terrain_profile(y, y_break, y_low, upper_ground, lower_ground)
+        if y <= y_flat_end:
+            return lower_ground
+        return max(rear_min_z, lower_ground - rear_drop_slope * (y - y_flat_end))
 
     for label, court_verts in [
         ("side_court_right", plan.side_courtyard_right),
@@ -1462,6 +1478,27 @@ def build_model(plan: PlanGeometry, config: Dict[str, float]) -> ModelData:
                              wt_conc, atrium_poly,
                              component="atrium_foundation",
                              cap_top=False, cap_bottom=False)
+    # Wing A and Wing C atrium edges also need structural concrete in the
+    # top support band directly below the atrium window line.
+    if atrium_roof_base > atrium_top_wall_base:
+        wing_a_c_edges = [
+            (plan.hex_vertices[0], plan.hex_vertices[5]),  # Wing A edge
+            (plan.hex_vertices[1], plan.hex_vertices[2]),  # Wing C edge
+        ]
+        for tw_p0, tw_p1 in wing_a_c_edges:
+            _add_solid_wall_edge(
+                mesh,
+                "concrete",
+                tw_p0,
+                tw_p1,
+                atrium_top_wall_base,
+                atrium_roof_base,
+                wt_conc,
+                atrium_poly,
+                component="atrium_top_wall",
+                cap_top=False,
+                cap_bottom=False,
+            )
     # Wing B atrium edge above the wing wall: accent wall, then concrete
     # support wall below the atrium window line (no glass splice).
     p0_b, p1_b = wing_b_atrium_edge
