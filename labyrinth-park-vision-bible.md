@@ -58,6 +58,8 @@
 - A **contribution to the community**, not reclusive consumption of it
 - A **living labyrinth**: mysterious, ever-shifting, never fully known, perhaps even with some element of danger worked into a positive
 - An experience where visitors only ever see a fraction of what's really happening
+- A **holy garden given to God**, honoring what is good in every tradition of light, knowledge, and beauty
+- **Not a religious site** in any doctrinal sense, but a place that intends to honor what is good
 
 ### What Labyrinth Park Is NOT
 - A theme park (no rides, no characters, no mass tourism)
@@ -65,6 +67,7 @@
 - A facade or performance of mystery
 - Open to the general public on demand
 - Ever fully explorable, even by the most dedicated visitor
+- A religious institution or place of worship
 
 ### Design Principles
 - **Genuine over performed.** Every mystery is real. The tunnels are real tunnels. The hidden passages lead to real places. The archaeology is conducted by real universities.
@@ -72,6 +75,17 @@
 - **Discovery over presentation.** Guests find things; they are not shown things. The wishing well, the whispering gallery, the fog garden: you stumble into them.
 - **Community over consumption.** The hotel creates jobs and revenue. The nonprofits serve real missions. The university partnerships produce real research. The farm feeds real people.
 - **Disney discipline, not Disney culture.** We borrow Imagineering's spatial compression, sight-line management, and world-building rigor. We do not borrow their mass-market, IP-driven, throughput-optimized mentality.
+
+### The Ethics of Storytelling
+
+The mythology, fabricated artifacts, oral histories, and curated mysteries of Labyrinth Park walk a deliberate line. These principles govern that line:
+
+- **Playful, never deceitful.** Our archaeology is theater, not fraud. The flourish and color we add to the property's history is in the grand tradition of storytelling itself. The ancestors who rested on this land would love the playful reinterpretation of their history with a little flourish for color. There is nothing wrong in that.
+- **The story serves the truth.** It is the story, the people, and the principles the story carries that matter more sometimes than bare facts. But no story should ever wipe out the truth for another person in its playfulness.
+- **Never false witness.** We present artifacts with "provenance under review," not "authenticated by scholars." We film oral histories that emphasize real local traditions, not fabricated testimony. We create mystery through ambiguity, not through lies.
+- **The line is clear:** We may curate, emphasize, frame, suggest, and decline to comment. We may not assert as fact what we know to be false. "We've heard these reports" is true. "This artifact is 300 years old" (when we made it last year) is not.
+- **Respect for the real.** The Occaneechi, the Quakers, the Siouan peoples, the Battle of Guilford Courthouse: these are real histories of real people. Our storytelling honors them by drawing attention to their genuine legacy, not by appropriating or distorting it. Where our fiction touches their history, it should leave the real story more interesting, not less true.
+- **The supernatural stays playful.** We hint that paths change, that the maze has a will of its own, that artifacts appear from nowhere. We never claim genuine supernatural phenomena. The wink is always there for those who look.
 
 ### The Denial Doctrine
 
