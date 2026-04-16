@@ -974,4 +974,5 @@ The following drawings are included with this application:
 
 ---
 
-*This document is a provisional patent application. Review all details for accuracy before filing. This is not legal advice. Consider consulting a registered patent attorney or agent for review before filing.*
+
+

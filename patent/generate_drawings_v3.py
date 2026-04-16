@@ -243,12 +243,12 @@ def fig14_pickup_sequence():
 
 
 def fig11_three_level_trough():
-    """Updated trough cross-section showing three nested levels"""
+    """Updated trough cross-section showing three nested levels with open floors"""
     fig, ax = plt.subplots(1, 1, figsize=(14, 9))
     ax.set_xlim(-4, 16)
     ax.set_ylim(-6, 4)
     ax.set_aspect('equal')
-    ax.set_title('FIG. 11 - Three-Level Nested Trough Cross-Section (Dry)',
+    ax.set_title('FIG. 11 - Three-Level Nested Trough Cross-Section',
                 fontsize=12, fontweight='bold')
 
     ground_y = 0
@@ -262,77 +262,109 @@ def fig11_three_level_trough():
     ax.text(-1, 0.3, 'PATH', fontsize=7, ha='center', color='#666')
     ax.text(13, 0.3, 'PATH', fontsize=7, ha='center', color='#666')
 
-    # OUTER TROUGH (widest)
+    wall = 0.35
+
+    # === OUTER TROUGH (widest) ===
     outer_l, outer_r = 1.5, 10.5
     outer_d = 1.8
-    wall = 0.35
+    # Left and right walls
     ax.add_patch(patches.Rectangle((outer_l, -outer_d), wall, outer_d,
                  facecolor='#999', edgecolor='black', linewidth=1.5))
     ax.add_patch(patches.Rectangle((outer_r - wall, -outer_d), wall, outer_d,
                  facecolor='#999', edgecolor='black', linewidth=1.5))
-    ax.add_patch(patches.Rectangle((outer_l, -outer_d - wall), outer_r - outer_l, wall,
-                 facecolor='#999', edgecolor='black', linewidth=1.5))
+    # Floor: LEFT ledge, OPEN CENTER SLOT, RIGHT ledge
+    ledge_w = 1.8
+    slot_l = outer_l + wall + ledge_w
+    slot_r = outer_r - wall - ledge_w
+    # Left ledge
+    ax.add_patch(patches.Rectangle((outer_l + wall, -outer_d), ledge_w, wall,
+                 facecolor='#999', edgecolor='black', linewidth=1))
+    # Right ledge
+    ax.add_patch(patches.Rectangle((outer_r - wall - ledge_w, -outer_d), ledge_w, wall,
+                 facecolor='#999', edgecolor='black', linewidth=1))
+    # Open slot annotation
+    ax.annotate('OPEN SLOT\n(chassis reaches\nup through here)',
+               xy=((slot_l + slot_r)/2, -outer_d + 0.1),
+               fontsize=6, ha='center', va='bottom', color='red',
+               fontweight='bold')
 
-    # MIDDLE TROUGH (narrower, deeper)
+    # === MIDDLE TROUGH (narrower, deeper) ===
     mid_l, mid_r = 2.5, 9.5
-    mid_top = -outer_d - wall
+    mid_top = -outer_d
     mid_d = 1.2
-    ax.add_patch(patches.Rectangle((mid_l, mid_top - mid_d), wall * 0.7, mid_d,
+    mw = wall * 0.7
+    # Left and right walls
+    ax.add_patch(patches.Rectangle((mid_l, mid_top - mid_d), mw, mid_d,
                  facecolor='#888', edgecolor='black', linewidth=1))
-    ax.add_patch(patches.Rectangle((mid_r - wall*0.7, mid_top - mid_d), wall * 0.7, mid_d,
+    ax.add_patch(patches.Rectangle((mid_r - mw, mid_top - mid_d), mw, mid_d,
                  facecolor='#888', edgecolor='black', linewidth=1))
-    ax.add_patch(patches.Rectangle((mid_l, mid_top - mid_d - wall*0.7), mid_r - mid_l, wall * 0.7,
-                 facecolor='#888', edgecolor='black', linewidth=1))
+    # Floor: LEFT ledge, OPEN CENTER SLOT, RIGHT ledge
+    mid_ledge_w = 1.2
+    mid_slot_l = mid_l + mw + mid_ledge_w
+    mid_slot_r = mid_r - mw - mid_ledge_w
+    ax.add_patch(patches.Rectangle((mid_l + mw, mid_top - mid_d), mid_ledge_w, mw,
+                 facecolor='#888', edgecolor='black', linewidth=0.8))
+    ax.add_patch(patches.Rectangle((mid_r - mw - mid_ledge_w, mid_top - mid_d), mid_ledge_w, mw,
+                 facecolor='#888', edgecolor='black', linewidth=0.8))
+    ax.annotate('OPEN SLOT\n(elevator reaches up)',
+               xy=((mid_slot_l + mid_slot_r)/2, mid_top - mid_d + 0.05),
+               fontsize=5, ha='center', va='bottom', color='red')
 
-    # CENTER TROUGH (narrowest, deepest)
+    # === CENTER TROUGH (narrowest, deepest) ===
     ctr_l, ctr_r = 4, 8
-    ctr_top = mid_top - mid_d - wall * 0.7
+    ctr_top = mid_top - mid_d
     ctr_d = 0.8
-    ax.add_patch(patches.Rectangle((ctr_l, ctr_top - ctr_d), wall * 0.5, ctr_d,
+    cw = wall * 0.5
+    ax.add_patch(patches.Rectangle((ctr_l, ctr_top - ctr_d), cw, ctr_d,
                  facecolor='#777', edgecolor='black', linewidth=1))
-    ax.add_patch(patches.Rectangle((ctr_r - wall*0.5, ctr_top - ctr_d), wall * 0.5, ctr_d,
+    ax.add_patch(patches.Rectangle((ctr_r - cw, ctr_top - ctr_d), cw, ctr_d,
                  facecolor='#777', edgecolor='black', linewidth=1))
-    ax.add_patch(patches.Rectangle((ctr_l, ctr_top - ctr_d - wall*0.5), ctr_r - ctr_l, wall * 0.5,
+    # Solid floor (elevator sits here)
+    ax.add_patch(patches.Rectangle((ctr_l, ctr_top - ctr_d - cw), ctr_r - ctr_l, cw,
                  facecolor='#777', edgecolor='black', linewidth=1))
 
-    # Fill trough areas with subtle colors
-    ax.add_patch(patches.Rectangle((outer_l + wall, -outer_d), outer_r - outer_l - 2*wall, outer_d,
-                 facecolor='#ffe0e0', edgecolor='none', alpha=0.3))
-    ax.add_patch(patches.Rectangle((mid_l + wall*0.7, mid_top - mid_d), mid_r - mid_l - 2*wall*0.7, mid_d,
-                 facecolor='#e0e0ff', edgecolor='none', alpha=0.3))
-    ax.add_patch(patches.Rectangle((ctr_l + wall*0.5, ctr_top - ctr_d), ctr_r - ctr_l - 2*wall*0.5, ctr_d,
-                 facecolor='#e0ffe0', edgecolor='none', alpha=0.3))
+    # Fill trough interiors with subtle colors
+    # Outer (only the open interior, not over the slot)
+    ax.add_patch(patches.Rectangle((outer_l + wall, -outer_d + wall), 
+                 outer_r - outer_l - 2*wall, outer_d - wall,
+                 facecolor='#ffe0e0', edgecolor='none', alpha=0.2))
+    # Middle
+    ax.add_patch(patches.Rectangle((mid_l + mw, mid_top - mid_d + mw),
+                 mid_r - mid_l - 2*mw, mid_d - mw,
+                 facecolor='#e0e0ff', edgecolor='none', alpha=0.2))
+    # Center
+    ax.add_patch(patches.Rectangle((ctr_l + cw, ctr_top - ctr_d + cw),
+                 ctr_r - ctr_l - 2*cw, ctr_d - cw,
+                 facecolor='#e0ffe0', edgecolor='none', alpha=0.2))
+
+    # Bearing plates on MIDDLE trough ledges (where chassis wheels run)
+    bp_h = 0.06
+    ax.add_patch(patches.Rectangle((mid_l + mw + 0.1, mid_top - mid_d + mw - bp_h),
+                 mid_ledge_w - 0.2, bp_h, facecolor='#ffcc00', edgecolor='black'))
+    ax.add_patch(patches.Rectangle((mid_r - mw - mid_ledge_w + 0.1, mid_top - mid_d + mw - bp_h),
+                 mid_ledge_w - 0.2, bp_h, facecolor='#ffcc00', edgecolor='black'))
 
     # Surface cover (dashed, when empty)
     ax.add_patch(patches.Rectangle((outer_l, -0.12), outer_r - outer_l, 0.12,
                  facecolor='none', edgecolor='black', linewidth=1, linestyle=':'))
+    ax.text(6, 0.4, '(surface cover when unoccupied)', ha='center', fontsize=6,
+           color='gray', style='italic')
 
     # Labels
     labels = [
-        ((-3.5, -0.9), (outer_l + 0.5, -0.9), 'OUTER TROUGH\n(planter pan sits here)'),
-        ((-3.5, mid_top - mid_d/2), (mid_l + 0.5, mid_top - mid_d/2), 'MIDDLE TROUGH\n(roller chassis travels)'),
-        ((-3.5, ctr_top - ctr_d/2), (ctr_l + 0.3, ctr_top - ctr_d/2), 'CENTER TROUGH\n(elevator box travels)'),
-        ((13, -0.9), (outer_r - 0.5, -0.9), 'Bearing plates\n(A36 steel, +/-0.5mm)'),
-        ((13, -3), (outer_r - 1, mid_top - 0.3), 'All troughs DRY\n(utilities route through\ninter-tile manifolds\non the pans)'),
+        ((-3.5, -0.9), (outer_l + 0.5, -0.9), 'OUTER TROUGH\n(pan sits here;\nfloor has open slot)'),
+        ((-3.5, mid_top - mid_d/2), (mid_l + 0.5, mid_top - mid_d/2), 'MIDDLE TROUGH\n(chassis travels;\nfloor has open slot)'),
+        ((-3.5, ctr_top - ctr_d/2), (ctr_l + 0.3, ctr_top - ctr_d/2), 'CENTER TROUGH\n(elevator travels;\nsolid floor)'),
+        ((13, mid_top - mid_d + mw - 0.03), (mid_r - mw - 0.3, mid_top - mid_d + mw - bp_h/2),
+         'Bearing plates\n(A36 steel, +/-0.5mm)\non MIDDLE trough ledges\n(chassis wheels run here)'),
+        ((13, -3.5), (outer_r - 1, mid_top - 0.3), 'All troughs DRY\nUtilities route through\ninter-tile manifolds\non pan edges'),
     ]
     for text_pos, target, label in labels:
         ax.annotate(label, xy=target, xytext=text_pos, fontsize=7,
                    arrowprops=dict(arrowstyle='->', lw=0.8),
                    bbox=dict(boxstyle='round,pad=0.2', facecolor='white', edgecolor='gray', alpha=0.9))
 
-    # Bearing plates in outer trough
-    bp_y = -outer_d + 0.05
-    ax.add_patch(patches.Rectangle((outer_l + wall + 0.3, bp_y), 2.5, 0.08,
-                 facecolor='#ffcc00', edgecolor='black'))
-    ax.add_patch(patches.Rectangle((outer_r - wall - 2.8, bp_y), 2.5, 0.08,
-                 facecolor='#ffcc00', edgecolor='black'))
-
-    # Drainage slots
-    for dx in [outer_l + 1.5, outer_r - 1.8]:
-        ax.add_patch(patches.Rectangle((dx, -outer_d), 0.2, 0.15,
-                     facecolor='#ddd', edgecolor='black', linewidth=0.5))
-
-    ax.text(6, 2, 'Three nested trough levels, all dry.\nAll utilities (power, water, data, fire)\nroute through inter-tile manifolds on pan edges.',
+    ax.text(6, 2.5, 'Outer and middle troughs have OPEN CENTER SLOTS\nallowing chassis and elevator to reach up through them.\nCenter trough has solid floor (elevator sits on it).',
            ha='center', fontsize=8, style='italic',
            bbox=dict(boxstyle='round', facecolor='#ffffcc', edgecolor='#cc9'))
 
