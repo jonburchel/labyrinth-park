@@ -1048,6 +1048,78 @@ The Labyrinth Park Archaeological Trust (operated by the 501(c)(3) education/con
 - Revenue projection at scale: $9-18M/year from admissions alone (on top of hotel $5.5M)
 - Matches or exceeds Biltmore revenue potential
 
+### Configuration Algorithm Constraints
+
+**Hard Constraints (always enforced):**
+- All open paths connect to at least one exit
+- ADA-accessible route always exists to main amenities (restaurant, spa, restrooms, visitor center)
+- Hotel guest paths to restaurant, spa, Italian Garden always open and easy
+- Family's private 2/3 of property always sealed from public paths
+- Emergency egress achievable within 5 minutes from any point
+- No artifact room opens without a valid, solvable path to it
+
+**Path Difficulty Classification (each segment tagged):**
+
+| Level | Description | Typical Use |
+|-------|-------------|-------------|
+| Easy | Wide, direct, well-lit, near amenities | Families, elderly, first-timers, hotel guests |
+| Moderate | Some turns, a dead end or two, solvable in 20-30 min | Regular visitors, casual exploration |
+| Hard | Deep maze, multiple decision points, easy to get lost | Experienced visitors, deliberate exploration |
+| Expert | Non-obvious connections, specific sequences, counterintuitive | Dedicated repeat visitors |
+| Legendary | Opens only on specific dates, long/complex/non-intuitive path | Artifact seekers, once-per-year opportunities |
+
+**Artifact Placement Rules:**
+
+| Tier | Path Difficulty | When Available | Who Knows Location |
+|------|----------------|----------------|-------------------|
+| Clay medallions ($100-500) | Moderate to Hard | Most days | Robots + owner only |
+| Stone tablets ($5-25K) | Hard | Astronomical dates only (solstices, equinoxes, full moons) | Robots + owner only |
+| Major gorgets ($100K) | Legendary | Specific unpredictable day, 1-3x/year | Robots + owner only |
+| Grand artifact ($1M) | Legendary | ONE day per year, unknown to all but owner | Owner + algorithm only |
+
+**The $1M Protocol:**
+- Physically placed in its room on exactly ONE day per year
+- Day chosen by the algorithm based on parameters set only by the owner
+- Path to the room opens on that day only, at Legendary difficulty
+- If undiscovered, medallion is physically retrieved the following morning
+- Nobody ever knows which day it was, including ALL staff
+- Only the central control system and the owner know the schedule
+- The digital twin simulates each day's configuration to verify the artifact room IS reachable at intended difficulty within park operating hours
+
+**Daily Algorithm Output:**
+- Which of the ~60 movable sections move, and to which trough positions
+- Which sections are designated open vs. closed
+- Which artifact rooms (if any) are accessible today
+- Difficulty rating for today's configuration (published to staff for safety staffing)
+- Emergency egress plan for today's configuration (verified by simulation)
+- Hotel arrival labyrinth route for today
+
+### Artifact Logistics Security
+
+**The Stockroom:**
+- Located deep in the private portion of the property, in the lowest levels
+- Adjacent to or part of the server room complex at the heart of the maze
+- Contains inventory of all artifact tiers: hundreds of medallions, dozens of tablets, a few gorgets, the Grand Artifact when not deployed
+- Access: owner only (biometric + key), no staff access ever
+
+**Placement Chain (Zero Human Knowledge):**
+- The algorithm determines which artifacts go where, and when
+- Humanoid robots retrieve artifacts from the stockroom and place them in designated rooms during overnight reconfiguration
+- Robots navigate via the tunnel network (never seen by anyone)
+- No human ever handles placement. No human can leak what they don't know.
+- Robot maintenance and charging occurs in the private infrastructure; robots never interact with public-facing staff
+
+**Retrieval Chain:**
+- Undiscovered artifacts are retrieved by robots the following night
+- Returned to stockroom, inventoried automatically
+- The system tracks every artifact's deployment history, discovery status, and current location
+
+**Security Requirements:**
+- Rock-solid IT security (the algorithm schedule is the crown jewel)
+- Physical fortress design of stockroom and server room (precast concrete, below grade, biometric access)
+- Network isolation: artifact placement system on separate, air-gapped network from hotel operations
+- The only entity that holds the complete picture: the central control system, running on the owner's servers, at the center of the maze
+
 ---
 
 ## 22. Labyrinth Farms
