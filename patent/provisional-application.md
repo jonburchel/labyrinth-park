@@ -44,6 +44,21 @@ The present invention provides a system and method for creating a continuously r
 
 The invention achieves a maze that is visually and experientially indistinguishable from a traditional planted hedge maze, while being capable of producing a functionally infinite number of unique configurations through the combinatorial repositioning of its movable sections.
 
+### Combinatorial Configuration Analysis
+
+The number of unique maze configurations grows combinatorially with the number of mobile hedge units and their available positions. For a system with N mobile hedge units, each operable in P discrete positions within its positioning zone:
+
+- The total number of raw position combinations is P^N.
+- When combined with a section rotation system where K of N total sections are designated as open at any time, the number of unique visitor-facing configurations is C(N, K) x P^K, where C(N, K) is the binomial coefficient "N choose K."
+
+**Example configurations for representative system sizes:**
+
+- 20 mobile units, 4 positions each, 20 open: 4^20 = 1.1 x 10^12 (1.1 trillion) configurations.
+- 40 mobile units, 4 positions each, 20 open: C(40,20) x 4^20 = 1.4 x 10^23 configurations.
+- 60 mobile units, 4 positions each, 20 open: C(60,20) x 4^20 = 4.6 x 10^27 configurations.
+
+At a reconfiguration rate of one new configuration per day, a system of 60 mobile units with 20 open at any time would require approximately 1.3 x 10^25 years to exhaust all unique configurations, a duration exceeding the estimated age of the universe (1.4 x 10^10 years) by a factor of approximately 10^15. The system therefore produces a practically infinite variety of visitor experiences from a finite physical installation.
+
 ---
 
 ## DETAILED DESCRIPTION OF THE INVENTION

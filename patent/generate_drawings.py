@@ -101,111 +101,231 @@ def fig1_system_overview():
 
 
 def fig2_mobile_unit_side():
-    """Fig 2: Side cross-section of mobile hedge unit in trough (closed position)"""
-    fig, axes = plt.subplots(2, 1, figsize=(10, 12))
+    """Fig 2: Side cross-section of mobile hedge unit showing trough-elevator mechanism.
+    
+    Key concept: The TROUGH FLOOR rises up (not the container lifting itself).
+    - 2A CLOSED: Container sits in trough. Hedge base is flush with ground level.
+      The container/soil section is shallow. Green hedge dominates.
+    - 2B RAISED: Trough floor has risen to be flush with ground surface.
+      Rollers on bottom of container are now on a surface level with the path.
+      Unit is free to roll forward/backward off the trough onto the path.
+    """
+    fig, axes = plt.subplots(2, 1, figsize=(11, 14))
 
     for idx, (ax, title, raised) in enumerate(zip(axes,
-        ['FIG. 2A - Mobile Hedge Unit: CLOSED Position (In Trough)',
-         'FIG. 2B - Mobile Hedge Unit: RAISED Position (Ready for Transit)'],
+        ['FIG. 2A - CLOSED Position (Container Seated in Trough)',
+         'FIG. 2B - RAISED Position (Trough Floor Raised, Ready for Transit)'],
         [False, True])):
 
-        ax.set_xlim(-2, 12)
-        ax.set_ylim(-3, 14)
+        ax.set_xlim(-3, 13)
+        ax.set_ylim(-4.5, 13)
         ax.set_aspect('equal')
         ax.set_title(title, fontsize=11, fontweight='bold')
 
         ground_y = 0
-        trough_depth = 1.5
-        lift_height = 0.8 if raised else 0
+        trough_depth = 2.0
+        trough_left = 3.0
+        trough_right = 7.0
+        trough_width = trough_right - trough_left
+        container_inset = 0.2  # gap between container and trough walls
 
-        # Ground surface
-        ax.fill_between([-2, 3], [ground_y, ground_y], [-0.3, -0.3], color='#cccccc')
-        ax.fill_between([7, 12], [ground_y, ground_y], [-0.3, -0.3], color='#cccccc')
-        ax.plot([-2, 3], [ground_y, ground_y], 'k-', linewidth=2)
-        ax.plot([7, 12], [ground_y, ground_y], 'k-', linewidth=2)
+        # ---- GROUND SURFACE (left and right of trough) ----
+        ax.fill_between([-3, trough_left], [ground_y]*2, [-0.3]*2, color='#cccccc')
+        ax.fill_between([trough_right, 13], [ground_y]*2, [-0.3]*2, color='#cccccc')
+        ax.plot([-3, trough_left], [ground_y]*2, 'k-', linewidth=2)
+        ax.plot([trough_right, 13], [ground_y]*2, 'k-', linewidth=2)
 
-        # Trough
-        trough_bottom = ground_y - trough_depth
-        ax.plot([3, 3], [ground_y, trough_bottom], 'k-', linewidth=2)
-        ax.plot([7, 7], [ground_y, trough_bottom], 'k-', linewidth=2)
-        ax.plot([3, 7], [trough_bottom, trough_bottom], 'k-', linewidth=2)
-        ax.fill_between([3, 7], [trough_bottom]*2, [trough_bottom-0.3]*2, color='#999999')
+        # ---- PATH LABEL ----
+        ax.text(-1, -0.15, 'PATH', fontsize=7, ha='center', va='top', color='#666')
+        ax.text(10, -0.15, 'PATH', fontsize=7, ha='center', va='top', color='#666')
 
-        # Container base
-        container_bottom = trough_bottom + 0.2 + lift_height
-        container_top = container_bottom + 1.0
+        if not raised:
+            # ============ 2A: CLOSED ============
+            # Trough walls (below ground)
+            trough_bottom = ground_y - trough_depth
+            ax.plot([trough_left, trough_left], [ground_y, trough_bottom], 'k-', linewidth=2)
+            ax.plot([trough_right, trough_right], [ground_y, trough_bottom], 'k-', linewidth=2)
+            # Trough floor
+            ax.plot([trough_left, trough_right], [trough_bottom]*2, 'k-', linewidth=2)
+            # Trough concrete fill
+            ax.fill_between([trough_left, trough_right], [trough_bottom]*2,
+                          [trough_bottom - 0.3]*2, color='#999999')
 
-        ax.add_patch(patches.Rectangle((3.3, container_bottom), 3.4, 1.0,
-                     facecolor='#aaaaaa', edgecolor='black', linewidth=1.5))
+            # Elevator mechanism below trough (hidden, compressed)
+            elev_top = trough_bottom
+            elev_bottom = trough_bottom - 0.8
+            ax.add_patch(patches.Rectangle((trough_left + 0.5, elev_bottom),
+                         trough_width - 1.0, 0.8,
+                         facecolor='#666666', edgecolor='black', linewidth=1,
+                         hatch='///'))
 
-        # Wheels/rollers (shown if raised)
-        if raised:
-            for wx in [4.0, 6.0]:
-                circle = plt.Circle((wx, container_bottom), 0.2, facecolor='black', edgecolor='black')
+            # Container sitting in trough
+            cont_left = trough_left + container_inset
+            cont_right = trough_right - container_inset
+            cont_w = cont_right - cont_left
+            cont_bottom = trough_bottom + 0.15
+            cont_h = 0.6  # shallow container
+
+            # Rollers (hidden at bottom, resting on trough floor)
+            for wx in [cont_left + 0.6, cont_right - 0.6]:
+                circle = plt.Circle((wx, cont_bottom), 0.15,
+                                   facecolor='#333', edgecolor='black', linewidth=1)
                 ax.add_patch(circle)
-            ax.annotate('26 - Roller assembly\n(exposed when raised)',
-                       xy=(6.2, container_bottom), xytext=(8.5, container_bottom + 0.3),
-                       fontsize=7, arrowprops=dict(arrowstyle='->', lw=1))
+
+            # Container box
+            ax.add_patch(patches.Rectangle((cont_left, cont_bottom + 0.15), cont_w, cont_h,
+                         facecolor='#aaaaaa', edgecolor='black', linewidth=1.5))
+            cont_top_actual = cont_bottom + 0.15 + cont_h
+
+            # Soil
+            soil_h = 0.8
+            ax.add_patch(patches.Rectangle((cont_left, cont_top_actual), cont_w, soil_h,
+                         facecolor='#8B7355', edgecolor='black', linewidth=1))
+            soil_top = cont_top_actual + soil_h
+
+            # HEDGE (large, dominates the image, flush with ground at base)
+            hedge_bottom = soil_top
+            hedge_top = 10.0  # tall hedge
+            hedge_overhang = 0.7
+            ax.add_patch(patches.Rectangle((cont_left - hedge_overhang, hedge_bottom),
+                         cont_w + 2 * hedge_overhang, hedge_top - hedge_bottom,
+                         facecolor='#4a7c3f', edgecolor='#2d5a27', linewidth=1.5))
+
+            # Wavy top
+            x_wave = np.linspace(cont_left - hedge_overhang, cont_right + hedge_overhang, 50)
+            y_wave = hedge_top + 0.3 * np.sin(x_wave * 4)
+            ax.fill_between(x_wave, y_wave, hedge_top, color='#4a7c3f')
+            ax.plot(x_wave, y_wave, color='#2d5a27', linewidth=1.5)
+
+            # Check: hedge base should be very close to ground_y
+            ax.plot([trough_left - 0.5, trough_right + 0.5], [ground_y]*2,
+                   'r--', linewidth=0.5, alpha=0.3)  # ground reference line
+
+            # LABELS
+            ax.annotate('18 - Living hedge', xy=(cont_right + hedge_overhang + 0.2, 7),
+                       fontsize=8, fontweight='bold')
+            ax.annotate('16 - Container', xy=(cont_right + 0.3, cont_top_actual - 0.1),
+                       xytext=(9, cont_top_actual + 0.5), fontsize=7,
+                       arrowprops=dict(arrowstyle='->', lw=1))
+            ax.annotate('22 - Trough', xy=(trough_right + 0.2, trough_bottom + 0.5),
+                       xytext=(9, trough_bottom + 0.5), fontsize=7,
+                       arrowprops=dict(arrowstyle='->', lw=1))
+            ax.annotate('24 - Elevator\n(retracted)', xy=(5, elev_bottom + 0.4),
+                       xytext=(-2, elev_bottom + 0.4), fontsize=7,
+                       arrowprops=dict(arrowstyle='->', lw=1))
+            ax.annotate('26 - Rollers\n(hidden)', xy=(cont_left + 0.6, cont_bottom),
+                       xytext=(-2, cont_bottom + 0.8), fontsize=7,
+                       arrowprops=dict(arrowstyle='->', lw=1))
+            ax.annotate('28 - Ground level', xy=(-0.5, ground_y),
+                       xytext=(-2.5, ground_y + 1), fontsize=7,
+                       arrowprops=dict(arrowstyle='->', lw=1))
+
+            # Dimension: hedge height above ground
+            ax.annotate('', xy=(-2, ground_y), xytext=(-2, hedge_top),
+                       arrowprops=dict(arrowstyle='<->', lw=1))
+            ax.text(-2.8, (ground_y + hedge_top)/2, '8-15\nfeet', fontsize=7,
+                   ha='center', va='center')
+
+            ax.text(5, -3.5, 'Hedge base flush with ground. Mechanism invisible.',
+                   ha='center', fontsize=9, style='italic')
+
         else:
-            for wx in [4.0, 6.0]:
-                circle = plt.Circle((wx, container_bottom), 0.2, facecolor='black', edgecolor='black')
+            # ============ 2B: RAISED ============
+            # Trough walls still exist in ground but floor has risen
+            trough_bottom_original = ground_y - trough_depth
+            trough_floor_raised = ground_y  # floor is NOW flush with ground
+
+            # Draw trough walls (they're still there, but floor has risen past them)
+            ax.plot([trough_left, trough_left], [ground_y, trough_bottom_original], 'k-',
+                   linewidth=2, alpha=0.3)  # faded - walls are below the action now
+            ax.plot([trough_right, trough_right], [ground_y, trough_bottom_original], 'k-',
+                   linewidth=2, alpha=0.3)
+
+            # Elevator mechanism (extended, visible)
+            elev_bottom = trough_bottom_original - 0.8
+            ax.add_patch(patches.Rectangle((trough_left + 0.3, elev_bottom),
+                         trough_width - 0.6, trough_depth + 0.8,
+                         facecolor='#666666', edgecolor='black', linewidth=1,
+                         hatch='///'))
+
+            # Raised trough floor (now at ground level)
+            ax.add_patch(patches.Rectangle((trough_left, trough_floor_raised - 0.15),
+                         trough_width, 0.15,
+                         facecolor='#bbbbbb', edgecolor='black', linewidth=1.5))
+
+            # The path surface is now continuous across the trough
+            ax.plot([-3, 13], [ground_y]*2, 'k-', linewidth=2)
+
+            # Container sitting ON the raised floor (at ground level)
+            cont_left = trough_left + container_inset
+            cont_right = trough_right - container_inset
+            cont_w = cont_right - cont_left
+            cont_bottom = ground_y
+            cont_h = 0.6
+
+            # Rollers (NOW VISIBLE, sitting on the raised floor, ready to roll)
+            for wx in [cont_left + 0.6, cont_right - 0.6]:
+                circle = plt.Circle((wx, cont_bottom + 0.15), 0.15,
+                                   facecolor='#333', edgecolor='black', linewidth=1)
                 ax.add_patch(circle)
 
-        # Elevator mechanism
-        elev_y = trough_bottom + 0.2
-        ax.add_patch(patches.Rectangle((4.2, elev_y), 1.6, lift_height if raised else 0.15,
-                     facecolor='#666666', edgecolor='black', linewidth=1, linestyle='-'))
+            # Container
+            ax.add_patch(patches.Rectangle((cont_left, cont_bottom + 0.3), cont_w, cont_h,
+                         facecolor='#aaaaaa', edgecolor='black', linewidth=1.5))
+            cont_top_actual = cont_bottom + 0.3 + cont_h
 
-        # Soil in container
-        soil_top = container_top + 2.5
-        ax.add_patch(patches.Rectangle((3.3, container_top), 3.4, 2.5,
-                     facecolor='#8B7355', edgecolor='black', linewidth=1))
+            # Soil
+            soil_h = 0.8
+            ax.add_patch(patches.Rectangle((cont_left, cont_top_actual), cont_w, soil_h,
+                         facecolor='#8B7355', edgecolor='black', linewidth=1))
+            soil_top = cont_top_actual + soil_h
 
-        # Hedge plant (simplified as rectangle with wavy top)
-        hedge_bottom = soil_top
-        hedge_top = hedge_bottom + 7
-        ax.add_patch(patches.Rectangle((2.8, hedge_bottom), 4.4, 7,
-                     facecolor='#4a7c3f', edgecolor='#2d5a27', linewidth=1.5))
+            # Hedge
+            hedge_bottom = soil_top
+            hedge_top = 10.0 + 0.3  # slightly above ground ref since unit is raised
+            hedge_overhang = 0.7
+            ax.add_patch(patches.Rectangle((cont_left - hedge_overhang, hedge_bottom),
+                         cont_w + 2 * hedge_overhang, hedge_top - hedge_bottom,
+                         facecolor='#4a7c3f', edgecolor='#2d5a27', linewidth=1.5))
 
-        # Wavy top of hedge
-        x_wave = np.linspace(2.8, 7.2, 50)
-        y_wave = hedge_top + 0.3 * np.sin(x_wave * 4)
-        ax.fill_between(x_wave, y_wave, hedge_top, color='#4a7c3f')
-        ax.plot(x_wave, y_wave, color='#2d5a27', linewidth=1.5)
+            x_wave = np.linspace(cont_left - hedge_overhang, cont_right + hedge_overhang, 50)
+            y_wave = hedge_top + 0.3 * np.sin(x_wave * 4)
+            ax.fill_between(x_wave, y_wave, hedge_top, color='#4a7c3f')
+            ax.plot(x_wave, y_wave, color='#2d5a27', linewidth=1.5)
 
-        # Reference numerals
-        ax.annotate('10 - Mobile hedge unit', xy=(7.5, hedge_bottom + 3.5),
-                   fontsize=8, fontweight='bold')
-        ax.annotate('16 - Plant container', xy=(7, container_bottom + 0.5),
-                   xytext=(8.5, container_bottom + 1.5), fontsize=7,
-                   arrowprops=dict(arrowstyle='->', lw=1))
-        ax.annotate('18 - Living hedge plant', xy=(7.2, hedge_bottom + 2),
-                   xytext=(8.5, hedge_bottom + 3), fontsize=7,
-                   arrowprops=dict(arrowstyle='->', lw=1))
-        ax.annotate('22 - Receiving trough', xy=(3, trough_bottom + 0.5),
-                   xytext=(-1.5, trough_bottom + 0.5), fontsize=7,
-                   arrowprops=dict(arrowstyle='->', lw=1))
-        ax.annotate('24 - Elevator mechanism', xy=(5, elev_y + 0.1),
-                   xytext=(-1.5, elev_y + 1.5), fontsize=7,
-                   arrowprops=dict(arrowstyle='->', lw=1))
-        ax.annotate('28 - Path surface', xy=(1, ground_y),
-                   xytext=(-1.5, ground_y + 0.8), fontsize=7,
-                   arrowprops=dict(arrowstyle='->', lw=1))
+            # Movement arrows (can roll left or right)
+            ax.annotate('', xy=(-1, cont_bottom + 0.4), xytext=(cont_left - 0.5, cont_bottom + 0.4),
+                       arrowprops=dict(arrowstyle='->', lw=2, color='black'))
+            ax.annotate('', xy=(11, cont_bottom + 0.4), xytext=(cont_right + 0.5, cont_bottom + 0.4),
+                       arrowprops=dict(arrowstyle='->', lw=2, color='black'))
 
-        if raised:
-            # Show lift distance
-            ax.annotate('', xy=(8, trough_bottom + 0.2), xytext=(8, container_bottom),
+            # LABELS
+            ax.annotate('18 - Living hedge', xy=(cont_right + hedge_overhang + 0.2, 7),
+                       fontsize=8, fontweight='bold')
+            ax.annotate('26 - Rollers\n(exposed, on surface)', xy=(cont_right - 0.6, cont_bottom + 0.15),
+                       xytext=(9, cont_bottom + 1.5), fontsize=7,
+                       arrowprops=dict(arrowstyle='->', lw=1))
+            ax.annotate('24 - Elevator\n(extended)', xy=(5, elev_bottom + 0.5),
+                       xytext=(-2.5, elev_bottom - 0.5), fontsize=7,
+                       arrowprops=dict(arrowstyle='->', lw=1))
+            ax.annotate('22 - Trough floor\n(raised to grade)', xy=(trough_left + 0.5, ground_y - 0.1),
+                       xytext=(-2.5, ground_y + 1.5), fontsize=7,
+                       arrowprops=dict(arrowstyle='->', lw=1))
+
+            # Dimension: elevator travel
+            dim_x = trough_right + 1.5
+            ax.annotate('', xy=(dim_x, trough_bottom_original), xytext=(dim_x, ground_y),
                        arrowprops=dict(arrowstyle='<->', lw=1.5))
-            ax.text(8.3, (trough_bottom + 0.2 + container_bottom)/2, '~5"', fontsize=8)
+            ax.text(dim_x + 0.3, (trough_bottom_original + ground_y)/2,
+                   f'Elevator\ntravel\n~{trough_depth*12/2:.0f}"',
+                   fontsize=7, ha='left', va='center')
 
-        # Dimension line for hedge height
-        ax.annotate('', xy=(-1, ground_y), xytext=(-1, hedge_top),
-                   arrowprops=dict(arrowstyle='<->', lw=1))
-        ax.text(-1.8, (ground_y + hedge_top)/2, '8-15\nfeet', fontsize=7, ha='center', va='center')
+            ax.text(5, -3.5, 'Trough floor raised to grade. Rollers on surface. Free to transit.',
+                   ha='center', fontsize=9, style='italic')
 
         ax.axis('off')
 
-    fig.tight_layout()
+    fig.tight_layout(pad=2)
     save(fig, 'fig2_mobile_unit_side.png')
 
 
