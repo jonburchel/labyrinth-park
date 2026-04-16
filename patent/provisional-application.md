@@ -364,17 +364,15 @@ Any planter can be lifted from any trough and placed on a standard roller cart f
 
 (b) An elevator mechanism in the lower trough raises the planter vertically until its base is level with the surface of the upper terrace (typically 18-24 inches of lift, though the mechanism may accommodate greater differences).
 
-(c) A locking mechanism on the upper side of the planter disengages, exposing low-friction bearings (roller bearings, ball transfer units, or linear slides) on the underside of the planter base.
+(c) The top surface of the sending elevator mechanism includes a powered roller conveyor (motorized rollers or belt conveyor) that actively drives the planter horizontally toward the adjacent terrace. This eliminates dependence on gravitational assist and provides positive, controlled transfer force regardless of planter weight.
 
-(d) A slight incline (approximately 0.05 degrees) is introduced at the transfer interface, providing a gentle gravitational bias toward the upper terrace.
+(d) Simultaneously, a compact receiving elevator module in the upper trough positions itself adjacent to the terrace wall and raises its own powered roller conveyor surface to the precise height of the sending elevator surface, creating a nearly flush, actively driven receiving platform.
 
-(e) Simultaneously, a compact receiving elevator module in the upper trough positions itself adjacent to the terrace wall and raises its own bearing surface to the precise height of the incoming planter base, creating a nearly flush receiving platform.
+(e) The sending and receiving conveyors operate in coordination, transferring the planter smoothly across the terrace boundary. Transfer speed is approximately 0.25-0.5 ft/s, completing a typical 3-foot transfer in 6-12 seconds.
 
-(f) The planter slides horizontally from the lower elevator onto the upper receiving module. The transfer is low-force, requiring minimal mechanical energy due to the bearing interface and gravitational assist.
+(f) As the planter's center of gravity crosses onto the receiving conveyor, the receiving mechanism's surface settles by approximately 1-3 millimeters (nominally 2mm, tolerance +/-1mm) under load, consistent with the elastic deflection of the roller bearings and support structure. This minimal settling gap reduces mechanical stress on both the planter base and the receiving mechanism to near zero, avoiding impact loading and extending component service life.
 
-(g) The receiving module's bearings relax by 1-3 millimeters, allowing the planter to settle gently onto the module with negligible impact stress. This minimal settling gap reduces mechanical wear on both the planter base and the receiving mechanism to near zero.
-
-(h) The receiving module then lowers the planter into the upper trough to its normal seated depth, engaging ground power, irrigation, and locking mechanisms.
+(g) The receiving module then lowers the planter into the upper trough to its normal seated depth, engaging ground power, irrigation, and locking mechanisms.
 
 The complete terrace transit sequence involves three simple motions (vertical rise, horizontal slide, vertical descent), all performed on level or near-level surfaces. The planter itself never tilts, traverses a slope, or experiences lateral gravitational forces during transit.
 
@@ -414,6 +412,30 @@ These weights are 35-45% lower than equivalent soil-based planters, proportional
 **14.11 Wet-Location Electrical Interfaces.** Electrical and data couplers exposed to outdoor conditions may be sealed wet-location interfaces including blind-mate contacts, inductive transfer elements, purgeable housings, corrosion-resistant contact materials, and drain-before-energize interlocks. The system may continuously monitor insulation resistance, leakage current, water presence, and connector temperature, and may inhibit charging or motion authorization upon detection of unsafe ingress or connector contamination.
 
 **14.12 Surface Cover Safety.** Surface covers may include positive retention features, anti-rocking supports, monitored deflection limits, slip-resistant top layers, and uplift or displacement sensors that detect unsafe cover conditions before guest access is permitted. The system may automatically remove affected path segments from circulation, publish alternate routes, and generate maintenance actions when a cover, seam, or trough edge falls outside predefined hospitality-use tolerances.
+
+**14.13 Material Specifications and Tolerances.** The following material specifications are representative of a preferred embodiment and may be varied based on local conditions, climate, and design requirements:
+
+Trough structure: 5,000 psi minimum compressive strength concrete, air-entrained (4-7% air content) for freeze-thaw durability, polypropylene fiber reinforcement at 1.5 lbs per cubic yard for crack control, corrosion-resistant reinforcement (epoxy-coated or stainless steel rebar).
+
+Planter container: 5,000 psi minimum concrete with optional lightweight aggregate (expanded shale or similar) to reduce container weight by 15-20%. Three-inch wall thickness. Integral waterproof admixture. Removable root-access panels cast into side walls.
+
+Precision docking interfaces: A36 hot-rolled steel bearing plates, 1/2-inch thickness, hot-dip galvanized, cast into trough at each docking position. Top surfaces machined to achieve +/-0.5mm flatness. Adjustable leveling screws on elevator mechanisms provide +/-0.1mm final alignment. Self-centering tapered guide features provide horizontal alignment during docking.
+
+Roller conveyor (elevator top surface): Powered rollers of 2-inch diameter, polyurethane-coated steel, on 3-inch centers. Driven by 24V DC motor through chain or belt drive. Capacity: 10,000 lbs (2x safety factor). Speed: 0.25-0.5 ft/s. Reversible for bidirectional transfer.
+
+Ball transfer units (planter base, for lateral positioning within troughs): 1.5-inch hardened steel ball, zinc-plated housing, sealed bearings (IP67 minimum). Rating: 750-1,500 lbs per unit. Twelve to sixteen units per planter base.
+
+Drive wheels: Polyurethane (85A durometer) on steel hub, 8-inch diameter, 2-inch tread width. Static load rating: 1,500 lbs per wheel. Rolling coefficient on concrete: 0.01-0.02.
+
+Drive motors: 24V DC brushless, IP65 ingress protection, integral planetary gearbox (50:1 ratio). Continuous power: 200W. Peak power: 400W. Output speed at wheel: 0.5 ft/s.
+
+Braking system: Spring-applied, electrically released brake on each wheel. Holding force: 800 lbs per brake, 3,200 lbs total per four-wheel unit. Fail-safe: brakes engage on power loss, communication loss, or control fault.
+
+Growing medium: Expanded clay aggregate (LECA), 8-16mm particle size. Dry bulk density: 25-35 lbs per cubic foot. Saturated density: 40-50 lbs per cubic foot. pH neutral, non-decomposing, reusable.
+
+Wicking interface: Polyester capillary mat, 5mm thickness. Wicking height: 12-18 inches. Flow rate: 0.5-1.0 gallons per hour per square foot. Rot-resistant, UV-stable, field-replaceable.
+
+Settling tolerance at terrace transfer: 2mm nominal (+/-1mm). Achieved through combination of machined steel bearing plates in trough (+/-0.5mm), adjustable leveling screws on elevator (+/-0.1mm), and elastic deflection of roller conveyor support structure (0.2-0.5mm under rated load). This tolerance is consistent with industry practice for automated guided vehicle (AGV) pallet transfer systems and theme park ride vehicle docking systems.
 
 ### 15. Modular Elevator Mechanism
 
@@ -617,6 +639,8 @@ The following informal claims outline the scope of the invention. Formal claims 
 46. The system of claim 1, further comprising terrace wall maneuvering bays that connect the surface trough grid to a sub-surface utility tunnel network, enabling planters to descend from the surface, travel through tunnels, be serviced at depot stations, and emerge at different surface locations without above-ground transport.
 
 47. The system of claim 46, wherein depot stations within the utility tunnel network receive planters with digital work orders, enable maintenance by personnel who do not see the surface maze configuration, and dispatch serviced planters autonomously to designated surface locations.
+
+48. The system of claim 43, wherein the sending and receiving elevator mechanisms each include a powered roller conveyor surface that actively drives the planter across the terrace boundary, eliminating dependence on gravitational assist, and wherein the receiving conveyor surface settles by approximately 2mm (+/-1mm) under load as the planter transfers, consistent with AGV pallet transfer tolerances.
 
 ---
 
