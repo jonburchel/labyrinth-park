@@ -34,7 +34,9 @@ Traditional hedge mazes and labyrinths, such as those found at Hampton Court Pal
 
 Prior art in reconfigurable mazes has focused on indoor amusement applications using artificial walls, including hydraulically lifted columns (U.S. Pat. No. 6,855,062), pivoting wall panels (U.S. Pat. No. 6,675,538), and water-jet walls (U.S. Pub. No. 2015/0024856). These systems are limited to indoor or controlled environments, use artificial materials rather than living plants, operate at small scales, and do not integrate with guest navigation or scheduling systems.
 
-There exists a need for a large-scale outdoor maze system that uses living plants to maintain the aesthetic and experiential qualities of a traditional hedge maze while providing continuous reconfigurability, autonomous operation, and integration with digital guest experience systems.
+Further prior art includes autonomous mobile robots used in nursery and warehouse operations (e.g., Harvest Automation HV-100, Amazon Robotics/Kiva-derived fleets, Iron Ox farming robots). These systems use small, lightweight, non-docking wheeled robots to transport small containers on flat indoor or nursery-yard surfaces. They do not provide (i) a recessed channel grid that conceals infrastructure and seats the container flush with surrounding grade, (ii) a trough-and-elevator mechanism that renders the transport mechanism invisible in the seated state, (iii) standardized trough/planter interoperability across whole-property scales, (iv) hydroponic sub-channel integration with convertible surface covers, or (v) terrace transit by a strictly vertical-lift-and-horizontal-slide sequence.
+
+There exists a needfor a large-scale outdoor maze system that uses living plants to maintain the aesthetic and experiential qualities of a traditional hedge maze while providing continuous reconfigurability, autonomous operation, and integration with digital guest experience systems.
 
 ---
 
@@ -128,9 +130,9 @@ Each mobile hedge unit comprises:
 **2.7 Drive and Mobility Specifications.** Each mobile hedge unit's drive system is sized for its planter weight class. Representative specifications for a medium-weight hydroponic unit (approximately 4,300 lbs):
 
 - **Wheels:** Four polyurethane wheels, 6-8 inch diameter, each rated for 1,100+ lbs static load. Omnidirectional (mecanum) or caster-and-drive configuration for multi-axis movement.
-- **Drive motors:** Two geared DC motors (or brushless equivalent), waterproof (IP65 minimum), approximately 175W each (0.23 HP), providing sufficient force for flat transit plus 5-degree ramp climbing.
+- **Drive motors:** Two geared DC motors (or brushless equivalent), waterproof (IP65 minimum), approximately 200W each (0.27 HP), providing sufficient force for flat transit plus 5-degree ramp climbing.
 - **Transit speed:** Approximately 0.5 ft/s (0.3 mph), prioritizing silence and safety over speed. Full transit between adjacent trough positions (typically 3-20 feet) completes in 6-40 seconds.
-- **Braking:** Spring-applied, electrically released brake on each wheel. Holding capacity sized for the maximum expected slope (15 degrees), requiring approximately 650 lbs braking force per unit for medium-weight planters. Brakes engage automatically on power loss (fail-safe).
+- **Braking:** Spring-applied, electrically released brake on each wheel. Holding capacity sized for the maximum expected slope (15 degrees), requiring approximately 1,200 lbs minimum holding force per unit (typically achieved via four spring-applied brakes rated 800 lbf each for a total of 3,200 lbf, providing approximately a 2.9x safety factor on a 15-degree slope). Brakes engage automatically on power loss (fail-safe).
 - **Battery:** Sized for transit-only operation (1-5 minutes of powered movement between trough positions where ground power is available). Approximately 200-500 Wh lithium iron phosphate (LFP) for safety and longevity. Provides reserve for emergency braking and communications.
 
 **2.8 Root Management Assembly.** Each planter may include a root-management assembly comprising air-pruning surfaces, guided-root ribs, root-turning baffles, removable root-access panels, or a replaceable inner root cartridge that reduces circling-root formation during long-term container use. The control system may assign each planter a root-service interval and autonomously route the planter to a service bay for root pruning, division, media refresh, or containerized rejuvenation before decline becomes externally visible.
@@ -243,6 +245,7 @@ The system optionally incorporates features to prevent the maze configuration fr
 
 - Pergolas, arbors, or trained canopy growth over selected path sections to obscure paths from above;
 - Mobile hedge units positioned to create the visual appearance of path openings that are physically inaccessible from ground level (false paths);
+- False paths may be implemented by positioning mobile hedge units to frame an opening at canopy level while retaining ground-level obstruction via lower trellis elements, sub-canopy fill plantings, or short barriers between the framing units. Such configurations appear as a continuous path when viewed at an elevation angle above approximately 30 degrees, but are physically discontinuous at ground level.
 - Integration with underground passage sections (tunnels) that connect non-adjacent maze sections without visible surface paths;
 - Multi-level path crossings (bridges and underpasses) that create vertical path complexity invisible from directly above.
 
@@ -439,7 +442,9 @@ Settling tolerance at terrace transfer: 2mm nominal (+/-1mm). Achieved through c
 
 ### 15. Modular Elevator Mechanism
 
-**15.1 Drop-In Elevator Module.** The elevator mechanism that raises planters for powered transit is itself a modular, relocatable unit. Rather than being permanently installed at fixed positions, the elevator module is designed to be lowered into a recessed bay at the bottom of any standard trough section. Key features:
+The system employs two complementary lift mechanisms: (i) a container-borne lift (Section 2.3) of 3-6 inches used to expose rollers for same-grade transit within a single terrace, and (ii) a trough-bay modular elevator (this Section 15) of 12-24 inches used for inter-terrace transit and sub-surface depot access. Either, both, or neither may be present depending on embodiment and site requirements.
+
+**15.1 Drop-In Elevator Module.**The elevator mechanism that raises planters for powered transit is itself a modular, relocatable unit. Rather than being permanently installed at fixed positions, the elevator module is designed to be lowered into a recessed bay at the bottom of any standard trough section. Key features:
 
 - The trough design includes a deeper recessed area (below the normal trough floor) at regular intervals throughout the grid. These bays accommodate the elevator mechanism when installed, and are covered with a flush floor plate when not in use.
 - The elevator module includes its own power connections, control electronics, position sensors, and lifting mechanism in a single self-contained unit.
@@ -460,7 +465,7 @@ Settling tolerance at terrace transfer: 2mm nominal (+/-1mm). Achieved through c
 
 **16.1 Sub-Planter Water Channels.** The trough system includes a secondary set of shallow, slightly graded water channels running beneath and parallel to the main trough channels. These sub-channels carry nutrient-enriched water that flows by gravity through the system, with recirculation pumps at collection points.
 
-**16.2 Wicking Planter Design.** Each standardized planter uses an inert, lightweight growing medium (expanded clay aggregate, perlite, coconite, rockwool, or similar) instead of traditional soil. The planter base includes a wicking interface (capillary mat, wicking strips, or porous base plate) that draws water and nutrients upward from the sub-channel into the growing medium through capillary action.
+**16.2 Wicking Planter Design.** Each standardized planter uses an inert, lightweight growing medium (expanded clay aggregate, perlite, coconite, rockwool, or similar) instead of traditional soil. The planter base includes a wicking interface (capillary mat, wicking strips, or porous base plate) that draws water and nutrients upward from the sub-channel into the growing medium through capillary action. In container depths exceeding the natural wicking height of the capillary medium (typically 12-18 inches), the system may include a supplementary moisture distribution manifold within the upper container zone, comprising drip emitters, micro-sprayers, or mist nozzles fed by the same nutrient recirculation loop, ensuring uniform moisture availability throughout the full root-zone depth.
 
 Advantages of the wicking/hydroponic system:
 
@@ -546,7 +551,7 @@ The invention encompasses the following variations:
 
 The following informal claims outline the scope of the invention. Formal claims will be prepared for the non-provisional application.
 
-1. A reconfigurable outdoor maze system comprising a plurality of containers holding living plants, each container mounted on a motorized platform capable of autonomous repositioning within a bounded zone on a prepared surface, wherein the positions of the plurality of containers are coordinated by a central control system to create variable maze configurations.
+1. A reconfigurable outdoor landscape system comprising a plurality of containers holding living plants, each container configured for autonomous self-propelled repositioning on a prepared ground surface by an integrated or cooperating motorized transport mechanism, wherein the positions of the plurality of containers are coordinated by a central control system to create variable landscape configurations.
 
 2. The system of claim 1, wherein each motorized platform includes position sensors, wireless communication, locking mechanisms, and obstruction detection.
 
@@ -604,7 +609,7 @@ The following informal claims outline the scope of the invention. Formal claims 
 
 29. A modular landscape infrastructure system comprising: a grid of standardized recessed channels embedded in a ground surface; a plurality of standardized plant containers sized to seat in the channels; modular surface covers that conceal unoccupied channel sections; and a modular elevator mechanism installable at any channel position to enable powered transit of plant containers between positions.
 
-30. The system of claim 1, wherein terrain with slopes exceeding 5 degrees is accommodated by installing the trough grid in stepped terraces, each individually level, with transit between terrace levels via short ramp sections or dedicated slope lift mechanisms.
+30. The system of claim 1, wherein terrain with slopes exceeding 5 degrees is accommodated by installing the trough grid as a plurality of individually level stepped terraces, inter-terrace transit being performed by the vertical-lift-and-horizontal-slide sequence of claim 43 such that planters do not traverse inclined surfaces.
 
 31. The system of claim 1, comprising a defined family of standardized planter sizes with standardized lift hook points, enabling any planter to be lifted by standardized equipment and placed in any trough section of matching width.
 
@@ -628,11 +633,11 @@ The following informal claims outline the scope of the invention. Formal claims 
 
 41. A non-transitory computer-readable medium storing instructions that, when executed by a processor, perform the method of claim 39.
 
-42. A modular living landscape infrastructure platform comprising: (i) an embedded grid of standardized recessed channels, (ii) a plurality of standardized mobile plant containers with integrated root management, wicking irrigation, and self-leveling mobility, (iii) modular utility docking manifolds, (iv) relocatable elevator modules, (v) convertible surface covers, and (vi) control software; wherein any layer may be independently sold, licensed, or operated while remaining interoperable with the broader platform.
+42. A modular living landscape infrastructure platform comprising: (i) an embedded grid of standardized recessed channels, (ii) a plurality of standardized mobile plant containers with integrated root management, wicking irrigation, and self-leveling mobility, (iii) modular utility docking manifolds, (iv) relocatable elevator modules, (v) convertible surface covers, and (vi) control software; wherein each of the embedded grid, mobile containers, utility docking manifolds, elevator modules, surface covers, and control software conforms to a defined set of mechanical and data interface specifications such that any subset operates interoperably with replacement components satisfying the same specifications.
 
 43. The system of claim 1, wherein transit between terrace levels is accomplished by a vertical-lift-and-horizontal-slide sequence in which an elevator mechanism raises the planter to the level of an adjacent terrace, a low-friction bearing interface enables horizontal transfer to a receiving mechanism on the adjacent terrace, and the receiving mechanism lowers the planter into the destination trough, such that the planter never traverses a slope during inter-terrace transit.
 
-44. The system of claim 43, wherein the receiving mechanism raises its bearing surface to within 1-3 millimeters of the incoming planter base height, and relaxes after transfer to settle the planter with negligible impact stress and near-zero mechanical wear.
+44. The system of claim 43, wherein the receiving mechanism raises its bearing surface to within 1-3 millimeters of the incoming planter base height, and relaxes after transfer to settle the planter.
 
 45. The system of claim 1, wherein elevator mechanisms are themselves mobile within a sub-trough utility space, traveling along below-grade channels to position themselves at any trough location, and are never visible from or accessed from the surface during normal operations.
 
@@ -640,7 +645,19 @@ The following informal claims outline the scope of the invention. Formal claims 
 
 47. The system of claim 46, wherein depot stations within the utility tunnel network receive planters with digital work orders, enable maintenance by personnel who do not see the surface maze configuration, and dispatch serviced planters autonomously to designated surface locations.
 
-48. The system of claim 43, wherein the sending and receiving elevator mechanisms each include a powered roller conveyor surface that actively drives the planter across the terrace boundary, eliminating dependence on gravitational assist, and wherein the receiving conveyor surface settles by approximately 2mm (+/-1mm) under load as the planter transfers, consistent with AGV pallet transfer tolerances.
+48. The system of claim 43, wherein the sending and receiving elevator mechanisms each include a powered roller conveyor surface that actively drives the planter across the terrace boundary, eliminating dependence on gravitational assist, and wherein the receiving conveyor surface settles by approximately 2mm (+/-1mm) under load as the planter transfers.
+
+49. The system of claim 1, wherein each container operates within a bounded positioning zone comprising a plurality of discrete positions on a prepared surface.
+
+50. A landscape infrastructure management system comprising: a grid of surface trough positions occupied by plant containers; a sub-surface utility tunnel network accessible from selected trough positions via vertical lifts; one or more depot stations within the tunnel network configured to service the plant containers; and a work-order distribution system that issues location-specific task assignments to maintenance personnel at the depot stations without exposing a map of the surface configuration of the grid; wherein plant containers transit between surface trough positions and depot stations autonomously via the tunnel network.
+
+51. A landscape ground infrastructure comprising a grid of surface-recessed plant-container troughs and a parallel network of sub-surface fluid channels, the sub-channels configured to operate selectably as a recirculating hydroponic supply to seated plant containers and as a stormwater drainage network when trough positions are unoccupied or overflow conditions are detected, the mode of the sub-channels being controlled by valves, pumps, and sensors coordinated by a central controller.
+
+52. A computer-implemented method for coordinated reconfiguration of a plurality of mobile plant containers in a shared trough grid, comprising: receiving a target configuration; computing, for each container, a transit schedule comprising timed reservations of transit corridors and destination troughs; arbitrating conflicting reservations by priority rules including emergency-egress override; executing the schedule with inter-container spacing maintained by local sensor feedback; and, upon detection of a failure of any container, automatically generating and executing a revised schedule that isolates the failed container, preserves all egress paths, and completes the remaining reconfiguration.
+
+53. A method of retrofitting an existing landscape installation to be reconfigurable, comprising: excavating a grid of recessed channels beneath an existing surface; installing standardized trough sections and sub-channel fluid lines in the excavated grid; restoring surface continuity with modular surface covers over unoccupied trough sections; transferring selected existing hedge specimens into standardized mobile plant containers; and seating the mobile plant containers into selected trough positions, whereby the existing landscape is converted into a reconfigurable living landscape infrastructure without replacement of the majority of existing plant material.
+
+54. A convertible ground surface assembly comprising: a grid of recessed troughs; modular surface covers seating flush with the troughs, at least a subset of the covers comprising shallow soil trays supporting living ground cover; and an interface permitting removal of selected covers and substitution with a plant container such that a continuously vegetated surface is convertible between a closed ground cover state and an active planter-occupied state without excavation.
 
 ---
 
