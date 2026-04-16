@@ -172,12 +172,14 @@ def fig9_terrace_transit():
 
 
 def fig10_planter_crosssection():
-    """Detailed planter cross-section with materials"""
-    fig, ax = plt.subplots(1, 1, figsize=(12, 10))
+    """Planter PAN cross-section (three-part architecture).
+    Pan has FLAT BOTTOM, no wheels. Shows manifolds, pump, sensors."""
+    fig, ax = plt.subplots(1, 1, figsize=(12, 11))
     ax.set_xlim(-4, 14)
-    ax.set_ylim(-3, 14)
+    ax.set_ylim(-2, 14)
     ax.set_aspect('equal')
-    ax.set_title('FIG. 10 - Planter Cross-Section with Materials', fontsize=12, fontweight='bold')
+    ax.set_title('FIG. 10 - Planter Pan Cross-Section (Three-Part Architecture)',
+                fontsize=12, fontweight='bold')
 
     # Container walls (concrete)
     wall_t = 0.4
@@ -185,30 +187,40 @@ def fig10_planter_crosssection():
     depth = 3.0
     outer_left = 3
     outer_right = outer_left + inner_w + 2*wall_t
+    pan_bottom = 0
 
-    # Outer container
-    ax.add_patch(patches.Rectangle((outer_left, 0), inner_w + 2*wall_t, depth,
+    # Outer container (concrete pan)
+    ax.add_patch(patches.Rectangle((outer_left, pan_bottom), inner_w + 2*wall_t, depth,
                  facecolor='#bbbbbb', edgecolor='black', linewidth=2))
     # Inner void
-    ax.add_patch(patches.Rectangle((outer_left + wall_t, wall_t + 0.3), inner_w, depth - wall_t - 0.3,
+    ax.add_patch(patches.Rectangle((outer_left + wall_t, pan_bottom + wall_t + 0.3),
+                 inner_w, depth - wall_t - 0.3,
                  facecolor='white', edgecolor='black', linewidth=1))
 
-    # Wicking mat at bottom
-    ax.add_patch(patches.Rectangle((outer_left + wall_t, wall_t), inner_w, 0.15,
-                 facecolor='#6699cc', edgecolor='black'))
-    ax.add_patch(patches.Rectangle((outer_left + wall_t, wall_t + 0.15), inner_w, 0.15,
-                 facecolor='#99ccff', edgecolor='black'))
+    # FLAT BOTTOM emphasis (thick line, labeled)
+    ax.plot([outer_left, outer_right], [pan_bottom]*2, 'k-', linewidth=4)
+    ax.text((outer_left + outer_right)/2, pan_bottom - 0.3,
+           'FLAT BOTTOM (no wheels, no motors)',
+           ha='center', fontsize=7, fontweight='bold', color='#c00')
+
+    # Wicking mat at bottom interior
+    ax.add_patch(patches.Rectangle((outer_left + wall_t, pan_bottom + wall_t),
+                 inner_w, 0.15, facecolor='#6699cc', edgecolor='black'))
+    ax.add_patch(patches.Rectangle((outer_left + wall_t, pan_bottom + wall_t + 0.15),
+                 inner_w, 0.15, facecolor='#99ccff', edgecolor='black'))
 
     # LECA growing medium
-    ax.add_patch(patches.Rectangle((outer_left + wall_t, wall_t + 0.3), inner_w, depth - wall_t - 0.5,
+    medium_bottom = pan_bottom + wall_t + 0.3
+    medium_top = depth - 0.2
+    ax.add_patch(patches.Rectangle((outer_left + wall_t, medium_bottom),
+                 inner_w, medium_top - medium_bottom,
                  facecolor='#D2691E', edgecolor='black', linewidth=0.5))
-    # Draw some circles to represent LECA pellets
     for i in range(15):
         for j in range(8):
             cx = outer_left + wall_t + 0.2 + i * (inner_w/15)
-            cy = wall_t + 0.5 + j * ((depth - wall_t - 0.7)/8)
-            r = 0.08
-            ax.add_patch(plt.Circle((cx, cy), r, facecolor='#C4A265', edgecolor='#8B6914', linewidth=0.3))
+            cy = medium_bottom + 0.2 + j * ((medium_top - medium_bottom - 0.3)/8)
+            ax.add_patch(plt.Circle((cx, cy), 0.08,
+                        facecolor='#C4A265', edgecolor='#8B6914', linewidth=0.3))
 
     # Root management ribs (air-pruning)
     for y in [1.0, 1.8, 2.3]:
@@ -222,15 +234,43 @@ def fig10_planter_crosssection():
                      arrowstyle='-', linewidth=3, color='#333'))
         ax.add_patch(plt.Circle((side_x - hook_dir*0.4, 2.3), 0.1, facecolor='#333'))
 
-    # Ball transfer units at bottom
-    for bx in [outer_left + 0.5, outer_left + inner_w/2 + wall_t, outer_right - 0.5]:
-        ax.add_patch(plt.Circle((bx, -0.15), 0.18, facecolor='#555', edgecolor='black'))
-        ax.add_patch(plt.Circle((bx, -0.15), 0.1, facecolor='#999', edgecolor='black'))
+    # Manifold connectors on edges (below rim height, at trough level)
+    for mx, side in [(outer_left, 'left'), (outer_right, 'right')]:
+        # Power connector (orange)
+        ax.add_patch(patches.Rectangle((mx - 0.15, pan_bottom + 0.15), 0.3, 0.25,
+                     facecolor='#ff8800', edgecolor='black', linewidth=1))
+        # Water connector (blue)
+        ax.add_patch(patches.Rectangle((mx - 0.15, pan_bottom + 0.5), 0.3, 0.2,
+                     facecolor='#4488cc', edgecolor='black', linewidth=1))
+        # Data connector (green)
+        ax.add_patch(patches.Rectangle((mx - 0.15, pan_bottom + 0.8), 0.3, 0.15,
+                     facecolor='#44cc44', edgecolor='black', linewidth=1))
+
+    # Micro-pump + 3-way valve (inside pan, bottom)
+    pump_x = outer_left + wall_t + 0.5
+    pump_y = pan_bottom + wall_t + 0.05
+    ax.add_patch(plt.Circle((pump_x + 0.3, pump_y + 0.15), 0.2,
+                 facecolor='#4488cc', edgecolor='black', linewidth=1))
+    ax.text(pump_x + 0.3, pump_y + 0.15, 'P', ha='center', va='center',
+           fontsize=5, color='white', fontweight='bold')
+    # Valve symbol
+    ax.add_patch(patches.Rectangle((pump_x + 0.7, pump_y), 0.4, 0.3,
+                 facecolor='#cc4444', edgecolor='black', linewidth=1))
+    ax.text(pump_x + 0.9, pump_y + 0.15, 'V', ha='center', va='center',
+           fontsize=5, color='white', fontweight='bold')
+
+    # MCU / electronics (small box in pan wall)
+    mcu_x = outer_right - wall_t - 0.8
+    ax.add_patch(patches.Rectangle((mcu_x, pan_bottom + wall_t + 0.05), 0.5, 0.25,
+                 facecolor='#333', edgecolor='black', linewidth=1))
+    ax.text(mcu_x + 0.25, pan_bottom + wall_t + 0.17, 'MCU', ha='center', va='center',
+           fontsize=4, color='#0f0')
 
     # Hedge above
     hedge_bottom = depth + 0.2
     hedge_h = 8.0
-    ax.add_patch(patches.Rectangle((outer_left - 0.5, hedge_bottom), inner_w + 2*wall_t + 1, hedge_h,
+    ax.add_patch(patches.Rectangle((outer_left - 0.5, hedge_bottom),
+                 inner_w + 2*wall_t + 1, hedge_h,
                  facecolor='#4a7c3f', edgecolor='#2d5a27', linewidth=1.5))
     x_wave = np.linspace(outer_left - 0.5, outer_right + 0.5, 40)
     y_wave = hedge_bottom + hedge_h + 0.3 * np.sin(x_wave * 3)
@@ -241,12 +281,14 @@ def fig10_planter_crosssection():
     labels = [
         ((-3, 12), (outer_left + 1, hedge_bottom + 4), '18 - Hedge plant\n(8-15 ft)'),
         ((-3, depth - 0.5), (outer_left + wall_t + 0.3, depth - 0.8), '50 - LECA growing\nmedium (8-16mm)'),
-        ((-3, wall_t + 0.15), (outer_left + wall_t + 0.3, wall_t + 0.15), '52 - Wicking mat\n(polyester, 5mm)'),
+        ((-3, wall_t + 0.15), (outer_left + wall_t + 0.3, pan_bottom + wall_t + 0.15), '52 - Wicking mat\n(polyester, 5mm)'),
         ((-3, 1.8), (outer_left + wall_t + 0.1, 1.8), '54 - Root management\nribs (air-pruning)'),
-        ((-3, -0.2), (outer_left + 0.5, -0.15), '26 - Ball transfer\nunits (IP67)'),
-        ((10, 1.5), (outer_right, 1.5), '16 - Concrete container\n(5,000 psi, 3" walls)'),
+        ((-3.5, pan_bottom + 0.3), (pump_x + 0.3, pump_y + 0.15), '72 - Micro-pump\n+ 3-way valve\n(irrigate/fire/bypass)'),
+        ((10, 1.5), (outer_right, 1.5), '16 - Concrete pan\n(5,000 psi, 3" walls)'),
         ((10, 2.3), (outer_right + 0.1, 2.3), '56 - Lift hook points\n(standardized)'),
         ((10, depth + 0.1), (outer_right - 0.5, depth), '58 - Root access panel\n(removable)'),
+        ((10, pan_bottom + 0.4), (outer_right + 0.1, pan_bottom + 0.5), '74 - Manifold connectors\n(power/water/data\non all edges,\nbelow grade)'),
+        ((10, pan_bottom + wall_t + 0.1), (mcu_x + 0.25, pan_bottom + wall_t + 0.17), '76 - MCU + sensors\n(moisture, temp,\nEC/pH)'),
     ]
     for text_pos, target, label in labels:
         ax.annotate(label, xy=target, xytext=text_pos, fontsize=7,
@@ -254,13 +296,18 @@ def fig10_planter_crosssection():
                    bbox=dict(boxstyle='round,pad=0.2', facecolor='white', edgecolor='gray', alpha=0.9))
 
     # Dimensions
-    ax.annotate('', xy=(-1.5, 0), xytext=(-1.5, depth),
+    ax.annotate('', xy=(-1.5, pan_bottom), xytext=(-1.5, depth),
                arrowprops=dict(arrowstyle='<->', lw=1))
     ax.text(-2.2, depth/2, '2.5-3.0\nft', fontsize=7, ha='center', va='center')
 
-    ax.annotate('', xy=(outer_left, -1.5), xytext=(outer_right, -1.5),
+    ax.annotate('', xy=(outer_left, -1.2), xytext=(outer_right, -1.2),
                arrowprops=dict(arrowstyle='<->', lw=1))
-    ax.text((outer_left + outer_right)/2, -2.2, '3.0-4.0 ft wide', fontsize=7, ha='center')
+    ax.text((outer_left + outer_right)/2, -1.7, '3.0-4.0 ft wide', fontsize=7, ha='center')
+
+    # Note
+    ax.text((outer_left + outer_right)/2, -0.8,
+           'PART 1 of three-part system. Flat bottom. No wheels.\nChassis (Part 2) engages from below through trough slot.',
+           ha='center', fontsize=7, style='italic', color='#666')
 
     ax.axis('off')
     save(fig, 'fig10_planter_crosssection.png')
