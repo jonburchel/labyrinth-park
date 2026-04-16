@@ -123,6 +123,14 @@ Each mobile hedge unit comprises:
 
 **2.6 Irrigation Integration.** Each mobile hedge unit includes flexible or quick-connect irrigation fittings that allow the unit to connect to water supply at any of its discrete positions within its positioning zone. In the trough-and-elevator embodiment, irrigation supply connections may be integrated into the trough base, automatically engaging when the container is lowered into position. Alternatively, the unit carries an onboard water reservoir sufficient for operation between scheduled irrigation connections.
 
+**2.7 Drive and Mobility Specifications.** Each mobile hedge unit's drive system is sized for its planter weight class. Representative specifications for a medium-weight hydroponic unit (approximately 4,300 lbs):
+
+- **Wheels:** Four polyurethane wheels, 6-8 inch diameter, each rated for 1,100+ lbs static load. Omnidirectional (mecanum) or caster-and-drive configuration for multi-axis movement.
+- **Drive motors:** Two geared DC motors (or brushless equivalent), waterproof (IP65 minimum), approximately 175W each (0.23 HP), providing sufficient force for flat transit plus 5-degree ramp climbing.
+- **Transit speed:** Approximately 0.5 ft/s (0.3 mph), prioritizing silence and safety over speed. Full transit between adjacent trough positions (typically 3-20 feet) completes in 6-40 seconds.
+- **Braking:** Spring-applied, electrically released brake on each wheel. Holding capacity sized for the maximum expected slope (15 degrees), requiring approximately 650 lbs braking force per unit for medium-weight planters. Brakes engage automatically on power loss (fail-safe).
+- **Battery:** Sized for transit-only operation (1-5 minutes of powered movement between trough positions where ground power is available). Approximately 200-500 Wh lithium iron phosphate (LFP) for safety and longevity. Provides reserve for emergency braking and communications.
+
 ### 3. Prepared Positioning Surfaces (Positioning Zones)
 
 Each mobile hedge unit operates within a bounded positioning zone comprising:
@@ -330,6 +338,29 @@ The result: an area that appears to be a normal lawn, garden, or paved surface i
 
 Any planter can be lifted from any trough and placed on a standard roller cart for transport to maintenance, nursery, or a new location.
 
+**14.6 Terraced Trough System for Slopes.** On terrain with slopes exceeding approximately 5 degrees (8.7% grade), the trough grid is installed in stepped terraces rather than following the natural grade. Each terrace is individually level (slope less than 2 degrees). Terrace risers of 6-12 inches match standard landscape step heights and may be constructed of the same precast concrete as the trough channels. Planters sit level on each terrace step. Transit between terrace levels uses short ramp sections (maximum 5 degrees, typically 10-20 feet in length) where the self-leveling suspension system compensates for the grade. Alternatively, a dedicated slope lift (a tilting elevator platform installed at the terrace riser) may transfer planters between terrace levels. This terraced approach enables the modular trough system to function on properties with significant topographic variation (up to approximately 15-20 degree maximum slope) while maintaining level planter operation and safe transit.
+
+**14.7 Standardized Planter Specifications.** The system defines a family of standardized planter sizes to support different hedge species, heights, and spatial configurations:
+
+| Designation | Length | Width | Depth | Application |
+|-------------|--------|-------|-------|-------------|
+| XS | 4 ft | 2.5 ft | 2.5 ft | Short hedges, accent plantings |
+| S | 4 ft | 3.0 ft | 2.5 ft | Standard short sections, corners |
+| M | 6 ft | 3.0 ft | 2.5 ft | Standard maze wall sections |
+| L | 8 ft | 3.0 ft | 2.5-3.0 ft | Long wall sections |
+| XL | 12 ft | 3.0 ft | 2.5-3.0 ft | Major wall sections, perimeter |
+| W | 6 ft | 4.0 ft | 2.5 ft | Wide/double-row hedges |
+| SQ | 4 ft | 4.0 ft | 2.5 ft | Square/corner junction pieces |
+
+Planter depth is selected based on the root system requirements of the hedge species: 2.5 feet is sufficient for most species (arborvitae, yew, boxwood); 3.0 feet is provided for species with deeper root systems (holly, beech). All planters use precast concrete construction with 3-inch wall thickness, integrated lift hook points cast into the side walls at standardized heights and spacings, and a porous or wicking base plate for hydroponic integration.
+
+Using the hydroponic growing medium (expanded clay aggregate), approximate loaded weights for representative sizes are:
+- Size M (6x3 ft): approximately 4,300 lbs
+- Size L (8x3 ft): approximately 5,500 lbs
+- Size XL (12x3 ft): approximately 8,000 lbs
+
+These weights are 35-45% lower than equivalent soil-based planters, proportionally reducing requirements for motor power, brake capacity, wheel load rating, and pavement structural capacity.
+
 ### 15. Modular Elevator Mechanism
 
 **15.1 Drop-In Elevator Module.** The elevator mechanism that raises planters for powered transit is itself a modular, relocatable unit. Rather than being permanently installed at fixed positions, the elevator module is designed to be lowered into a recessed bay at the bottom of any standard trough section. Key features:
@@ -474,6 +505,12 @@ The following informal claims outline the scope of the invention. Formal claims 
 28. The system of claim 27, further comprising at least one grade-separated crossing where one vehicle route passes over another via a bridge structure.
 
 29. A modular landscape infrastructure system comprising: a grid of standardized recessed channels embedded in a ground surface; a plurality of standardized plant containers sized to seat in the channels; modular surface covers that conceal unoccupied channel sections; and a modular elevator mechanism installable at any channel position to enable powered transit of plant containers between positions.
+
+30. The system of claim 1, wherein terrain with slopes exceeding 5 degrees is accommodated by installing the trough grid in stepped terraces, each individually level, with transit between terrace levels via short ramp sections or dedicated slope lift mechanisms.
+
+31. The system of claim 1, comprising a defined family of standardized planter sizes with standardized lift hook points, enabling any planter to be lifted by standardized equipment and placed in any trough section of matching width.
+
+32. The system of claim 25, wherein the hydroponic growing medium reduces total planter weight by 35-45% compared to traditional soil, proportionally reducing motor power, brake capacity, wheel rating, and pavement structural requirements.
 
 ---
 
