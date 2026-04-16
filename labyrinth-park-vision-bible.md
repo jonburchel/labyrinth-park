@@ -544,15 +544,19 @@ At $15M debt: debt service ~$1.2M, net cash flow ~$1.1M, DSCR ~1.9x.
 - **Templar:** Red cross pattee set into a wall stone. Circular meditation space echoing the Temple Church, London.
 - **Illuminati:** Owl sculpture in the Nature Garden, watching from a branch. Pyramid/eye motifs.
 - **Hermetic:** "Quod est superius est sicut quod est inferius" ("As above, so below") carved in Latin. Perfect for a place where the world above mirrors a hidden world below.
-- **Kabbalistic:** The Tree of Life at Station 2. Sephirotic geometry potentially embedded in garden layouts or floor patterns.
+- **Kabbalistic:** The Tree of Life at Station 2. **Dedicated Kabbalah Garden** with Sephirotic geometry embedded in garden layout and floor patterns. Multiple Jewish honoring sites throughout the property.
+- **Christian:** Multiple honoring sites. The Rose Cross carries Christian resonance. The property is understood as a holy garden given to God.
 - **Alchemical:** Symbols of transformation (the philosopher's stone, the ouroboros, solve et coagula). Appropriate for a property that transforms raw land into living art.
-- **Persian/Babylonian mysticism:** Ancient garden tradition (the word "paradise" comes from Persian *pairidaeza*, meaning "walled garden"). Labyrinth Park IS a walled garden. Ziggurat/stepped forms in landscaping. Winged sun disc or lamassu references.
-- **Egyptian (Akhenaten's cult):** Solar symbolism, the Aten disc, monotheistic sun worship. The solar array could be oriented or designed with a nod to Aten. Obelisk at Station 1 carries Egyptian resonance inherently.
+- **Persian/Babylonian mysticism:** Ancient garden tradition (the word "paradise" comes from Persian *pairidaeza*, meaning "walled garden"). Labyrinth Park IS a walled garden. Ziggurat/stepped forms in landscaping.
+- **Egyptian (Akhenaten's cult):** Solar symbolism, the Aten disc, monotheistic sun worship. Honoring site dedicated to Akhenaten's radical vision. Obelisk at Station 1 carries Egyptian resonance.
 - **Sikh:** The Khanda (double-edged sword with circle and two kirpans) as a symbol of spiritual sovereignty and the unity of God. The Ik Onkar (One God). Subtle, respectful integration.
+- **Minoan:** Honoring site for the civilization that gave us the labyrinth. Labrys motifs, spiral patterns, Knossos-inspired architectural details.
+- **Sciences and Arts:** Dedicated honoring sites celebrating human achievement in mathematics, astronomy, music, architecture, literature, natural philosophy. The golden ratio, Fibonacci spirals, and sacred geometry serve double duty as both esoteric and scientific symbolism.
 - **Sacred geometry:** Flower of Life, Metatron's Cube in floor patterns. Golden ratio in architectural proportions. Fibonacci spirals in garden planting patterns.
 
 #### Traditions NOT Referenced
 - **Golden Dawn** and derivative ceremonial magic organizations. No connection, no kinship.
+- **Any tradition associated with evil practices, human sacrifice, or dark worship.** No pagan deities associated with such practices. This is a holy garden given to God, honoring only traditions of light, knowledge, beauty, and the elevation of the human spirit.
 
 #### Design Principles for Symbolism
 - **Every symbol has meaning and intention.** Nothing random, nothing decorative-only.
