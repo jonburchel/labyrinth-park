@@ -98,13 +98,21 @@ Each mobile hedge unit comprises:
 - Onboard rechargeable power supply with provisions for autonomous or manual recharging;
 - Obstruction detection sensors (LIDAR, ultrasonic, infrared, or camera-based) to prevent collisions during repositioning.
 
-**2.5 Irrigation Integration.** Each mobile hedge unit includes flexible or quick-connect irrigation fittings that allow the unit to connect to water supply at any of its discrete positions within its positioning zone. In the trough-and-elevator embodiment, irrigation supply connections may be integrated into the trough base, automatically engaging when the container is lowered into position. Alternatively, the unit carries an onboard water reservoir sufficient for operation between scheduled irrigation connections.
+**2.5 Self-Leveling Suspension System.** Because outdoor path surfaces may exhibit minor irregularities (settling, frost heave, root intrusion, natural grade variations), each mobile hedge unit includes a self-leveling suspension system:
+
+- Each wheel or wheel cluster is mounted on an independent suspension assembly (spring, pneumatic, or hydraulic) capable of vertical travel of at least 1 inch above and below the nominal ride height (2-inch total range of compensation).
+- Omnidirectional pivot capability on each wheel allows the platform to traverse paths that are not perfectly straight or that include gentle curves, without requiring the entire unit to rotate.
+- An onboard level sensor (accelerometer, inclinometer, or gyroscopic) continuously monitors the platform attitude and commands individual suspension adjustments to maintain the plant container in a level orientation during transit, preventing soil shifting, root disturbance, or water spillage.
+- The self-leveling system also compensates for minor misalignment between the transit surface and the receiving trough, ensuring smooth entry into the trough during the positioning phase.
+- In the stationary (closed) position, the suspension is locked to prevent any rocking or movement from wind loads on the hedge plant.
+
+**2.6 Irrigation Integration.** Each mobile hedge unit includes flexible or quick-connect irrigation fittings that allow the unit to connect to water supply at any of its discrete positions within its positioning zone. In the trough-and-elevator embodiment, irrigation supply connections may be integrated into the trough base, automatically engaging when the container is lowered into position. Alternatively, the unit carries an onboard water reservoir sufficient for operation between scheduled irrigation connections.
 
 ### 3. Prepared Positioning Surfaces (Positioning Zones)
 
 Each mobile hedge unit operates within a bounded positioning zone comprising:
 
-**3.1 Surface.** A level, load-bearing prepared surface (reinforced concrete slab, compacted aggregate with paving, precast concrete panels, or similar) capable of supporting the fully loaded weight of the mobile hedge unit (estimated 2,000-10,000 lbs depending on container size and plant maturity). The surface between trough positions must be smooth and flush to allow roller transit.
+**3.1 Surface.** A load-bearing prepared surface (reinforced concrete slab, compacted aggregate with paving, precast concrete panels, permeable pavers, stabilized gravel, or similar) capable of supporting the fully loaded weight of the mobile hedge unit (estimated 2,000-10,000 lbs depending on container size and plant maturity). The surface between trough positions should be generally level but need not be perfectly smooth; the self-leveling suspension system (Section 2.5) compensates for surface irregularities of up to 1 inch in any direction. This allows the use of natural-looking outdoor path surfaces (flagstone, brick, textured concrete, compacted gravel) rather than requiring polished indoor-grade flooring, preserving the aesthetic of an outdoor garden environment.
 
 **3.2 Trough Positions (Preferred Embodiment).** Concrete troughs are set into the path surface at each position where a mobile hedge unit may rest. Each trough is:
 
