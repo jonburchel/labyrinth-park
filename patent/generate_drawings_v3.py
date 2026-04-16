@@ -243,115 +243,155 @@ def fig14_pickup_sequence():
 
 
 def fig11_three_level_trough():
-    """Three nested U-channels, only center has floor. Simplest concrete form."""
-    fig, ax = plt.subplots(1, 1, figsize=(14, 9))
+    """Three nested U-channels as ONE continuous concrete structure.
+    Walls step inward at each level. Only bottom has a floor."""
+    fig, ax = plt.subplots(1, 1, figsize=(14, 8))
     ax.set_xlim(-4, 16)
-    ax.set_ylim(-7, 4)
+    ax.set_ylim(-6, 3.5)
     ax.set_aspect('equal')
-    ax.set_title('FIG. 11 - Three Nested U-Channel Trough Cross-Section',
+    ax.set_title('FIG. 11 - Three-Level Trough Cross-Section (Single Concrete Form)',
                 fontsize=12, fontweight='bold')
 
     ground_y = 0
-    wall = 0.3
+    w = 0.3  # wall thickness
+
+    # Dimensions
+    # Outer channel: 9ft wide opening, 1.5ft deep
+    # Middle channel: 6ft wide, starts at bottom of outer, 1.5ft deep
+    # Center channel: 3ft wide, starts at bottom of middle, 1.0ft deep
+    # Total depth: 4.0ft
+
+    outer_w = 9.0
+    outer_d = 1.5
+    mid_w = 6.0
+    mid_d = 1.5
+    ctr_w = 3.0
+    ctr_d = 1.0
+
+    cx = 6.0  # center x of the whole structure
+    outer_l = cx - outer_w/2
+    outer_r = cx + outer_w/2
+    mid_l = cx - mid_w/2
+    mid_r = cx + mid_w/2
+    ctr_l = cx - ctr_w/2
+    ctr_r = cx + ctr_w/2
 
     # Ground surface
-    ax.fill_between([-4, 1.5], [ground_y]*2, [-0.2]*2, color='#cccccc')
-    ax.fill_between([10.5, 16], [ground_y]*2, [-0.2]*2, color='#cccccc')
-    ax.plot([-4, 1.5], [ground_y]*2, 'k-', linewidth=2)
-    ax.plot([10.5, 16], [ground_y]*2, 'k-', linewidth=2)
-    ax.text(-1, 0.3, 'PATH', fontsize=7, ha='center', color='#666')
-    ax.text(13, 0.3, 'PATH', fontsize=7, ha='center', color='#666')
+    ax.fill_between([-4, outer_l], [ground_y]*2, [-0.15]*2, color='#cccccc')
+    ax.fill_between([outer_r, 16], [ground_y]*2, [-0.15]*2, color='#cccccc')
+    ax.plot([-4, outer_l], [ground_y]*2, 'k-', linewidth=2)
+    ax.plot([outer_r, 16], [ground_y]*2, 'k-', linewidth=2)
+    ax.text(-1.5, 0.3, 'PATH', fontsize=7, ha='center', color='#666')
+    ax.text(13.5, 0.3, 'PATH', fontsize=7, ha='center', color='#666')
 
-    # === OUTER U-CHANNEL (widest, no floor) ===
-    outer_l, outer_r = 1.5, 10.5
-    outer_d = 5.5  # goes all the way down (no floor, open to middle)
-    # Left wall
-    ax.add_patch(patches.Rectangle((outer_l, -outer_d), wall, outer_d,
+    # Draw the entire structure as one continuous concrete profile
+    # Going clockwise from top-left:
+    profile_x = [
+        outer_l, outer_l,                          # left outer wall, top to step
+        mid_l, mid_l,                              # step inward, then down
+        ctr_l, ctr_l,                              # step inward again, then down
+        ctr_r, ctr_r,                              # across bottom, then up
+        mid_r, mid_r,                              # step outward, then up
+        outer_r, outer_r,                          # step outward to top
+    ]
+    profile_y = [
+        ground_y, -outer_d,                        # outer left wall
+        -outer_d, -outer_d - mid_d,               # middle left wall
+        -outer_d - mid_d, -outer_d - mid_d - ctr_d,  # center left wall
+        -outer_d - mid_d - ctr_d, -outer_d - mid_d,  # center right wall (up)
+        -outer_d - mid_d, -outer_d,               # middle right wall (up)
+        -outer_d, ground_y,                        # outer right wall (up)
+    ]
+
+    # Fill the concrete (draw as thick walls by offsetting)
+    # Simpler approach: draw the OUTER profile and INNER profile
+    # Outer profile is the outside face of all concrete
+    # Inner profile is the inside face (the open channels)
+
+    # LEFT SIDE concrete mass
+    # Outer wall
+    ax.add_patch(patches.Rectangle((outer_l, -outer_d), w, outer_d,
                  facecolor='#999', edgecolor='black', linewidth=1.5))
-    # Right wall
-    ax.add_patch(patches.Rectangle((outer_r - wall, -outer_d), wall, outer_d,
+    # Left step (horizontal ledge connecting outer to middle wall)
+    ax.add_patch(patches.Rectangle((outer_l, -outer_d - w), mid_l - outer_l, w,
+                 facecolor='#999', edgecolor='black', linewidth=1))
+    # Middle left wall
+    ax.add_patch(patches.Rectangle((mid_l, -outer_d - mid_d), w, mid_d,
+                 facecolor='#888', edgecolor='black', linewidth=1.2))
+    # Left step (horizontal ledge connecting middle to center wall)
+    ax.add_patch(patches.Rectangle((mid_l, -outer_d - mid_d - w), ctr_l - mid_l, w,
+                 facecolor='#888', edgecolor='black', linewidth=1))
+    # Center left wall
+    ax.add_patch(patches.Rectangle((ctr_l, -outer_d - mid_d - ctr_d), w, ctr_d,
+                 facecolor='#777', edgecolor='black', linewidth=1))
+
+    # RIGHT SIDE (mirror)
+    ax.add_patch(patches.Rectangle((outer_r - w, -outer_d), w, outer_d,
                  facecolor='#999', edgecolor='black', linewidth=1.5))
-    # NO FLOOR (open into middle channel)
-
-    # === MIDDLE U-CHANNEL (narrower, no floor) ===
-    mid_l = outer_l + wall + 0.8  # step inward
-    mid_r = outer_r - wall - 0.8
-    mid_top = -1.8  # starts below pan zone
-    mid_d = 2.5
-    # Left wall
-    ax.add_patch(patches.Rectangle((mid_l, mid_top - mid_d), wall * 0.8, mid_d + mid_top + outer_d,
+    ax.add_patch(patches.Rectangle((mid_r, -outer_d - w), outer_r - mid_r, w,
+                 facecolor='#999', edgecolor='black', linewidth=1))
+    ax.add_patch(patches.Rectangle((mid_r - w, -outer_d - mid_d), w, mid_d,
                  facecolor='#888', edgecolor='black', linewidth=1.2))
-    # Right wall  
-    ax.add_patch(patches.Rectangle((mid_r - wall*0.8, mid_top - mid_d), wall * 0.8, mid_d + mid_top + outer_d,
-                 facecolor='#888', edgecolor='black', linewidth=1.2))
-    # NO FLOOR (open into center channel)
+    ax.add_patch(patches.Rectangle((ctr_r, -outer_d - mid_d - w), mid_r - ctr_r, w,
+                 facecolor='#888', edgecolor='black', linewidth=1))
+    ax.add_patch(patches.Rectangle((ctr_r - w, -outer_d - mid_d - ctr_d), w, ctr_d,
+                 facecolor='#777', edgecolor='black', linewidth=1))
 
-    # === CENTER U-CHANNEL (narrowest, HAS FLOOR) ===
-    ctr_l = mid_l + wall*0.8 + 0.8
-    ctr_r = mid_r - wall*0.8 - 0.8
-    ctr_top = mid_top - 1.5
-    ctr_d = 1.2
-    ctr_floor = -outer_d
-    # Left wall
-    ax.add_patch(patches.Rectangle((ctr_l, ctr_floor), wall * 0.6, outer_d - (-ctr_top + ctr_d),
-                 facecolor='#777', edgecolor='black', linewidth=1))
-    # Right wall
-    ax.add_patch(patches.Rectangle((ctr_r - wall*0.6, ctr_floor), wall * 0.6, outer_d - (-ctr_top + ctr_d),
-                 facecolor='#777', edgecolor='black', linewidth=1))
-    # FLOOR (only level with a floor)
-    ax.add_patch(patches.Rectangle((outer_l, ctr_floor - wall*0.6), outer_r - outer_l, wall * 0.6,
+    # BOTTOM FLOOR (only floor in the system)
+    ax.add_patch(patches.Rectangle((ctr_l, -outer_d - mid_d - ctr_d - w), ctr_w, w,
                  facecolor='#777', edgecolor='black', linewidth=1.5))
 
-    # Fill zones with subtle color
-    # Outer zone (pan sits here, above mid_top)
-    ax.add_patch(patches.Rectangle((outer_l + wall, mid_top), 
-                 outer_r - outer_l - 2*wall, -mid_top,
+    # Fill channel zones with color
+    # Outer channel zone (above the steps)
+    ax.add_patch(patches.Rectangle((outer_l + w, -outer_d),
+                 outer_w - 2*w, outer_d,
                  facecolor='#ffe0e0', edgecolor='none', alpha=0.15))
-    # Middle zone (chassis travels, between mid walls)
-    ax.add_patch(patches.Rectangle((mid_l + wall*0.8, ctr_top),
-                 mid_r - mid_l - 2*wall*0.8, mid_top - ctr_top,
+    # Middle channel zone
+    ax.add_patch(patches.Rectangle((mid_l + w, -outer_d - mid_d),
+                 mid_w - 2*w, mid_d,
                  facecolor='#e0e0ff', edgecolor='none', alpha=0.15))
-    # Center zone (elevator travels)
-    ax.add_patch(patches.Rectangle((ctr_l + wall*0.6, ctr_floor),
-                 ctr_r - ctr_l - 2*wall*0.6, ctr_top - ctr_floor + ctr_d,
+    # Center channel zone
+    ax.add_patch(patches.Rectangle((ctr_l + w, -outer_d - mid_d - ctr_d),
+                 ctr_w - 2*w, ctr_d,
                  facecolor='#e0ffe0', edgecolor='none', alpha=0.15))
 
-    # Bearing plates (steel angle brackets cast into middle trough walls)
-    bp_w = 0.5
+    # Bearing brackets on the STEP LEDGES (where chassis wheels run)
     bp_h = 0.06
-    bp_y = mid_top - 0.5  # where chassis wheels run
-    # Left bracket
-    ax.add_patch(patches.Rectangle((mid_l + wall*0.8, bp_y), bp_w, bp_h,
-                 facecolor='#ffcc00', edgecolor='black', linewidth=1))
-    ax.plot([mid_l + wall*0.8, mid_l + wall*0.8], [bp_y, bp_y + 0.4], 
-           color='#ffcc00', linewidth=2)  # vertical bracket part
+    # Left bracket (on the outer-to-middle step)
+    bp_y = -outer_d
+    ax.add_patch(patches.Rectangle((outer_l + w + 0.1, bp_y - bp_h),
+                 mid_l - outer_l - w - 0.2, bp_h,
+                 facecolor='#ffcc00', edgecolor='black'))
     # Right bracket
-    ax.add_patch(patches.Rectangle((mid_r - wall*0.8 - bp_w, bp_y), bp_w, bp_h,
-                 facecolor='#ffcc00', edgecolor='black', linewidth=1))
-    ax.plot([mid_r - wall*0.8, mid_r - wall*0.8], [bp_y, bp_y + 0.4],
-           color='#ffcc00', linewidth=2)
+    ax.add_patch(patches.Rectangle((mid_r + 0.1, bp_y - bp_h),
+                 outer_r - w - mid_r - 0.2, bp_h,
+                 facecolor='#ffcc00', edgecolor='black'))
 
-    # Surface cover (dashed, when empty)
-    ax.add_patch(patches.Rectangle((outer_l, -0.12), outer_r - outer_l, 0.12,
+    # Surface cover (dashed)
+    ax.add_patch(patches.Rectangle((outer_l, -0.1), outer_w, 0.1,
                  facecolor='none', edgecolor='black', linewidth=1, linestyle=':'))
-    ax.text(6, 0.4, '(surface cover when unoccupied)', ha='center', fontsize=6,
+    ax.text(cx, 0.35, '(surface cover when unoccupied)', ha='center', fontsize=6,
            color='gray', style='italic')
 
-    # Labels - spread out vertically to prevent overlap
+    # Labels
     labels = [
-        ((-3.5, -0.5), (outer_l + 0.5, -0.9), 'OUTER CHANNEL\n(pan alignment walls;\nNO floor)'),
-        ((-3.5, -3.0), (mid_l + wall*0.8 + 0.3, bp_y), 'MIDDLE CHANNEL\n(chassis wheels run\non bracket rails;\nNO floor)'),
-        ((-3.5, -5.5), (ctr_l + 0.3, ctr_floor + 0.3), 'CENTER CHANNEL\n(elevator travels;\nONLY floor in system)'),
-        ((13, -1.0), (mid_r - wall*0.8 - bp_w + 0.2, bp_y + bp_h),
-         'Bearing brackets\n(A36 steel angles\ncast into middle walls)'),
-        ((13, -4.0), (outer_r - 1, -3), 'All channels DRY\nUtilities route through\ninter-tile manifolds\non pan edges'),
+        ((-3.5, -0.7), (outer_l + 0.5, -0.7),
+         'OUTER CHANNEL\n(pan sits here)'),
+        ((-3.5, -2.5), (mid_l + 0.5, -outer_d - mid_d/2),
+         'MIDDLE CHANNEL\n(chassis travels\non step ledges)'),
+        ((-3.5, -4.5), (ctr_l + 0.5, -outer_d - mid_d - ctr_d/2),
+         'CENTER CHANNEL\n(elevator travels;\nonly floor)'),
+        ((13, -0.7), (outer_r - w - 0.3, bp_y - bp_h/2),
+         'Bearing surface\n(on step ledge;\nA36 steel)'),
+        ((13, -3.0), (outer_r - 0.5, -outer_d - 1),
+         'All channels DRY\nUtilities in pan\nmanifolds only'),
     ]
     for text_pos, target, label in labels:
         ax.annotate(label, xy=target, xytext=text_pos, fontsize=7,
                    arrowprops=dict(arrowstyle='->', lw=0.8),
                    bbox=dict(boxstyle='round,pad=0.2', facecolor='white', edgecolor='gray', alpha=0.9))
 
-    ax.text(6, 2.5, 'Simple concrete form: three nested U-channels.\nNo horizontal floors except at the very bottom.\nOne continuous pour. Cheapest possible construction.',
+    ax.text(cx, 2.5, 'Single concrete form: stepped walls getting narrower with depth.\nNo suspended floors. Chassis wheels run on the step ledges.\nOne pour, simple formwork.',
            ha='center', fontsize=8, style='italic',
            bbox=dict(boxstyle='round', facecolor='#ffffcc', edgecolor='#cc9'))
 
