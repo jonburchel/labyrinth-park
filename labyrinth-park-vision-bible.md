@@ -1,6 +1,6 @@
 # Labyrinth Park – Complete Vision Bible
 
-**Last updated:** April 15, 2026
+**Last updated:** July 18, 2025
 **Purpose:** Definitive, exhaustive reference for every detail of the Labyrinth Park project. Supersedes all prior briefings as the single source of truth. Every detail ever discussed is captured here, categorized and cross-referenced.
 
 ---
@@ -40,6 +40,7 @@
 30. [Key Advisors](#30-key-advisors)
 31. [Open Questions](#31-open-questions)
 32. [Budget Summary](#32-budget-summary)
+33. [Patent Status](#33-patent-status)
 
 ---
 
@@ -414,6 +415,80 @@ At $15M debt: debt service ~$1.2M, net cash flow ~$1.1M, DSCR ~1.9x.
 - Secret tunnel exits hidden in each region via hinged living hedge sections
 - Classical labyrinth pattern in plan
 - External public labyrinth beyond gates for tourability
+
+### Three-Part Modular Architecture (Patent Section 20B)
+
+The patent specifies a three-part decomposition of each mobile landscape tile:
+
+1. **Planter Pan** (Part 1, uppermost): The surface payload (hedge, lawn tray, furniture deck, etc.). A "smart bucket with plumbing" containing a micro-pump, 3-way valve manifold, inter-tile connectivity hardware on all edges, horticultural sensors, and a small power buffer. No wheels, no drive motors, no locomotion of any kind. Estimated cost: $400-800 per pan.
+2. **Roller Chassis** (Part 2, middle level): A motorized wheeled platform that travels in a middle-depth trough channel beneath the pans. Engages a pan by raising its bearing surface ~3mm, transports it, then disengages. These are a **shared fleet** of approximately 20-30 active chassis for a property with ~600 pans. Parked in sub-surface depots when idle.
+3. **Elevator Box** (Part 3, deepest level): A compact vertical lift mechanism in the narrowest center trough channel. Lifts the chassis (with or without a pan) for surface transit or inter-terrace transfers. Also a **shared fleet** of approximately 10-15 units that roam to wherever a lift is needed.
+
+This architecture saves 45-68% on hardware cost versus a monolithic self-propelled design. See patent Section 20B for full operating sequences, interlock systems, and cost analysis.
+
+### Universal Trough Grid
+
+The entire configurable landscape is underlaid by a **universal grid of standardized trough channels** with perpendicular cross-channels at regular intervals, forming a navigable junction network for roller chassis and elevator boxes underground. Key properties:
+
+- **Precast slab construction:** Standardized precast concrete sections containing 4-8 parallel trough channels with pre-formed junctions, placed side by side on prepared sub-grade and grouted at joints. Enables rapid, low-cost installation across large areas.
+- **Software-defined zone designation:** The central controller designates regions as hedge maze, open lawn, event space, garden, or any other function through **software alone**. No physical modification of the trough infrastructure is required to change any zone. An area that is lawn today can be maze tomorrow, an event venue next week, and lawn again the following day.
+- **Configuration-agnostic infrastructure:** Large areas are simply covered with the standardized trough grid during initial construction. All layout decisions happen in software, not concrete.
+
+See patent Sections 14 and 20B.5-20B.7 for specifications.
+
+### Inter-Tile Connectivity Manifold
+
+All utilities connect between adjacent pans below ground through auto-engaging manifolds on each pan edge. Each manifold carries:
+
+- **48V DC power** (50A continuous)
+- **Fiber optic** (LC-format singlemode/multimode)
+- **Shielded gigabit Ethernet**
+- **Water supply** (3/4-inch quick-connect, 30-50 psi)
+- **Water return** (matching quick-connect)
+
+Manifolds self-align via tapered guides and magnetic assist, with spring-loaded floating sub-plates for sub-millimeter precision. Connection and disconnection follow a staged safety sequence (mechanical, water, data, low-voltage handshake, 48V contactor, water valves). Each link is independently fuse-protected and fault-isolatable. Rated NEMA 4X / IP66 when mated. See patent Section 21.
+
+### Pop-Up Utility Access
+
+Selected tiles include **retractable utility access points** that deploy from flush-stowed positions:
+
+- GFCI-protected 120V AC outlets (from onboard inverter off the 48V DC bus)
+- Sealed RJ45 Ethernet jack
+- USB-C PD jack (up to 100W)
+- Optional water spigot, compressed air, or landscape lighting tap
+
+On lawn tiles, the cover carries a grass flap or sod plug that is visually continuous with surrounding turf when retracted. On hedge tiles, the utility head emerges behind the hedge line, invisible from the path side. Deploys on local touch, remote command, or scheduled event activation. See patent Section 22.
+
+### Automated Event Orchestration
+
+The control system supports **template-driven event setup with zero human labor** for positioning:
+
+- Parametric event templates define required tile inventory symbolically (e.g., "wedding ceremony, 256 guests" specifies aisle tiles, seating rows, fountain tiles, audio coverage, lighting levels, perimeter hedges, and adjacency constraints).
+- An orchestration service solves geometric placement, selects specific tiles from inventory, schedules transit (respecting quiet-hours and safety constraints), and commands repositioning.
+- After positioning, the system verifies power/data/water continuity across all manifold links, runs payload self-tests, and produces a signed readiness report.
+- Named transitions between stored configurations (e.g., "ceremony to reception") execute on a single operator command in under 30 minutes.
+- Post-event teardown is fully automated: tiles return to default positions, pop-up utilities retract, site reverts to its default state.
+
+See patent Section 24.
+
+### Universal Tile Family
+
+The patent generalizes the mobile hedge planter into a **universal landscape tile** with a standardized mobile base and an interchangeable surface payload. The tile family includes (not just hedges):
+
+- **Lawn tile** (shallow soil tray with living turf)
+- **Hedge/planter tile** (the original mobile hedge unit)
+- **Furniture tile** (benches, tables, lounge modules on rigid deck)
+- **Event surface tile** (dance floor, runway, stage, aisle; interlocking for contiguous assemblies)
+- **Decorative tile** (fountains, statues, trellis/lattice, columns)
+- **Utility tile** (infrastructure node: HVAC, misting, shade, charging)
+- **Lighting tile** (bollards, uplights, festoon anchors, LED arrays; DMX-addressable)
+- **Audio/AV tile** (speakers, subwoofers, projection surfaces, LED video; auto-calibrating)
+- **Bar/service tile** (counter with basin, ice well, POS mount; plumbed via water manifold)
+- **Fire/water-feature tile** (gas fire pits, recirculating fountains, misting)
+- **Sensor/environmental tile** (weather, air quality, crowd density, acoustic monitoring)
+- **Emergency tile** (AED, first-aid cabinet, emergency call station)
+
+Any tile base is mechanically and electrically interoperable with any trough of matching footprint and any payload in the family. See patent Section 20.
 
 ---
 
@@ -1645,6 +1720,10 @@ Note: Large lands overlap significantly with maze corridors (woodland trails ARE
 
 ### Total All-In: $30-40M+ over 10+ years
 
+### Trough Grid Infrastructure Cost (Business Planning Estimate)
+- Universal trough grid infrastructure: approximately **$864K per acre** of configurable surface area.
+- This figure is for business planning purposes and is not included in the patent.
+
 ### Annual Operating Costs (Stabilized)
 - Hotel operations: $3.20M (covered by $5.48M revenue)
 - Hedge maintenance: $141-282K
@@ -1655,3 +1734,17 @@ Note: Large lands overlap significantly with maze corridors (woodland trails ARE
 ---
 
 *This document is the single source of truth for Labyrinth Park planning. Update with every session. Load as context for any future planning conversation.*
+
+---
+
+## 33. Patent Status
+
+A **provisional patent application** has been filed covering the **Universal Modular Landscape Infrastructure Platform and Method**. Key facts:
+
+- **Scope:** The patent covers the complete system: universal trough grid, three-part modular tile architecture (planter pan / roller chassis / elevator box), inter-tile connectivity manifold, pop-up utility access, universal tile family, automated event orchestration, mesh network architecture, software-defined zone designation, and all supporting subsystems.
+- **Claims:** 89 informal claims across four categories: apparatus (system), method, software (computer-readable medium), and platform.
+- **Review process:** The application underwent a 40-expert simulated review process across two waves, covering mechanical engineering, horticulture, electrical, civil, safety, IP law, and commercial viability. Expert review files are preserved for attorney reference:
+  - `patent/expert-review-wave1.md`
+  - `patent/expert-review-wave2.md`
+- **Full application:** `patent/provisional-application.md`
+- **Next step:** Engage a patent attorney to file the non-provisional application within the 12-month provisional window, converting informal claims to formal claim language.
