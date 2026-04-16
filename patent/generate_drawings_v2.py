@@ -277,23 +277,27 @@ def fig10_planter_crosssection():
     ax.fill_between(x_wave, y_wave, hedge_bottom + hedge_h, color='#4a7c3f')
     ax.plot(x_wave, y_wave, color='#2d5a27', linewidth=1.5)
 
-    # Labels - spread out vertically on BOTH sides to prevent overlap
+    # Labels - carefully spread on both sides, no overlaps
+    # Right side: stack from top to bottom with 1.8 unit spacing minimum
+    # Left side: stack with 1.5 unit spacing minimum
     labels = [
-        ((-3, 12), (outer_left + 1, hedge_bottom + 4), '18 - Hedge plant\n(8-15 ft)'),
-        ((-3.5, depth + 0.5), (outer_left + wall_t + 0.3, depth - 0.8), '50 - LECA growing\nmedium (8-16mm)'),
-        ((-3.5, 2.5), (outer_left + wall_t + 0.1, 1.8), '54 - Root management\nribs (air-pruning)'),
+        # LEFT SIDE (top to bottom)
+        ((-3, 12), (outer_left + 1, hedge_bottom + 4), '18 - Hedge plant (8-15 ft)'),
+        ((-3.5, depth + 0.5), (outer_left + wall_t + 0.3, depth - 0.8), '50 - LECA medium\n(8-16mm)'),
+        ((-3.5, 2.5), (outer_left + wall_t + 0.1, 1.8), '54 - Root ribs\n(air-pruning)'),
         ((-3.5, 0.8), (outer_left + wall_t + 0.3, pan_bottom + wall_t + 0.15), '52 - Wicking mat\n(polyester, 5mm)'),
-        ((-3.5, -0.8), (pump_x + 0.3, pump_y + 0.15), '72 - Micro-pump + 3-way valve\n(irrigate/fire/bypass)'),
-        ((10, depth + 0.5), (outer_right - 0.5, depth), '58 - Root access panel\n(removable)'),
-        ((10, 3.5), (outer_right, 1.5), '16 - Concrete pan\n(5,000 psi, 3" walls)'),
-        ((10, 2.0), (outer_right + 0.1, 2.3), '56 - Lift hook points\n(standardized)'),
-        ((10, 0.5), (outer_right + 0.1, pan_bottom + 0.5), '74 - Manifold connectors\n(power/water/data, below grade)'),
-        ((10, -0.9), (mcu_x + 0.25, pan_bottom + wall_t + 0.17), '76 - MCU + sensors\n(moisture, temp, EC/pH)'),
+        ((-3.5, -0.8), (pump_x + 0.3, pump_y + 0.15), '72 - Micro-pump\n+ 3-way valve'),
+        # RIGHT SIDE (top to bottom, wider spacing)
+        ((10, 8.0), (outer_right - 0.5, depth), '58 - Root access panel'),
+        ((10, 6.0), (outer_right, 1.5), '16 - Concrete pan\n(5,000 psi, 3" walls)'),
+        ((10, 4.0), (outer_right + 0.1, 2.3), '56 - Lift hooks'),
+        ((10, 2.0), (outer_right + 0.1, pan_bottom + 0.5), '74 - Manifold connectors\n(power/water/data)'),
+        ((10, 0.0), (mcu_x + 0.25, pan_bottom + wall_t + 0.17), '76 - MCU + sensors'),
     ]
     for text_pos, target, label in labels:
-        ax.annotate(label, xy=target, xytext=text_pos, fontsize=7,
-                   arrowprops=dict(arrowstyle='->', lw=0.8),
-                   bbox=dict(boxstyle='round,pad=0.2', facecolor='white', edgecolor='gray', alpha=0.9))
+        ax.annotate(label, xy=target, xytext=text_pos, fontsize=6.5,
+                   arrowprops=dict(arrowstyle='->', lw=0.7),
+                   bbox=dict(boxstyle='round,pad=0.15', facecolor='white', edgecolor='gray', alpha=0.9))
 
     # Dimensions
     ax.annotate('', xy=(-1.5, pan_bottom), xytext=(-1.5, depth),
