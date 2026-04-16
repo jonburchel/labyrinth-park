@@ -663,6 +663,10 @@ The following drawings are included with this application:
 7. Fig. 6A/6B - Emergency egress configuration (normal vs. all-open comparison)
 8. Fig. 7 - Anti-aerial-observation features (cross-section: pergola, false path, tunnel connection)
 9. Fig. 8 - System architecture block diagram
+10. Fig. 9A/9B/9C/9D - Terrace transit sequence (four steps: seated, raised, powered roller transfer, seated in upper trough)
+11. Fig. 10 - Planter cross-section with materials (concrete container, LECA medium, wicking mat, root management ribs, ball transfer units, lift hooks)
+12. Fig. 11 - Trough infrastructure cross-section (concrete structure, bearing plates, power contacts, sub-channel, conduit corridor, elevator bay recess)
+13. Fig. 12 - Depot station layout in utility tunnel (plan view: service bays, reserve storage, transit corridor, lift to surface, work order display)
 
 ---
 
