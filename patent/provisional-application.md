@@ -1,6 +1,6 @@
 # Provisional Patent Application
 
-## AUTONOMOUSLY RECONFIGURABLE LIVING LANDSCAPE MAZE SYSTEM AND METHOD
+## UNIVERSAL MODULAR LIVING LANDSCAPE INFRASTRUCTURE PLATFORM AND METHOD
 
 ### Inventor
 [Jon Burchel - to be completed on filing]
@@ -12,7 +12,7 @@
 
 ## TITLE OF THE INVENTION
 
-Autonomously Reconfigurable Living Landscape Maze System and Method
+Universal Modular Living Landscape Infrastructure Platform and Method
 
 ---
 
@@ -24,7 +24,7 @@ None.
 
 ## FIELD OF THE INVENTION
 
-The present invention relates to outdoor landscape maze and labyrinth systems, and more particularly to a system and method for creating a continuously reconfigurable outdoor maze using living plant containers mounted on motorized platforms that autonomously reposition according to programmable schedules.
+The present invention relates to modular outdoor landscape infrastructure systems, and more particularly to a universal platform comprising recessed channel grids, mobile living plant containers, modular utility docking, hydroponic irrigation, and autonomous reconfiguration control for applications including but not limited to reconfigurable mazes, privacy screening, event routing, decorative partitioning, environmental buffering, crowd management, and managed public-space operations.
 
 ---
 
@@ -43,6 +43,8 @@ There exists a need for a large-scale outdoor maze system that uses living plant
 The present invention provides a system and method for creating a continuously reconfigurable outdoor labyrinth comprising a plurality of living plant containers mounted on motorized transport platforms. Each platform operates within a bounded positioning zone on a prepared surface, repositioning autonomously according to algorithmic scheduling to create new maze configurations. The system integrates with a guest navigation application and emergency management systems.
 
 The invention achieves a maze that is visually and experientially indistinguishable from a traditional planted hedge maze, while being capable of producing a functionally infinite number of unique configurations through the combinatorial repositioning of its movable sections.
+
+In broader embodiments, the invention is not limited to maze applications and may be implemented as a universal modular living landscape infrastructure platform for configurable screening, circulation control, privacy, event routing, decorative partitioning, environmental buffering, and managed public-space operations. The same recessed-channel, mobile-planter, docking, and control architecture may serve as a general-purpose landscape operating system across hospitality, civic, entertainment, security, transportation, and institutional sites.
 
 ### Combinatorial Configuration Analysis
 
@@ -130,6 +132,12 @@ Each mobile hedge unit comprises:
 - **Transit speed:** Approximately 0.5 ft/s (0.3 mph), prioritizing silence and safety over speed. Full transit between adjacent trough positions (typically 3-20 feet) completes in 6-40 seconds.
 - **Braking:** Spring-applied, electrically released brake on each wheel. Holding capacity sized for the maximum expected slope (15 degrees), requiring approximately 650 lbs braking force per unit for medium-weight planters. Brakes engage automatically on power loss (fail-safe).
 - **Battery:** Sized for transit-only operation (1-5 minutes of powered movement between trough positions where ground power is available). Approximately 200-500 Wh lithium iron phosphate (LFP) for safety and longevity. Provides reserve for emergency braking and communications.
+
+**2.8 Root Management Assembly.** Each planter may include a root-management assembly comprising air-pruning surfaces, guided-root ribs, root-turning baffles, removable root-access panels, or a replaceable inner root cartridge that reduces circling-root formation during long-term container use. The control system may assign each planter a root-service interval and autonomously route the planter to a service bay for root pruning, division, media refresh, or containerized rejuvenation before decline becomes externally visible.
+
+**2.9 Canopy Separation and Root Bridging Prevention.** Adjacent planters may include canopy-separation features that preserve a controlled seam between neighboring hedge masses, including spacer fins, sacrificial trim zones, retractable comb structures, pruning guides, or temporary spreader members used during growth management. Docking interfaces, drainage openings, and sub-channel couplers may further include root-impermeable barriers, intrusion-resistant sleeves, and serviceable anti-bridge seals that prevent roots from crossing between planters or entering shared infrastructure.
+
+**2.10 Degraded-Mobility Support.** Each mobile unit may include a degraded-mobility support structure comprising sacrificial skid pads, auxiliary landing shoes, emergency casters, or a three-point backup load path that prevents excessive list or structural binding upon wheel, bearing, or suspension failure. Upon detection of abnormal vibration, temperature, or ride-height asymmetry, the unit may enter a reduced-speed limp mode to reach the nearest serviceable docking position or await assisted recovery while remaining upright and stable.
 
 ### 3. Prepared Positioning Surfaces (Positioning Zones)
 
@@ -272,6 +280,8 @@ The system optionally incorporates features to prevent the maze configuration fr
 
 **12.4 Lifecycle and Nursery Rotation.** Mobile hedge units may be assigned lifecycle states including: establishment, mature service, rehabilitation, quarantine, replacement, and decommissioning. The system may include one or more off-maze service bays or nursery positions into which units are autonomously transferred for pruning, treatment, replanting, root work, soil replacement, battery service, or mechanical cleaning. Visually similar reserve units may be inserted into the active maze footprint to maintain operational capacity during service activities.
 
+**12.5 Seasonal Conditioning and Overwintering.** The control system may implement a species-specific seasonal conditioning program that modifies irrigation, fertilization, movement frequency, sun exposure, and sheltered placement to promote dormancy induction, cold hardening, and spring recovery in containerized hedge stock. Selected planters may be autonomously relocated to overwintering bays, wind-sheltered corridors, thermal service zones, or grouped protective arrangements when root-zone or canopy exposure exceeds species-specific thresholds.
+
 ### 13. Operational Infrastructure
 
 **13.1 Maintenance Corridors.** The maze may include designated maintenance corridors, crossover zones, and staging nodes sized for personnel, carts, lifts, towing equipment, or replacement plant modules, whether continuously open or selectively opened by reconfiguration. The control system may reserve such corridors automatically during maintenance windows or fault recovery operations.
@@ -301,6 +311,14 @@ The system optionally incorporates features to prevent the maze configuration fr
 **13.13 Compartmented Maintenance Interface.** The maintenance management system may present work orders to maintenance personnel as location-specific task assignments (tunnel exit number, zone identifier, task description) without providing or requiring access to the overall maze configuration, current layout, or reconfiguration schedule. Maintenance workers navigate to work zones via the tunnel network using turn-by-turn directions, not a full property map. This architecture preserves operational security while enabling efficient maintenance operations by personnel who do not need to understand the maze's current or planned state.
 
 **13.14 Autonomous Maintenance Robot Integration.** The maze system may be integrated with one or more auxiliary maintenance robots configured to inspect, clean, trim, irrigate, spray, tow, recharge, or otherwise service mobile hedge units and associated positioning surfaces. The central control system may coordinate movement of such service robots with maze reconfiguration schedules and guest access restrictions.
+
+**13.15 Hospitality Quiet-Hours Mode.** The control system may include a hospitality quiet-hours mode in which unit movement is sequenced according to acoustic thresholds, guest-room proximity, event schedules, and local ambient noise conditions. Reconfiguration tasks may be deferred, rerouted, slowed, clustered, or performed in shielded zones so that operational changes occur without exceeding property-specific sound criteria in occupied guest areas.
+
+**13.16 Emergency Medical Extraction.** The maze may include a responder-navigation subsystem with uniquely addressable waypoints, staff-readable location markers, and incident-control logic that opens responder-only corridors for stretcher, wheelchair, cart, or utility-vehicle access to a guest location. Upon receipt of a medical alert, the control system may determine the fastest extraction geometry, direct staff and guests by different routes, and communicate the selected access path to handheld devices, radios, or property dispatch systems.
+
+**13.17 Multi-Profile Guest Routing.** The control system may maintain multiple simultaneously valid guest-route classes, including wheelchair-optimized, stroller-optimized, low-sensory, shaded, short-duration, and restroom-proximate routes, each generated from stored geometric and operational constraints. The physical maze may include designated passing bays, turning pockets, rest nodes, and refuge points that are selectively preserved or opened to satisfy the active route class while the surrounding layout remains dynamically reconfigurable.
+
+**13.18 Automated Cleaning and Throughput Management.** The system may classify paths by expected traffic intensity and may schedule cleaning, litter removal, waste servicing, and surface-rest periods accordingly, including autonomous or semi-autonomous cleaning vehicles coordinated with guest access restrictions. Animal-detection sensors, service-animal accommodations, and pet-restriction enforcement zones may further be used to preserve plant health, sanitation, and safe circulation in high-traffic operating modes.
 
 ### 14. Universal Modular Trough Infrastructure
 
@@ -361,6 +379,16 @@ Using the hydroponic growing medium (expanded clay aggregate), approximate loade
 
 These weights are 35-45% lower than equivalent soil-based planters, proportionally reducing requirements for motor power, brake capacity, wheel load rating, and pavement structural capacity.
 
+**14.8 Thermal Expansion and Settlement Tolerance.** The trough infrastructure may include thermal-expansion joints, settlement-tolerant interfaces, and adjustable alignment assemblies comprising shim packs, eccentric guides, replaceable wear blocks, or self-centering lead-in surfaces that maintain transit tolerances despite seasonal thermal movement, phased construction, or differential settlement. Each trough section may be referenced to a site datum and periodically re-surveyed, with alignment corrections applied mechanically or in software to preserve docking and lift performance.
+
+**14.9 Structural Durability.** The trough and bay structures may be formed from freeze-thaw durable concrete assemblies including air entrainment, corrosion-resistant reinforcement, fiber reinforcement, polymer-modified surfaces, waterproof liners, or replaceable wear inserts at motion-critical contact zones. The infrastructure may further include crack-control joints, drainage membranes, and sacrificial edge elements that localize wear and permit service replacement without full reconstruction of the surrounding landscape.
+
+**14.10 Seismic and Impact Response.** The infrastructure may include seismic-response features comprising automatic seated-position locking, inter-unit bracing, fluid isolation valves, and control logic that secures planters and limits hydraulic slosh when seismic motion, impact loading, or abnormal ground acceleration is detected. Utility routing may be provided through modular conduit corridors, spare raceways, flexible service loops, and branch manifolds that permit phased expansion, sectional isolation, and replacement of electrical, data, or fluid services without demolition of the full trough grid.
+
+**14.11 Wet-Location Electrical Interfaces.** Electrical and data couplers exposed to outdoor conditions may be sealed wet-location interfaces including blind-mate contacts, inductive transfer elements, purgeable housings, corrosion-resistant contact materials, and drain-before-energize interlocks. The system may continuously monitor insulation resistance, leakage current, water presence, and connector temperature, and may inhibit charging or motion authorization upon detection of unsafe ingress or connector contamination.
+
+**14.12 Surface Cover Safety.** Surface covers may include positive retention features, anti-rocking supports, monitored deflection limits, slip-resistant top layers, and uplift or displacement sensors that detect unsafe cover conditions before guest access is permitted. The system may automatically remove affected path segments from circulation, publish alternate routes, and generate maintenance actions when a cover, seam, or trough edge falls outside predefined hospitality-use tolerances.
+
 ### 15. Modular Elevator Mechanism
 
 **15.1 Drop-In Elevator Module.** The elevator mechanism that raises planters for powered transit is itself a modular, relocatable unit. Rather than being permanently installed at fixed positions, the elevator module is designed to be lowered into a recessed bay at the bottom of any standard trough section. Key features:
@@ -397,6 +425,10 @@ Advantages of the wicking/hydroponic system:
 - Lighter containers extend the life of roller mechanisms, motors, and pavement.
 
 **16.3 Dual-Purpose Trough Infrastructure.** The primary trough channels (which hold the planters) and the sub-channels (which carry water) together form a unified infrastructure system. The water channels serve as both irrigation delivery and drainage return, flowing in a closed loop. When planters are removed from a section, the water channels continue to function as stormwater drainage or remain dormant under surface covers.
+
+**16.4 Pathogen Isolation and Water Treatment.** The irrigation and nutrient network may be divided into independently isolatable hydraulic zones, each including backflow-prevention features, return-side filtration, and one or more disinfection stages selected from ultraviolet treatment, ozone injection, peroxide dosing, thermal treatment, or membrane filtration. Upon detection of a root-zone pathogen, abnormal EC/pH behavior, or plant decline, the affected planter or zone may be automatically quarantined from the shared recirculation loop and routed to treatment or replacement.
+
+**16.5 Biological Conditioning.** In embodiments using inert or semi-inert media, the system may further include a biological conditioning subsystem that introduces beneficial fungi, bacteria, or other root-associated organisms through dedicated inoculation ports, dosing lines, or removable media inserts. Biological conditioning may be species-specific and may be suspended, replaced, or re-established after sanitation, quarantine, or media service operations.
 
 ### 17. Vehicular-Scale Arrival Labyrinth
 
@@ -441,6 +473,24 @@ The invention encompasses the following variations:
 **18.12 Accessibility-Adaptive Routing.** The control system may generate and maintain one or more accessibility-specific circulation networks within the maze, including routes optimized for wheelchair turning radius, reduced grade, firm-and-stable surfaces, reduced sensory load, resting intervals, and emergency evacuation. Different guest mobility profiles or operating periods may receive different route topologies while sharing the same physical hedge infrastructure.
 
 **18.13 Swarm Coordination.** Maze reconfiguration may be coordinated by a centralized planner, a distributed multi-agent control system, or a hybrid thereof, wherein mobile hedge units negotiate movement priorities, reserve transit corridors, and avoid deadlock while achieving a target configuration. Reservation of paths, docking windows, and exclusion zones may occur dynamically in response to faults, schedule changes, or environmental conditions.
+
+### 19. Platform Architecture and Commercial Implementation
+
+**19.1 Layered Platform Model.** The invention may be deployed as a layered platform comprising: (i) embedded landscape infrastructure, (ii) mobile living barrier modules, (iii) utility docking and service interfaces, (iv) control and simulation software, and (v) guest or operator applications. Any one layer, or any interoperable subset of layers, may be sold, licensed, retrofitted, or operated independently while remaining compatible with the broader platform architecture.
+
+**19.2 Software Service Layer.** The control platform may include a software service that aggregates occupancy, movement, dwell-time, maintenance, plant-health, weather, and event data across one or more installations and uses such data to optimize configuration selection, staffing, preventive maintenance, guest throughput, and experience-specific routing. The software may further expose operator APIs, reporting dashboards, and rule engines that convert observed site conditions into physical reconfiguration commands or property-management actions.
+
+**19.3 Recurring Revenue Ecosystem.** The platform may be commercially implemented through recurring-service arrangements in which control software, predictive maintenance, fleet monitoring, certified replacement modules, reserve plant inventory, nutrient formulations, and service robotics are supplied on a subscription or managed-service basis. The infrastructure may therefore function as a recurring-revenue ecosystem in which installed trough networks remain in place while mobile units, control features, and operational capabilities are upgraded over time.
+
+**19.4 Standardized Interface Architecture.** The invention may define standardized physical and digital interfaces for mobile living barrier modules, including trough geometry, lift engagement points, utility couplers, safety-state signaling, and command/telemetry protocols, thereby enabling certified interoperability among components from multiple sources. Such interface standardization may support a platform ecosystem in which third-party modules remain compatible only by practicing one or more patented interface requirements.
+
+**19.5 Non-Maze Market Applications.** In non-maze embodiments, the platform may define temporary or persistent circulation, privacy, screening, queuing, crowd-separation, valet-routing, outdoor-dining partitioning, exhibit layout, or security perimeters in airports, resorts, stadiums, campuses, zoos, municipalities, festival grounds, transportation hubs, and mixed-use developments. Such embodiments may be permanent installations or retrofit overlays applied to existing paved, landscaped, or event-programmable spaces.
+
+**19.6 Separable Inventive Aspects.** The disclosed embodiments may be claimed separately or in combination as distinct inventive aspects, including the universal trough grid, relocatable elevator bay, utility docking manifold, modular surface cover assembly, horticultural lifecycle service system, and guest-routing control architecture. The invention expressly contemplates that certain aspects may be practiced independently of others while remaining interoperable within a common landscape infrastructure platform.
+
+**19.7 Design and International Scope.** Certain embodiments may additionally support separate protection for ornamental or non-functional visual features, including surface-cover geometries, concealed joint appearances, planter exteriors, facade skins, and graphical user interfaces used for guest navigation or operator control. Dimensions, materials, and performance thresholds disclosed herein are exemplary and may be varied to satisfy regional codes, metric design conventions, climate conditions, and local construction practices without departing from the invention.
+
+**19.8 Continuation and Divisional Strategy.** The present disclosure includes numerous interoperable but separable aspects that may be pursued in one or more continuation, continuation-in-part, divisional, or foreign counterpart applications directed to different inventive groupings. Variants not selected for immediate prosecution may be publicly disclosed to dedicate such subject matter to the public and reduce the risk of blocking patents by third parties on foreseeable design-arounds.
 
 ---
 
@@ -512,11 +562,31 @@ The following informal claims outline the scope of the invention. Formal claims 
 
 32. The system of claim 25, wherein the hydroponic growing medium reduces total planter weight by 35-45% compared to traditional soil, proportionally reducing motor power, brake capacity, wheel rating, and pavement structural requirements.
 
+33. The system of claim 1, wherein each planter includes a root-management assembly comprising air-pruning surfaces, guided-root ribs, or a replaceable inner root cartridge, and the control system assigns root-service intervals and autonomously routes planters to service bays for root maintenance.
+
+34. The system of claim 25, wherein the recirculating irrigation network is divided into independently isolatable hydraulic zones with backflow prevention and disinfection stages, and the control system automatically quarantines affected planters or zones upon detection of pathogen indicators.
+
+35. The system of claim 1, further comprising canopy-separation features and root-bridging prevention barriers at planter interfaces that prevent adjacent living plants from grafting, intertwining, or extending roots into shared infrastructure.
+
+36. The system of claim 1, further comprising a hospitality quiet-hours mode that sequences unit movement according to acoustic thresholds, guest-room proximity, and event schedules.
+
+37. The system of claim 1, further comprising a responder-navigation subsystem with addressable waypoints and incident-control logic that opens responder-only corridors for medical extraction from any location in the maze.
+
+38. The system of claim 1, further comprising multiple simultaneously valid guest-route classes including wheelchair-optimized, stroller-optimized, low-sensory, and restroom-proximate routes generated from stored accessibility constraints.
+
+39. A computer-implemented method comprising: receiving sensor data from a plurality of mobile living plant containers in a recessed channel grid; generating candidate landscape configurations subject to horticultural, safety, accessibility, hospitality, and mechanical constraints; validating configurations via simulation; and commanding physical repositioning of the containers to implement a validated configuration.
+
+40. The method of claim 39, further comprising predictive maintenance scheduling, plant lifecycle classification, hydraulic quarantine triggering, quiet-hours movement sequencing, and incident-response reconfiguration.
+
+41. A non-transitory computer-readable medium storing instructions that, when executed by a processor, perform the method of claim 39.
+
+42. A modular living landscape infrastructure platform comprising: (i) an embedded grid of standardized recessed channels, (ii) a plurality of standardized mobile plant containers with integrated root management, wicking irrigation, and self-leveling mobility, (iii) modular utility docking manifolds, (iv) relocatable elevator modules, (v) convertible surface covers, and (vi) control software; wherein any layer may be independently sold, licensed, or operated while remaining interoperable with the broader platform.
+
 ---
 
 ## ABSTRACT
 
-A reconfigurable outdoor landscape maze system uses living plants in mobile containers mounted on motorized platforms. In the preferred embodiment, each platform employs a trough-and-elevator mechanism: a receiving trough set into the path surface receives the container flush with grade, and an elevator raises the container approximately 5 inches to expose a roller assembly for autonomous transit to a new trough position. The invention further comprises a universal trough grid extending across the entire property, enabling maze sections to be placed at any grid point and to migrate across the landscape seasonally or permanently. When trough sections are unoccupied, modular surface covers conceal the infrastructure, presenting as lawn, garden, or paved surfaces. The elevator mechanism is itself a modular, relocatable unit that can be installed in or removed from recessed bays at any trough position, making the locations of active transit junctions reconfigurable. Each standardized planter uses an inert lightweight growing medium with a wicking interface that draws water and nutrients from sub-channels integrated into the trough infrastructure, forming a closed-loop hydroponic irrigation system that reduces container weight 40-60% versus soil. The system may be implemented at vehicular scale with vehicle-rated corridors, hedge walls of 8-12 feet, and grade-separated bridge/underpass crossings, creating a reconfigurable driving maze that presents a different route on every visit. Each platform includes a self-leveling suspension system compensating for outdoor surface irregularities, redundant fail-safe braking, wind-load stabilization, and freeze-thaw protection. A central control system commands positions according to algorithmic scheduling, validates safety and egress compliance, and maintains a digital twin for simulation. The system integrates with a guest navigation application providing progressive-reveal wayfinding, an emergency access mode for rapid egress, a section rotation system for operational flexibility, utility docking manifolds for automated irrigation and charging, plant-health monitoring with nursery rotation, anti-aerial-observation features, and severe-weather management. The invention enables a living outdoor labyrinth that autonomously reconfigures itself on programmable schedules, producing a functionally unlimited number of unique configurations while maintaining the aesthetic of a traditional hedge garden.
+A universal modular living landscape infrastructure platform uses living plants in mobile containers mounted on motorized platforms within a standardized recessed channel grid. In the preferred embodiment, each platform employs a trough-and-elevator mechanism: a receiving trough set into the path surface receives the container flush with grade, and an elevator raises the container approximately 5 inches to expose a roller assembly for autonomous transit to a new trough position. The invention further comprises a universal trough grid extending across the entire property, enabling maze sections to be placed at any grid point and to migrate across the landscape seasonally or permanently. When trough sections are unoccupied, modular surface covers conceal the infrastructure, presenting as lawn, garden, or paved surfaces. The elevator mechanism is itself a modular, relocatable unit that can be installed in or removed from recessed bays at any trough position, making the locations of active transit junctions reconfigurable. Each standardized planter uses an inert lightweight growing medium with a wicking interface that draws water and nutrients from sub-channels integrated into the trough infrastructure, forming a closed-loop hydroponic irrigation system that reduces container weight 40-60% versus soil. The recirculating irrigation network is divided into independently isolatable hydraulic zones with pathogen detection, backflow prevention, and disinfection stages enabling automatic quarantine of affected planters or zones. Each planter includes a root-management assembly comprising air-pruning surfaces, guided-root ribs, or a replaceable inner root cartridge, with the control system assigning root-service intervals and autonomously routing planters to service bays. Adjacent planters include canopy-separation features and root-bridging prevention barriers. The system may be implemented at vehicular scale with vehicle-rated corridors, hedge walls of 8-12 feet, and grade-separated bridge/underpass crossings, creating a reconfigurable driving maze that presents a different route on every visit. Each platform includes a self-leveling suspension system compensating for outdoor surface irregularities, redundant fail-safe braking, wind-load stabilization, freeze-thaw protection, and degraded-mobility support for wheel or suspension failures. A central control system commands positions according to algorithmic scheduling, validates safety and egress compliance, and maintains a digital twin for simulation. The system includes a hospitality quiet-hours mode that sequences unit movement according to acoustic thresholds and guest-room proximity, a responder-navigation subsystem with addressable waypoints and incident-control logic for emergency medical extraction, and multiple simultaneously valid guest-route classes including wheelchair-optimized, stroller-optimized, low-sensory, and restroom-proximate routes. The system integrates with a guest navigation application providing progressive-reveal wayfinding, an emergency access mode for rapid egress, a section rotation system for operational flexibility, utility docking manifolds for automated irrigation and charging, plant-health monitoring with nursery rotation and seasonal conditioning, anti-aerial-observation features, and severe-weather management. The invention may be deployed as a layered platform comprising embedded infrastructure, mobile living barrier modules, utility docking interfaces, control software, and guest or operator applications, wherein any layer may be independently sold, licensed, or operated. The platform may be commercially implemented through recurring-service arrangements in which control software, predictive maintenance, fleet monitoring, certified replacement modules, and service robotics are supplied on a subscription or managed-service basis. In non-maze embodiments, the platform may define circulation, privacy, screening, queuing, crowd-separation, or security perimeters in airports, resorts, stadiums, campuses, and mixed-use developments. The invention enables a living outdoor landscape infrastructure that autonomously reconfigures itself on programmable schedules, producing a functionally unlimited number of unique configurations while maintaining the aesthetic of a traditional hedge garden.
 
 ---
 
