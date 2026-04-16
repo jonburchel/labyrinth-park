@@ -243,106 +243,93 @@ def fig14_pickup_sequence():
 
 
 def fig11_three_level_trough():
-    """Updated trough cross-section showing three nested levels with open floors"""
+    """Three nested U-channels, only center has floor. Simplest concrete form."""
     fig, ax = plt.subplots(1, 1, figsize=(14, 9))
     ax.set_xlim(-4, 16)
-    ax.set_ylim(-6, 4)
+    ax.set_ylim(-7, 4)
     ax.set_aspect('equal')
-    ax.set_title('FIG. 11 - Three-Level Nested Trough Cross-Section',
+    ax.set_title('FIG. 11 - Three Nested U-Channel Trough Cross-Section',
                 fontsize=12, fontweight='bold')
 
     ground_y = 0
+    wall = 0.3
 
     # Ground surface
     ax.fill_between([-4, 1.5], [ground_y]*2, [-0.2]*2, color='#cccccc')
     ax.fill_between([10.5, 16], [ground_y]*2, [-0.2]*2, color='#cccccc')
     ax.plot([-4, 1.5], [ground_y]*2, 'k-', linewidth=2)
     ax.plot([10.5, 16], [ground_y]*2, 'k-', linewidth=2)
-
     ax.text(-1, 0.3, 'PATH', fontsize=7, ha='center', color='#666')
     ax.text(13, 0.3, 'PATH', fontsize=7, ha='center', color='#666')
 
-    wall = 0.35
-
-    # === OUTER TROUGH (widest) ===
+    # === OUTER U-CHANNEL (widest, no floor) ===
     outer_l, outer_r = 1.5, 10.5
-    outer_d = 1.8
-    # Left and right walls
+    outer_d = 5.5  # goes all the way down (no floor, open to middle)
+    # Left wall
     ax.add_patch(patches.Rectangle((outer_l, -outer_d), wall, outer_d,
                  facecolor='#999', edgecolor='black', linewidth=1.5))
+    # Right wall
     ax.add_patch(patches.Rectangle((outer_r - wall, -outer_d), wall, outer_d,
                  facecolor='#999', edgecolor='black', linewidth=1.5))
-    # Floor: LEFT ledge, OPEN CENTER SLOT, RIGHT ledge
-    ledge_w = 1.8
-    slot_l = outer_l + wall + ledge_w
-    slot_r = outer_r - wall - ledge_w
-    # Left ledge
-    ax.add_patch(patches.Rectangle((outer_l + wall, -outer_d), ledge_w, wall,
-                 facecolor='#999', edgecolor='black', linewidth=1))
-    # Right ledge
-    ax.add_patch(patches.Rectangle((outer_r - wall - ledge_w, -outer_d), ledge_w, wall,
-                 facecolor='#999', edgecolor='black', linewidth=1))
-    # Open slot annotation
-    ax.annotate('OPEN SLOT\n(chassis reaches\nup through here)',
-               xy=((slot_l + slot_r)/2, -outer_d + 0.1),
-               fontsize=6, ha='center', va='bottom', color='red',
-               fontweight='bold')
+    # NO FLOOR (open into middle channel)
 
-    # === MIDDLE TROUGH (narrower, deeper) ===
-    mid_l, mid_r = 2.5, 9.5
-    mid_top = -outer_d
-    mid_d = 1.2
-    mw = wall * 0.7
-    # Left and right walls
-    ax.add_patch(patches.Rectangle((mid_l, mid_top - mid_d), mw, mid_d,
-                 facecolor='#888', edgecolor='black', linewidth=1))
-    ax.add_patch(patches.Rectangle((mid_r - mw, mid_top - mid_d), mw, mid_d,
-                 facecolor='#888', edgecolor='black', linewidth=1))
-    # Floor: LEFT ledge, OPEN CENTER SLOT, RIGHT ledge
-    mid_ledge_w = 1.2
-    mid_slot_l = mid_l + mw + mid_ledge_w
-    mid_slot_r = mid_r - mw - mid_ledge_w
-    ax.add_patch(patches.Rectangle((mid_l + mw, mid_top - mid_d), mid_ledge_w, mw,
-                 facecolor='#888', edgecolor='black', linewidth=0.8))
-    ax.add_patch(patches.Rectangle((mid_r - mw - mid_ledge_w, mid_top - mid_d), mid_ledge_w, mw,
-                 facecolor='#888', edgecolor='black', linewidth=0.8))
-    ax.annotate('OPEN SLOT\n(elevator reaches up)',
-               xy=((mid_slot_l + mid_slot_r)/2, mid_top - mid_d + 0.05),
-               fontsize=5, ha='center', va='bottom', color='red')
+    # === MIDDLE U-CHANNEL (narrower, no floor) ===
+    mid_l = outer_l + wall + 0.8  # step inward
+    mid_r = outer_r - wall - 0.8
+    mid_top = -1.8  # starts below pan zone
+    mid_d = 2.5
+    # Left wall
+    ax.add_patch(patches.Rectangle((mid_l, mid_top - mid_d), wall * 0.8, mid_d + mid_top + outer_d,
+                 facecolor='#888', edgecolor='black', linewidth=1.2))
+    # Right wall  
+    ax.add_patch(patches.Rectangle((mid_r - wall*0.8, mid_top - mid_d), wall * 0.8, mid_d + mid_top + outer_d,
+                 facecolor='#888', edgecolor='black', linewidth=1.2))
+    # NO FLOOR (open into center channel)
 
-    # === CENTER TROUGH (narrowest, deepest) ===
-    ctr_l, ctr_r = 4, 8
-    ctr_top = mid_top - mid_d
-    ctr_d = 0.8
-    cw = wall * 0.5
-    ax.add_patch(patches.Rectangle((ctr_l, ctr_top - ctr_d), cw, ctr_d,
+    # === CENTER U-CHANNEL (narrowest, HAS FLOOR) ===
+    ctr_l = mid_l + wall*0.8 + 0.8
+    ctr_r = mid_r - wall*0.8 - 0.8
+    ctr_top = mid_top - 1.5
+    ctr_d = 1.2
+    ctr_floor = -outer_d
+    # Left wall
+    ax.add_patch(patches.Rectangle((ctr_l, ctr_floor), wall * 0.6, outer_d - (-ctr_top + ctr_d),
                  facecolor='#777', edgecolor='black', linewidth=1))
-    ax.add_patch(patches.Rectangle((ctr_r - cw, ctr_top - ctr_d), cw, ctr_d,
+    # Right wall
+    ax.add_patch(patches.Rectangle((ctr_r - wall*0.6, ctr_floor), wall * 0.6, outer_d - (-ctr_top + ctr_d),
                  facecolor='#777', edgecolor='black', linewidth=1))
-    # Solid floor (elevator sits here)
-    ax.add_patch(patches.Rectangle((ctr_l, ctr_top - ctr_d - cw), ctr_r - ctr_l, cw,
-                 facecolor='#777', edgecolor='black', linewidth=1))
+    # FLOOR (only level with a floor)
+    ax.add_patch(patches.Rectangle((outer_l, ctr_floor - wall*0.6), outer_r - outer_l, wall * 0.6,
+                 facecolor='#777', edgecolor='black', linewidth=1.5))
 
-    # Fill trough interiors with subtle colors
-    # Outer (only the open interior, not over the slot)
-    ax.add_patch(patches.Rectangle((outer_l + wall, -outer_d + wall), 
-                 outer_r - outer_l - 2*wall, outer_d - wall,
-                 facecolor='#ffe0e0', edgecolor='none', alpha=0.2))
-    # Middle
-    ax.add_patch(patches.Rectangle((mid_l + mw, mid_top - mid_d + mw),
-                 mid_r - mid_l - 2*mw, mid_d - mw,
-                 facecolor='#e0e0ff', edgecolor='none', alpha=0.2))
-    # Center
-    ax.add_patch(patches.Rectangle((ctr_l + cw, ctr_top - ctr_d + cw),
-                 ctr_r - ctr_l - 2*cw, ctr_d - cw,
-                 facecolor='#e0ffe0', edgecolor='none', alpha=0.2))
+    # Fill zones with subtle color
+    # Outer zone (pan sits here, above mid_top)
+    ax.add_patch(patches.Rectangle((outer_l + wall, mid_top), 
+                 outer_r - outer_l - 2*wall, -mid_top,
+                 facecolor='#ffe0e0', edgecolor='none', alpha=0.15))
+    # Middle zone (chassis travels, between mid walls)
+    ax.add_patch(patches.Rectangle((mid_l + wall*0.8, ctr_top),
+                 mid_r - mid_l - 2*wall*0.8, mid_top - ctr_top,
+                 facecolor='#e0e0ff', edgecolor='none', alpha=0.15))
+    # Center zone (elevator travels)
+    ax.add_patch(patches.Rectangle((ctr_l + wall*0.6, ctr_floor),
+                 ctr_r - ctr_l - 2*wall*0.6, ctr_top - ctr_floor + ctr_d,
+                 facecolor='#e0ffe0', edgecolor='none', alpha=0.15))
 
-    # Bearing plates on MIDDLE trough ledges (where chassis wheels run)
+    # Bearing plates (steel angle brackets cast into middle trough walls)
+    bp_w = 0.5
     bp_h = 0.06
-    ax.add_patch(patches.Rectangle((mid_l + mw + 0.1, mid_top - mid_d + mw - bp_h),
-                 mid_ledge_w - 0.2, bp_h, facecolor='#ffcc00', edgecolor='black'))
-    ax.add_patch(patches.Rectangle((mid_r - mw - mid_ledge_w + 0.1, mid_top - mid_d + mw - bp_h),
-                 mid_ledge_w - 0.2, bp_h, facecolor='#ffcc00', edgecolor='black'))
+    bp_y = mid_top - 0.5  # where chassis wheels run
+    # Left bracket
+    ax.add_patch(patches.Rectangle((mid_l + wall*0.8, bp_y), bp_w, bp_h,
+                 facecolor='#ffcc00', edgecolor='black', linewidth=1))
+    ax.plot([mid_l + wall*0.8, mid_l + wall*0.8], [bp_y, bp_y + 0.4], 
+           color='#ffcc00', linewidth=2)  # vertical bracket part
+    # Right bracket
+    ax.add_patch(patches.Rectangle((mid_r - wall*0.8 - bp_w, bp_y), bp_w, bp_h,
+                 facecolor='#ffcc00', edgecolor='black', linewidth=1))
+    ax.plot([mid_r - wall*0.8, mid_r - wall*0.8], [bp_y, bp_y + 0.4],
+           color='#ffcc00', linewidth=2)
 
     # Surface cover (dashed, when empty)
     ax.add_patch(patches.Rectangle((outer_l, -0.12), outer_r - outer_l, 0.12,
@@ -350,21 +337,21 @@ def fig11_three_level_trough():
     ax.text(6, 0.4, '(surface cover when unoccupied)', ha='center', fontsize=6,
            color='gray', style='italic')
 
-    # Labels
+    # Labels - spread out vertically to prevent overlap
     labels = [
-        ((-3.5, -0.9), (outer_l + 0.5, -0.9), 'OUTER TROUGH\n(pan sits here;\nfloor has open slot)'),
-        ((-3.5, mid_top - mid_d/2), (mid_l + 0.5, mid_top - mid_d/2), 'MIDDLE TROUGH\n(chassis travels;\nfloor has open slot)'),
-        ((-3.5, ctr_top - ctr_d/2), (ctr_l + 0.3, ctr_top - ctr_d/2), 'CENTER TROUGH\n(elevator travels;\nsolid floor)'),
-        ((13, mid_top - mid_d + mw - 0.03), (mid_r - mw - 0.3, mid_top - mid_d + mw - bp_h/2),
-         'Bearing plates\n(A36 steel, +/-0.5mm)\non MIDDLE trough ledges\n(chassis wheels run here)'),
-        ((13, -3.5), (outer_r - 1, mid_top - 0.3), 'All troughs DRY\nUtilities route through\ninter-tile manifolds\non pan edges'),
+        ((-3.5, -0.5), (outer_l + 0.5, -0.9), 'OUTER CHANNEL\n(pan alignment walls;\nNO floor)'),
+        ((-3.5, -3.0), (mid_l + wall*0.8 + 0.3, bp_y), 'MIDDLE CHANNEL\n(chassis wheels run\non bracket rails;\nNO floor)'),
+        ((-3.5, -5.5), (ctr_l + 0.3, ctr_floor + 0.3), 'CENTER CHANNEL\n(elevator travels;\nONLY floor in system)'),
+        ((13, -1.0), (mid_r - wall*0.8 - bp_w + 0.2, bp_y + bp_h),
+         'Bearing brackets\n(A36 steel angles\ncast into middle walls)'),
+        ((13, -4.0), (outer_r - 1, -3), 'All channels DRY\nUtilities route through\ninter-tile manifolds\non pan edges'),
     ]
     for text_pos, target, label in labels:
         ax.annotate(label, xy=target, xytext=text_pos, fontsize=7,
                    arrowprops=dict(arrowstyle='->', lw=0.8),
                    bbox=dict(boxstyle='round,pad=0.2', facecolor='white', edgecolor='gray', alpha=0.9))
 
-    ax.text(6, 2.5, 'Outer and middle troughs have OPEN CENTER SLOTS\nallowing chassis and elevator to reach up through them.\nCenter trough has solid floor (elevator sits on it).',
+    ax.text(6, 2.5, 'Simple concrete form: three nested U-channels.\nNo horizontal floors except at the very bottom.\nOne continuous pour. Cheapest possible construction.',
            ha='center', fontsize=8, style='italic',
            bbox=dict(boxstyle='round', facecolor='#ffffcc', edgecolor='#cc9'))
 
