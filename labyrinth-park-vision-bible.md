@@ -276,6 +276,15 @@ At $15M debt: debt service ~$1.2M, net cash flow ~$1.1M, DSCR ~1.9x.
 - Connected to hotel and all property zones via tunnel network
 - Well-developed by Year 5 move-in
 
+### The Heart of the Maze: The Server Room
+- Located at the **lowest point on the entire property**, deep within the residential core
+- Beneath the residence, at the convergence of the tunnel network
+- Significant compute capacity, unusual for a hospitality organization even by 2038 standards
+- Climate-controlled, secured, redundantly powered (solar + grid + generator)
+- **The true center of the labyrinth.** Every myth has something at the center of the maze. This is it.
+- Long-term aspiration: to someday run Jon's brain's primary copy here
+- The Minotaur at the center of the labyrinth is not a beast. It is a mind.
+
 ---
 
 ## 6. The Guesthouse
@@ -431,7 +440,20 @@ At $15M debt: debt service ~$1.2M, net cash flow ~$1.1M, DSCR ~1.9x.
 
 ## 9. Arrival Sequence & Stations
 
-### 3 Separate Entrances
+### Hotel Arrival Labyrinth (Reconfigurable)
+- **Concept:** The drive into the hotel passes through a reconfigurable hedge labyrinth that changes nightly
+- **Path length:** ~0.25 miles (1,320 ft), approximately 60 seconds at 15 mph
+- **Region:** ~3 acres, compact Z-shaped pattern within hotel allocation
+- **Hedge walls:** 8-10 ft tall (shorter than park maze, immersive from driver's seat)
+- **Lane width:** 12 ft one-way with hedge walls on both sides
+- **Junction points:** 8-10 movable hedge sections using the patented trough-and-elevator system
+- **Valid routes:** 38-307+ unique configurations (one per day for a year without repeating)
+- **Rotation:** New route nightly (reconfigured after last arrival, before first morning departure)
+- **Bridge crossover:** At least one point where the road dips ~8 ft below grade, passing under a hedge-walled bridge carrying another route segment overhead. Creates dramatic descent/ascent experience and enables routes to cross without intersection.
+- **Guest experience:** Returning guests never drive the same route twice. Guests at dinner compare notes: "You went UNDER the bridge? We went OVER it." The hotel breathes labyrinth from the first moment of arrival.
+- **Patent coverage:** Same movable hedge system (Sections 2-3 of provisional patent). Vehicular-scale application.
+
+### 3 Separate Entrances (Owner's Residence)
 
 **1. Main Guest Entrance:**
 - Gate (flush cattle grid, no columns)
@@ -471,9 +493,38 @@ At $15M debt: debt service ~$1.2M, net cash flow ~$1.1M, DSCR ~1.9x.
 
 ### Station Hexagon Orientations
 - **Stations 1 and 2:** Vertex-through orientation (driveway passes through opposite vertices, not faces). 3 wall faces on each side of driveway. Walls begin ~10-14ft inside each vertex, creating dramatic gateway/narrowing passage.
-- **Station 3 (motor court):** Face-through orientation (driveway enters one face, house entrance opposite face, garage doors on 2 back-corner faces, 2 side walls)
-- For Station 1 (s=46): vertex-to-vertex 92', flat-to-flat 79.7'
-- For Station 2 (s=34.5): v-to-v 69', f-to-f 59.8'
+- **Station 3 (motor court):** Face-through orientation (driveway enters one face, house entrance opposite face, garage doors on 2 back-corner faces, 2 side walls). Rose bushes grow around a **Rose Cross** (Rosicrucian emblem, not overtly Christian). The roses bloom at the intersection of the cross, representing the unfolding of spiritual knowledge. Dramatic, esoteric, deeply personal focal point visible upon arrival.
+
+### Station 2: The Tree of Life
+- **The Tree of Life** as the central feature
+- Symbolic across all esoteric traditions: Kabbalistic sephirot, Norse Yggdrasil, Hermetic tradition, Masonic symbolism
+- Living tree, carefully selected species, trained and tended as a sacred specimen
+- Station details TBD (geometry: s=34.5, vertex-through, v-to-v 69', f-to-f 59.8')
+
+### Esoteric Symbolism Throughout Property
+
+#### Traditions Referenced (With Genuine Spiritual Kinship)
+- **Rosicrucian:** Rose Cross in motorcourt. Rose motifs in Rose Garden. The number 7 recurring in design.
+- **Masonic:** Compass rose inlaid at maze intersection. Square-and-compass geometry in stonework. All-seeing eye in water feature or tunnel entrance carving.
+- **Templar:** Red cross pattee set into a wall stone. Circular meditation space echoing the Temple Church, London.
+- **Illuminati:** Owl sculpture in the Nature Garden, watching from a branch. Pyramid/eye motifs.
+- **Hermetic:** "Quod est superius est sicut quod est inferius" ("As above, so below") carved in Latin. Perfect for a place where the world above mirrors a hidden world below.
+- **Kabbalistic:** The Tree of Life at Station 2. Sephirotic geometry potentially embedded in garden layouts or floor patterns.
+- **Alchemical:** Symbols of transformation (the philosopher's stone, the ouroboros, solve et coagula). Appropriate for a property that transforms raw land into living art.
+- **Persian/Babylonian mysticism:** Ancient garden tradition (the word "paradise" comes from Persian *pairidaeza*, meaning "walled garden"). Labyrinth Park IS a walled garden. Ziggurat/stepped forms in landscaping. Winged sun disc or lamassu references.
+- **Egyptian (Akhenaten's cult):** Solar symbolism, the Aten disc, monotheistic sun worship. The solar array could be oriented or designed with a nod to Aten. Obelisk at Station 1 carries Egyptian resonance inherently.
+- **Sikh:** The Khanda (double-edged sword with circle and two kirpans) as a symbol of spiritual sovereignty and the unity of God. The Ik Onkar (One God). Subtle, respectful integration.
+- **Sacred geometry:** Flower of Life, Metatron's Cube in floor patterns. Golden ratio in architectural proportions. Fibonacci spirals in garden planting patterns.
+
+#### Traditions NOT Referenced
+- **Golden Dawn** and derivative ceremonial magic organizations. No connection, no kinship.
+
+#### Design Principles for Symbolism
+- **Every symbol has meaning and intention.** Nothing random, nothing decorative-only.
+- **The symbols collectively tell a story**, forming a map that leads to things in the physical maze AND to things that are only reachable in the world of the mind and spirit.
+- **Nothing is labeled, nothing is explained.** Guests who recognize symbols feel a jolt of recognition. Those who don't see beautiful decorative stonework.
+- **The overall effect:** A place built by someone who has studied deeply without ever declaring allegiance. An homage to the greats, meant to inspire speculation of every kind, but only honest speculation reflecting genuine spiritual kinship.
+- **Obelisk (Station 1):** Symbolism TBD. Carries Egyptian, Masonic, and Hermetic associations inherently. The specific meaning and design to be determined.
 
 ---
 

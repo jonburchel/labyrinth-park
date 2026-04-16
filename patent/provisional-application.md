@@ -215,17 +215,77 @@ The system optionally incorporates features to prevent the maze configuration fr
 - Integration with underground passage sections (tunnels) that connect non-adjacent maze sections without visible surface paths;
 - Multi-level path crossings (bridges and underpasses) that create vertical path complexity invisible from directly above.
 
-### 10. Variations and Alternative Embodiments
+### 10. Weather Resilience and Storm Management
+
+**10.1 Wind-Load Stabilization.** Each mobile hedge unit may include a wind-load stabilization system comprising one or more of: deployable outriggers, below-grade anchor engagement features integrated with the receiving trough, ballast compartments within the container base, retractable ground pins, and mechanical interlocks with the receiving trough walls. The control system may restrict movement or command a storm-secure position when measured or forecast wind speeds exceed a configurable threshold.
+
+**10.2 Severe-Weather Mode.** The system may include a severe-weather mode in which mobile hedge units are autonomously repositioned into a protected storage arrangement, a low-sail-area orientation, or mutually braced clusters that reduce wind exposure and projectile risk. Severe-weather mode may be triggered by on-site weather sensors (anemometer, barometer, precipitation gauge), forecast data feeds, operator command, or utility outage detection.
+
+**10.3 Inter-Unit Coupling.** Adjacent mobile hedge units may include inter-unit coupling features such as retractable pins, latches, magnetic couplers, or shared brace members that temporarily connect multiple units into a composite structure. Such coupling may increase resistance to crowd loads, wind loads, tampering, or misalignment in storm or high-traffic operating modes.
+
+**10.4 Freeze-Thaw and Ice Protection.** Receiving troughs, drainage channels, lift interfaces, roller assemblies, and utility couplers may include freeze-protection features including resistive heating elements, hydronic warming loops, thermal insulation, low-point drains, and ice-detection sensors. The control system may suspend movement operations, preheat target positions, or route units to frost-protected docking locations when ambient or surface temperature conditions indicate freezing risk.
+
+**10.5 Drainage and Water Intrusion Management.** Each receiving trough may incorporate a drainage management assembly comprising graded floors, sediment sumps, cleanout access ports, debris screens, overflow passages, and water-level sensing. The control system may inhibit lowering of a mobile hedge unit into a flooded or debris-filled trough and may command drainage, cleaning, or alternate positioning before seating.
+
+### 11. Safety Systems
+
+**11.1 Dynamic Safety Envelope.** Each mobile hedge unit may define a dynamic safety zone around the unit and along its projected path using redundant presence-detection sensors including LIDAR, radar, machine vision, pressure-sensitive bumper edges, and ground-based occupancy sensing (pressure mats, infrared beams). If a person, animal, or object enters the safety zone, the unit shall decelerate, stop, issue audible and visual warnings, and await operator clearance, automatic rerouting, or zone-clear confirmation before resuming movement.
+
+**11.2 Redundant Braking and Fail-Safe Immobilization.** The mobile hedge unit may include redundant braking systems comprising normally engaged spring-applied brakes, mechanical wheel locks, elevator-position locks, and seated-position latches that default to a secure (immobilized) state upon power loss, communication loss, or control fault detection. Release of any immobilization device shall require affirmative control authorization and successful verification of safe operating conditions.
+
+**11.3 Recovery Mode for Breakdown Mid-Transit.** Each mobile hedge unit may include a recovery interface enabling manual towing, robotic rescue vehicle coupling, jack-and-skate relocation, or attachment to a dedicated service vehicle when the unit becomes immobilized between discrete trough positions. The control system may automatically designate exclusion zones around the disabled unit, compute substitute maze configurations that bypass the obstruction, and reroute guests and other mobile units until recovery is completed.
+
+**11.4 Manual Override Hierarchy.** The control architecture may provide a hierarchy of operating modes including: fully autonomous, supervised autonomous, local manual (pendant or handheld control), maintenance lockout, and emergency-stop states, with explicit authority transfer and command arbitration between central operators and local technicians. Entry into maintenance or local manual mode may mechanically and electronically isolate selected functions to prevent unintended motion.
+
+**11.5 Night Operations.** The system may include task lighting, low-glare perimeter indicators, path-status lighting, and machine-visible infrared markers that support nighttime positioning and safety while minimizing visual intrusion. Lighting modes may differ for public operation, maintenance operation, emergency egress, and covert overnight reconfiguration.
+
+### 12. Utility Docking and Plant Health
+
+**12.1 Utility Docking Manifold.** Each discrete trough position may include a utility docking manifold configured to automatically couple one or more of: irrigation supply, drainage return, fertigation delivery, electrical charging, data communication, compressed air, or thermal conditioning to a mobile hedge unit when seated. Coupling may be mechanical quick-connect, magnetic, inductive, fluidic, or non-contact, and may be located in the trough floor, sidewall, or adjacent pedestal. Coupling engagement may be verified by flow, voltage, or signal presence sensors.
+
+**12.2 Plant-Health Monitoring.** Each mobile hedge unit may include horticultural monitoring sensors for soil moisture, salinity, temperature, nutrient conductivity, root-zone oxygenation, trunk or stem stability, and canopy health (spectral imaging, chlorophyll fluorescence). The central system may designate units for rest, treatment, nursery rotation, or replacement based on measured plant-health conditions and configurable thresholds.
+
+**12.3 Root-Zone Climate Management.** The plant container may include insulated wall assemblies, reflective exterior surfaces, ventilated root-zone cavities, thermal mass reservoirs, or seasonal wrap/cover systems to moderate root temperature extremes. The control system may alter irrigation schedules, container placement (e.g., shaded vs. exposed positions), and movement frequency according to seasonal heat or cold stress thresholds.
+
+**12.4 Lifecycle and Nursery Rotation.** Mobile hedge units may be assigned lifecycle states including: establishment, mature service, rehabilitation, quarantine, replacement, and decommissioning. The system may include one or more off-maze service bays or nursery positions into which units are autonomously transferred for pruning, treatment, replanting, root work, soil replacement, battery service, or mechanical cleaning. Visually similar reserve units may be inserted into the active maze footprint to maintain operational capacity during service activities.
+
+### 13. Operational Infrastructure
+
+**13.1 Maintenance Corridors.** The maze may include designated maintenance corridors, crossover zones, and staging nodes sized for personnel, carts, lifts, towing equipment, or replacement plant modules, whether continuously open or selectively opened by reconfiguration. The control system may reserve such corridors automatically during maintenance windows or fault recovery operations.
+
+**13.2 Degraded-Service Operation.** The control system may maintain one or more degraded-service configurations that remain guest-usable when one or more mobile hedge units are unavailable, misaligned, or removed for maintenance. Spare hedge units or substitute fixed barriers may be deployed to preserve path integrity and regulatory compliance during reduced-capacity operation.
+
+**13.3 Communication Redundancy.** Each mobile hedge unit may support multiple communication paths including local mesh radio, long-range radio, cellular, wired service connection, and optical beacon references, and may continue a limited locally supervised motion profile in the event of central communication loss. On loss of validated command authority, the unit shall stop, return to the last safe trough position, or complete only a short verified docking maneuver.
+
+**13.4 Power Management.** The system may include a power management architecture that schedules motion based on state of charge, battery temperature, expected route energy consumption, and reserve requirements for safe braking and communications. Charging may occur through conductive dock contacts in the trough, inductive pads beneath positioning surfaces, battery swap, tethered charging in service bays, or combinations thereof, with the control system reserving minimum emergency energy for safe shutdown, braking, and recovery.
+
+**13.5 Pavement Protection.** The prepared positioning surface may include localized reinforcement, buried grade beams, distributed wheel paths, replaceable wear panels, or structural slabs designed for repeated concentrated wheel loads under saturated-soil conditions. The mobile hedge unit may include wheel-load equalization and route selection logic that avoids overstressing weakened or deteriorated surface areas.
+
+**13.6 Debris and Root Intrusion Management.** The positioning surface and receiving troughs may include self-cleaning features, sweeping brushes, purge air, scraper edges, debris channels, or scheduled cleaning passes to remove leaves, mulch, mud, and other material from motion-critical interfaces. Root barriers and intrusion-resistant seams may reduce penetration by adjacent fixed plantings into transit and docking areas.
+
+**13.7 Anti-Tamper and Security.** Each mobile hedge unit may include tamper sensors, enclosure locks, authenticated startup procedures, geofenced motion authorization, and intrusion detection for access panels, utility couplers, or control electronics. The system may generate alarms and lock the unit into a safe state upon attempted unauthorized movement, vandalism, or component theft.
+
+**13.8 Noise and Vibration Attenuation.** The mobile hedge unit may include low-noise drive components, resilient wheel materials (rubber, polyurethane), vibration isolators between the transport platform and plant container, and motion profiles that limit jerk, resonance, and audible tonal noise. Reconfiguration schedules may be optimized for quiet hours while preserving emergency movement capability.
+
+**13.9 Site Infrastructure Integration.** The maze system may interface with existing landscape irrigation controllers, weather-based irrigation scheduling, stormwater conveyance, reclaimed-water systems, and backflow-prevention infrastructure. Water delivery to mobile hedge units may be coordinated with site-wide irrigation zones and suspended automatically in response to rainfall, freeze conditions, leaks, or drainage faults.
+
+**13.10 ADA Surface Continuity.** Transit surfaces, trough openings, dock interfaces, and path transitions may be configured to maintain wheelchair-usable rolling continuity, controlled gap widths (maximum 1/2 inch), cross-slope tolerances, slip resistance, and detectable warning conditions where required. When a unit is unavailable or a trough surface cannot be safely traversed, the control system may automatically publish and physically mark an alternate accessible route.
+
+**13.11 Digital Twin and Simulation.** The system may maintain a digital twin representing geometry, plant condition, utility state, surface condition, weather, and current or planned positions of all mobile hedge units, and may validate candidate configurations or transit plans in simulation before physical execution. Simulation may include wind loading, occupancy modeling, path accessibility analysis, actuator health prediction, and emergency-egress performance verification.
+
+**13.12 Autonomous Maintenance Robot Integration.** The maze system may be integrated with one or more auxiliary maintenance robots configured to inspect, clean, trim, irrigate, spray, tow, recharge, or otherwise service mobile hedge units and associated positioning surfaces. The central control system may coordinate movement of such service robots with maze reconfiguration schedules and guest access restrictions.
+
+### 14. Extended Applications and Alternative Embodiments
 
 The invention encompasses the following variations:
 
-**10.1 Scale.** The system may be implemented at any scale from a small garden (4-10 mobile units) to a landscape-scale installation (50-200+ mobile units covering multiple acres).
+**14.1 Scale.** The system may be implemented at any scale from a small garden (4-10 mobile units) to a landscape-scale installation (50-200+ mobile units covering multiple acres).
 
-**10.2 Plant Types.** While hedge plants are the preferred embodiment, the mobile containers may support any living plant material including ornamental grasses, bamboo, flowering shrubs, espaliered trees, climbing plants on integrated trellis structures, or combinations thereof.
+**14.2 Plant Types.** While hedge plants are the preferred embodiment, the mobile containers may support any living plant material including ornamental grasses, bamboo, flowering shrubs, espaliered trees, climbing plants on integrated trellis structures, or combinations thereof.
 
-**10.3 Container Shapes.** Containers may be rectangular, curved, L-shaped, or custom-shaped to create varied wall geometries.
+**14.3 Container Shapes.** Containers may be rectangular, curved, L-shaped, or custom-shaped to create varied wall geometries.
 
-**10.4 Movement Mechanisms.** In addition to wheeled platforms, mobile hedge units may be transported by:
+**14.4 Movement Mechanisms.** In addition to wheeled platforms, mobile hedge units may be transported by:
 
 - Air-cushion (hovercraft) systems;
 - Magnetic levitation on embedded rail systems;
@@ -233,13 +293,23 @@ The invention encompasses the following variations:
 - Hydraulic slide systems;
 - Cable-drawn systems.
 
-**10.5 Power Sources.** Platforms may be powered by onboard batteries, embedded inductive charging in the positioning surface, solar panels integrated into the container or platform, wired connections, or combinations thereof.
+**14.5 Power Sources.** Platforms may be powered by onboard batteries, embedded inductive charging in the positioning surface, solar panels integrated into the container or platform, wired connections, or combinations thereof.
 
-**10.6 Fixed and Mobile Hybrid.** The maze may comprise a combination of permanently planted (fixed) hedge sections and mobile hedge units, where the fixed sections provide the primary maze structure and the mobile units alter specific junctions, openings, or connections.
+**14.6 Fixed and Mobile Hybrid.** The maze may comprise a combination of permanently planted (fixed) hedge sections and mobile hedge units, where the fixed sections provide the primary maze structure and the mobile units alter specific junctions, openings, or connections.
 
-**10.7 Integration with Hospitality or Entertainment Operations.** The system may be integrated with hospitality management systems (hotel booking, event scheduling, guest management) to automatically configure the maze for specific events, guest groups, or operational requirements.
+**14.7 Integration with Hospitality or Entertainment Operations.** The system may be integrated with hospitality management systems (hotel booking, event scheduling, guest management) to automatically configure the maze for specific events, guest groups, or operational requirements.
 
-**10.8 Data Collection and Optimization.** The system may collect anonymized data on visitor movement patterns, section popularity, average time in maze, and other metrics, and use this data to optimize configuration scheduling, section placement, and guest experience.
+**14.8 Data Collection and Optimization.** The system may collect anonymized data on visitor movement patterns, section popularity, average time in maze, and other metrics, and use this data to optimize configuration scheduling, section placement, and guest experience.
+
+**14.9 Portable and Temporary Installation.** The reconfigurable maze system may be deployed as a permanent installation or as a temporary or seasonal installation using modular surface panels, transportable utility manifolds, crane-liftable hedge modules, and removable control infrastructure. Temporary embodiments may be configured for fairs, festivals, corporate events, hospitality venues, seasonal attractions, or pop-up public spaces.
+
+**14.10 Non-Maze Applications.** The mobile living barrier system may be used not only as a maze but also as a dynamically reconfigurable perimeter, queueing system, event routing system, privacy screen, temporary exclusion barrier, botanical exhibit layout, outdoor dining partition, or emergency crowd-management infrastructure. The same autonomous plant-bearing mobile units may therefore define decorative, security, or circulation boundaries in non-maze environments.
+
+**14.11 Seasonal Facade and Theming.** A mobile hedge unit may further include removable or deployable facade elements comprising decorative panels, trellis structures, lighting skins, holiday theming, signage, acoustic treatment, or weather screens while retaining living plant material as a primary or secondary visual component. Such facades may be seasonally changed without replacing the transport platform or plant container.
+
+**14.12 Accessibility-Adaptive Routing.** The control system may generate and maintain one or more accessibility-specific circulation networks within the maze, including routes optimized for wheelchair turning radius, reduced grade, firm-and-stable surfaces, reduced sensory load, resting intervals, and emergency evacuation. Different guest mobility profiles or operating periods may receive different route topologies while sharing the same physical hedge infrastructure.
+
+**14.13 Swarm Coordination.** Maze reconfiguration may be coordinated by a centralized planner, a distributed multi-agent control system, or a hybrid thereof, wherein mobile hedge units negotiate movement priorities, reserve transit corridors, and avoid deadlock while achieving a target configuration. Reservation of paths, docking windows, and exclusion zones may occur dynamically in response to faults, schedule changes, or environmental conditions.
 
 ---
 
@@ -267,11 +337,33 @@ The following informal claims outline the scope of the invention. Formal claims 
 
 10. The method of claim 9, further comprising designating subsets of the maze as open or closed on independent rotation schedules to create a continuously changing visitor experience.
 
+11. The system of claim 1, wherein each mobile hedge unit includes a trough-and-elevator mechanism comprising a receiving trough set into the path surface, an elevator mechanism that raises the container to expose a roller assembly for transit, and a lowering mechanism that seats the container into the trough such that the hedge base meets surrounding grade level and the transport mechanism is concealed.
+
+12. The system of claim 11, wherein vacant receiving troughs present as drainage channels or expansion joints in the path surface, visually indistinguishable from standard landscape infrastructure.
+
+13. The system of claim 1, wherein each mobile hedge unit includes a self-leveling suspension system with independent vertical travel on each wheel of at least 1 inch above and below nominal ride height, and an onboard level sensor that maintains the plant container in a level orientation during transit across irregular outdoor surfaces.
+
+14. The system of claim 1, further comprising a wind-load stabilization system including one or more of deployable outriggers, trough-integrated mechanical anchors, ballast compartments, retractable ground pins, and inter-unit coupling features that temporarily connect adjacent units into a composite braced structure.
+
+15. The system of claim 1, further comprising a severe-weather mode in which mobile hedge units are autonomously repositioned into a protected configuration with reduced wind exposure, triggered by on-site weather sensors, forecast data, or operator command.
+
+16. The system of claim 1, wherein each mobile hedge unit includes redundant fail-safe braking comprising normally engaged spring-applied brakes, mechanical wheel locks, and elevator-position locks that default to an immobilized state upon power loss or control fault.
+
+17. The system of claim 1, further comprising a recovery system for units disabled between trough positions, including a manual tow interface, robotic rescue vehicle coupling, and control system logic that computes substitute maze configurations bypassing the disabled unit.
+
+18. The system of claim 1, further comprising a utility docking manifold at each trough position that automatically couples irrigation, drainage, electrical charging, and data communication to the mobile hedge unit when seated.
+
+19. The system of claim 1, further comprising horticultural monitoring sensors in each mobile hedge unit for soil moisture, temperature, salinity, and root-zone health, with the control system designating units for nursery rotation, treatment, or replacement based on measured plant conditions.
+
+20. The system of claim 1, further comprising a digital twin of the maze system that validates candidate configurations in simulation including wind loading, occupancy, accessibility, and emergency egress performance before physical execution.
+
+21. A reconfigurable living barrier system comprising a plurality of containers holding living plants on motorized platforms, operable as a dynamically reconfigurable perimeter, privacy screen, event routing system, queueing system, crowd-management barrier, or botanical exhibit layout in non-maze environments.
+
 ---
 
 ## ABSTRACT
 
-A reconfigurable outdoor landscape maze system uses living plants in mobile containers mounted on motorized platforms. Each platform operates within a bounded positioning zone on a prepared level surface, autonomously repositioning to discrete locations under command of a central control system. The system creates a continuously variable outdoor labyrinth that maintains the aesthetic of a traditional hedge maze while producing a functionally unlimited number of unique configurations. The system integrates with a guest navigation application providing progressive-reveal wayfinding, an emergency access mode for rapid egress path creation, a section rotation system for operational flexibility, and anti-aerial-observation features. The invention addresses the fundamental limitation of traditional static hedge mazes by enabling a living landscape that reconfigures itself according to programmable schedules.
+A reconfigurable outdoor landscape maze system uses living plants in mobile containers mounted on motorized platforms. In the preferred embodiment, each platform employs a trough-and-elevator mechanism: a receiving trough set into the path surface receives the container flush with grade, and an elevator raises the container approximately 5 inches to expose a roller assembly for autonomous transit to a new trough position. Each platform includes a self-leveling suspension system compensating for outdoor surface irregularities, redundant fail-safe braking, wind-load stabilization, and freeze-thaw protection. A central control system commands positions according to algorithmic scheduling, validates safety and egress compliance, and maintains a digital twin for simulation. The system integrates with a guest navigation application providing progressive-reveal wayfinding, an emergency access mode for rapid egress, a section rotation system for operational flexibility, utility docking manifolds for automated irrigation and charging, plant-health monitoring with nursery rotation, anti-aerial-observation features, and severe-weather management. The invention enables a living outdoor labyrinth that autonomously reconfigures itself on programmable schedules, producing a functionally unlimited number of unique configurations while maintaining the aesthetic of a traditional hedge garden.
 
 ---
 
