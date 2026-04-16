@@ -982,19 +982,29 @@ The Labyrinth Park Archaeological Trust (operated by the 501(c)(3) education/con
 - Guests who found a $100 medallion in 2035 bring grandchildren in 2055 to see their name
 - The museum itself becomes an attraction and a reason to visit
 
-### Financial Structure
-| Tier | Annual Amortized Cost |
-|------|----------------------|
-| Clay medallions | $50-100K |
-| Stone tablets | $25-50K |
-| Major artifacts | $50K |
-| Grand artifact | $100K |
-| **Total** | **$200-300K/year** |
+### Financial and Legal Structure
 
-- All funded through the 501(c)(3) Trust, via donations and tax-deductible contributions
-- The park charges admission; the Trust acquires artifacts. Entities stay clean.
-- At 2% of projected revenue, this is insanely high ROI marketing
-- Every discovery is a global news story you can't buy
+**The treasure program is a for-profit marketing activity, NOT a charitable function.**
+
+| Entity | Type | Role in Treasure Program |
+|--------|------|-------------------------|
+| Labyrinth Park LLC | For-profit | Parent entity. Funds treasure program via marketing budget. |
+| Labyrinth Park Trust LLC | For-profit LLC | Subsidiary. Commissions artifacts, places them, pays rewards to discoverers. Operates museum displays. "The Trust" to the public. |
+| Labyrinth Park Archaeological Trust | 501(c)(3) | Separate. Genuine academic research: Native American artifact collection, university partnerships, educational programs. Does NOT fund treasure rewards. Curates interpretive materials and scholarly descriptions for museum. Shoestring budget ($25-50K/yr) but real. |
+
+**Key separations:**
+- The for-profit Trust LLC pays all reward money (deductible business expense, promotional prizes)
+- The 501(c)(3) never touches reward money; does only genuine research and education
+- Shared name creates natural public conflation ("the Trust") but entities are legally and financially separate
+- To the public and reporters: reads as an archaeological society
+- To the IRS: legitimate business promotion alongside legitimate charity
+- Tax attorney must bless this structure before implementation
+
+**Prize reporting requirements:**
+- Prizes over $600: 1099-MISC to recipient
+- NC sweepstakes law compliance required
+- "No purchase necessary" alternative entry method may be required
+- Consult promotions attorney during implementation
 
 ### Impact on Operating Model
 - Park can now operate DAILY (not just Sundays) because treasure hunt drives constant demand
