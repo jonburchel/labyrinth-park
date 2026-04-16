@@ -68,10 +68,45 @@
 
 ### Design Principles
 - **Genuine over performed.** Every mystery is real. The tunnels are real tunnels. The hidden passages lead to real places. The archaeology is conducted by real universities.
-- **Scarcity over abundance.** Limited days, limited admissions, sections that open and close. The complete experience is a moving target that can never be captured.
+- **Scarcity over abundance.** Limited admissions, sections that open and close. The complete experience is a moving target that can never be captured.
 - **Discovery over presentation.** Guests find things; they are not shown things. The wishing well, the whispering gallery, the fog garden: you stumble into them.
 - **Community over consumption.** The hotel creates jobs and revenue. The nonprofits serve real missions. The university partnerships produce real research. The farm feeds real people.
 - **Disney discipline, not Disney culture.** We borrow Imagineering's spatial compression, sight-line management, and world-building rigor. We do not borrow their mass-market, IP-driven, throughput-optimized mentality.
+
+### The Denial Doctrine
+
+**Labyrinth Park never confirms, never advertises, and never explains the following:**
+- That the maze reconfigures itself
+- That artifacts are placed by staff
+- The existence or nature of the tunnel network
+- The identity of the owner
+- The age or origin of the maze
+- How any specific section is accessed
+
+**Official position on all of the above:** "We've heard these reports. Some aspects of the property continue to surprise us. We don't have a complete understanding of the property's full history or behavior."
+
+**Staff NDA (critical):**
+- Employment agreement includes perpetual non-disclosure of operational details
+- Staff may NOT confirm or deny that paths change, that artifacts are placed, or how any mechanical system works
+- Staff MAY say: "I've heard guests mention that," "It does seem different sometimes," "We're still learning about the property ourselves"
+- Staff may NOT say anything that confirms deliberate human engineering of any mystery
+- Violation: liquidated damages (specific dollar amount), surviving termination indefinitely
+- Standard for themed entertainment (Disney cast members sign equivalent agreements)
+
+**The patent is not a threat to the mystery:**
+- Provisional patents are completely confidential (never published)
+- Full utility patent publishes ~2.5 years after provisional filing, long after the legend is established
+- A patent is a dry technical document; nobody searching "Labyrinth Park mystery" finds USPTO filings
+- If a Reddit detective eventually finds it, it deepens the conspiracy: "THEY HAVE A PATENT. WHAT ELSE ARE THEY HIDING?"
+
+**Marketing approach: cultivate a legend, not a brand.**
+- Year 1: locals notice, post on Facebook groups
+- Year 2: regional travel bloggers write "The Strangest Park in NC"
+- Year 3: Reddit thread goes viral
+- Year 4: Atlas Obscura, then NYT travel section
+- Year 5+: the internet has done the marketing; official response is still "We've heard these reports"
+- Strategic anonymous social media posts to catalyze discovery (never traceable to the organization)
+- Legends don't have press releases
 
 ---
 
