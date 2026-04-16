@@ -1102,12 +1102,12 @@ The Labyrinth Park Archaeological Trust (operated by the 501(c)(3) education/con
 - Contains inventory of all artifact tiers: hundreds of medallions, dozens of tablets, a few gorgets, the Grand Artifact when not deployed
 - Access: owner only (biometric + key), no staff access ever
 
-**Placement Chain (Zero Human Knowledge):**
+**Placement Chain (Minimal Human Knowledge):**
 - The algorithm determines which artifacts go where, and when
 - Humanoid robots retrieve artifacts from the stockroom and place them in designated rooms during overnight reconfiguration
-- Robots navigate via the tunnel network (never seen by anyone)
-- No human ever handles placement. No human can leak what they don't know.
-- Robot maintenance and charging occurs in the private infrastructure; robots never interact with public-facing staff
+- Robots navigate via the tunnel network (never seen by public or most staff)
+- At most 2-3 most trusted staff may be aware that robots carry objects; they do NOT know what, where, when, or why
+- Robot maintenance and charging occurs in the private infrastructure
 
 **Retrieval Chain:**
 - Undiscovered artifacts are retrieved by robots the following night
@@ -1119,6 +1119,39 @@ The Labyrinth Park Archaeological Trust (operated by the 501(c)(3) education/con
 - Physical fortress design of stockroom and server room (precast concrete, below grade, biometric access)
 - Network isolation: artifact placement system on separate, air-gapped network from hotel operations
 - The only entity that holds the complete picture: the central control system, running on the owner's servers, at the center of the maze
+
+### Staff Knowledge Tiers
+
+**Tiered information architecture (compartmentalized):**
+
+| Role | What They Know | What They Don't Know |
+|------|---------------|---------------------|
+| Owner | Everything | Nothing |
+| Head of Security (1) | Stockroom exists, robots place objects, camera monitoring | Which artifacts, which rooms, which days, $1M schedule |
+| Head Gardener (1) | Robots active at night, off-limits zones during reconfiguration | What robots carry, artifact program, stockroom |
+| Security staff (2-3) | Cameras in some areas, paths change overnight | Why, how, artifact program, stockroom |
+| All other staff | Some hedge sections are in containers for "horticultural flexibility" | The algorithm, the treasure system, the mystery being intentional |
+
+**Staff onboarding narrative (what operational staff are told):**
+> "The property uses a proprietary landscape management system that allows sections to be closed for maintenance, replanting, and seasonal rotation. Some hedge sections are in containers rather than planted in ground. This is for horticultural flexibility. The details are confidential per your employment agreement. If guests ask about paths changing, you may say: 'The garden team does make adjustments from time to time.'"
+
+**Staff entry route:**
+- All employees enter through a separate service gate and travel to work areas via service tunnels
+- Most staff never drive or walk the guest arrival labyrinth
+- When guests say "the driveway was different today!" staff genuinely don't know. Their ignorance is real.
+
+**Retention of trusted staff:**
+- Pay key security/operations staff extremely well ($120K+ for roles that hold secrets)
+- NDA with specific liquidated damages ($500K, written on the page they sign)
+- Non-disparagement clause
+- Post-employment consulting retainer: $5K/year for 10 years after departure, with annual NDA re-certification
+- Cost: $5K x 3 key staff x 10 years = $150K total. Insurance against loose lips.
+- People don't risk a great job, and they don't bite the hand that's still feeding them.
+
+**The real leak risk:**
+- Not current employees (they're well-paid and NDAs are terrifying)
+- Former employees 10 years later (handled by perpetual NDA + consulting retainer)
+- Even if someone talks: "My boss has robots that put clay discs in the maze at night" sounds insane without proof. With proof, they owe $500K.
 
 ---
 
