@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Expert Review Round 2: Compiled Results</title>
+<style>
+
+@page {
+    size: letter;
+    margin: 1in;
+}
+body {
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-size: 12pt;
+    line-height: 1.6;
+    color: #000;
+    max-width: 7.5in;
+    margin: 0 auto;
+    padding: 0.5in;
+}
+.confidential-header {
+    text-align: center;
+    font-size: 10pt;
+    font-weight: bold;
+    color: #990000;
+    border-bottom: 2px solid #990000;
+    padding-bottom: 6pt;
+    margin-bottom: 24pt;
+    letter-spacing: 2pt;
+}
+h1 {
+    font-size: 16pt;
+    text-align: center;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10pt;
+    margin-top: 0;
+}
+h2 {
+    font-size: 14pt;
+    margin-top: 24pt;
+    border-bottom: 1px solid #666;
+    padding-bottom: 4pt;
+    page-break-after: avoid;
+}
+h3 {
+    font-size: 12pt;
+    margin-top: 18pt;
+    page-break-after: avoid;
+}
+h4 {
+    font-size: 11pt;
+    margin-top: 14pt;
+    page-break-after: avoid;
+}
+p {
+    text-align: justify;
+    margin: 6pt 0;
+}
+ul, ol {
+    margin: 6pt 0 6pt 24pt;
+}
+li {
+    margin: 3pt 0;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 12pt 0;
+    font-size: 10pt;
+}
+th, td {
+    border: 1px solid #000;
+    padding: 4pt 8pt;
+    text-align: left;
+}
+th {
+    background: #eee;
+    font-weight: bold;
+}
+hr {
+    border: none;
+    border-top: 1px solid #999;
+    margin: 18pt 0;
+}
+strong {
+    font-weight: bold;
+}
+code {
+    font-family: 'Courier New', monospace;
+    font-size: 10pt;
+    background: #f4f4f4;
+    padding: 1pt 4pt;
+}
+blockquote {
+    margin: 12pt 24pt;
+    padding: 6pt 12pt;
+    border-left: 3pt solid #ccc;
+    font-style: italic;
+}
+@media print {
+    body {
+        padding: 0;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="confidential-header">
+CONFIDENTIAL &mdash; Labyrinth Park LLC
+</div>
+
+<h1>Expert Review Round 2 — Compiled Results</h1>
+<p><strong>Generated:</strong> Round 2 post-fix review of patent application
+<strong>Agents reviewed:</strong> 37 of 37 (all completed)</p>
+<hr />
+<h2>1. SCORECARD: CLEAN vs NEW ISSUES</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Agent ID</th>
+<th>Verdict</th>
+<th>New Issues?</th>
+<th>Fix Problems?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>r2-patent-law-critical</td>
+<td>NOT CLEAN</td>
+<td>Yes (B1 fwd ref, B2 dup claim, B3 §16 contradiction)</td>
+<td>Yes (A1 terminology schism, A2 powered-roller inconsistency)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>r2-patent-law-curious</td>
+<td>MOSTLY CLEAN</td>
+<td>Opportunities only</td>
+<td>Minor (§16 parenthetical, wheel-load inconsistency)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>r2-mech-eng-critical</td>
+<td>NOT CLEAN</td>
+<td>Yes (N1-N5 incl. drawings mismatch, terrace transit gap)</td>
+<td>Yes (B1 drawings list, B2 terrace transit undefined for 3-part)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>r2-mech-eng-curious</td>
+<td>NOT CLEAN</td>
+<td>Yes (fire hydraulics, 3mm tolerance, retention clips)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>5</td>
+<td>r2-civil-critical</td>
+<td>NOT CLEAN</td>
+<td>Yes (B1-B4 incl. fig contradictions, elevator reconciliation)</td>
+<td>Yes (fig/caption inconsistencies)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>r2-civil-curious</td>
+<td>NOT CLEAN</td>
+<td>Yes (drawings mismatch, §16 contradiction, power path conflict)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>7</td>
+<td>r2-hort-critical</td>
+<td>NOT CLEAN</td>
+<td>Yes (B1-B4 hort blockers, H1-H6 species/substrate)</td>
+<td>Yes (fig depth contradiction)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>r2-hort-curious</td>
+<td>NOT CLEAN</td>
+<td>Yes (drawings mismatch, claim 55/78 conflict, §16 contradiction)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>9</td>
+<td>r2-hosp-critical</td>
+<td>NOT CLEAN</td>
+<td>Yes (drawings mismatch, §16 contradiction, claim antecedent)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>10</td>
+<td>r2-hosp-curious</td>
+<td>NOT CLEAN</td>
+<td>Yes (drawings mismatch, §16 contradiction, §15 embodiment conflict)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>11</td>
+<td>r2-mfg-critical</td>
+<td>NOT CLEAN</td>
+<td>Yes (drawings mismatch, §16 contradiction, elevator dual-def)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>12</td>
+<td>r2-mfg-curious</td>
+<td>MOSTLY CLEAN</td>
+<td>Minor (cross-ref bugs, orphan number)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>13</td>
+<td>r2-elec-critical</td>
+<td>NOT CLEAN</td>
+<td>Yes (P1-P11 power engineering gaps)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>14</td>
+<td>r2-elec-curious</td>
+<td>NOT CLEAN</td>
+<td>Yes (drawings mismatch, §16 contradiction, Fig 8 stale)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>15</td>
+<td>r2-sw-critical</td>
+<td>NOT CLEAN</td>
+<td>Yes (claim 41 written-desc gap, fire hydraulics, SIL2 gap)</td>
+<td>Yes (claim 39 antecedent, sequencing restriction)</td>
+</tr>
+<tr>
+<td>16</td>
+<td>r2-sw-curious</td>
+<td>NOT CLEAN</td>
+<td>Yes (drawings mismatch, §16 contradiction, wheel rating)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>17</td>
+<td>r2-lit-critical</td>
+<td>NOT CLEAN</td>
+<td>Yes (claim 39/41 antecedent basis, fwd ref, MPF risk)</td>
+<td>Yes (hardware-tying broke 112(b))</td>
+</tr>
+<tr>
+<td>18</td>
+<td>r2-lit-curious</td>
+<td>NOT CLEAN</td>
+<td>Yes (claim 1 IPR-dead, fire disclaimer self-defeating)</td>
+<td>Yes (admitted prior art weakens claim 1)</td>
+</tr>
+<tr>
+<td>19</td>
+<td>r2-ptab-critical</td>
+<td>MOSTLY CLEAN</td>
+<td>No new blockers</td>
+<td>Claims 43, 39, 41 improved; others unchanged</td>
+</tr>
+<tr>
+<td>20</td>
+<td>r2-ptab-curious</td>
+<td>NOT CLEAN</td>
+<td>Yes (drawings mismatch, claim redundancy)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>21</td>
+<td>r2-landscape-critical</td>
+<td>NOT CLEAN</td>
+<td>Yes (broken cross-refs, orphan figure, term mismatch)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>22</td>
+<td>r2-landscape-curious</td>
+<td>NOT CLEAN</td>
+<td>Yes (drawings mismatch, Fig 2 contradiction, §16 contradiction)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>23</td>
+<td>r2-fire-critical</td>
+<td>NOT CLEAN</td>
+<td>Yes (claim 71 unhedged, pump sizing, drainage conflict)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>24</td>
+<td>r2-fire-curious</td>
+<td>NOT CLEAN</td>
+<td>Yes (hydraulically impossible pipeline, gas manifold undefined)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>25</td>
+<td>r2-ada-critical</td>
+<td>MOSTLY CLEAN</td>
+<td>Moderate gaps (accessibility modalities, service animals)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>26</td>
+<td>r2-ada-curious</td>
+<td>NOT CLEAN</td>
+<td>Yes (drawings mismatch, egress not code-compliant, ADA gaps)</td>
+<td>Yes (Fig 2 contradiction)</td>
+</tr>
+<tr>
+<td>27</td>
+<td>r2-vc-critical</td>
+<td>NOT CLEAN</td>
+<td>Yes (claim 39 antecedent, claim 45 orphaned, §19.8 self-wound)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>28</td>
+<td>r2-vc-curious</td>
+<td>NOT CLEAN</td>
+<td>Yes (drawings mismatch, claim 55/78 conflict, cost model)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>29</td>
+<td>r2-product-critical</td>
+<td>NOT CLEAN</td>
+<td>Yes (§16 contradiction, interlock non-enabled, drainage gap)</td>
+<td>Yes (pan-to-pan interlock species)</td>
+</tr>
+<tr>
+<td>30</td>
+<td>r2-product-curious</td>
+<td>NOT CLEAN</td>
+<td>Yes (drawings mismatch, cross-refs, underground comms gap)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>31</td>
+<td>r2-env-critical</td>
+<td>NOT CLEAN</td>
+<td>Yes (§16 contradiction, drainage gaps, fertigation cross-contamination)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>32</td>
+<td>r2-env-curious</td>
+<td>NOT CLEAN</td>
+<td>Yes (dual preferred embodiments, §16 contradiction, Fig 2)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>33</td>
+<td>r2-acoustics-critical</td>
+<td>NOT CLEAN</td>
+<td>Yes (Fig 2 contradiction, claim 78 "flat bottom", §16/Fig 11)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>34</td>
+<td>r2-acoustics-curious</td>
+<td>NOT CLEAN</td>
+<td>Yes (§16 contradiction, reference numeral conflicts, Fig 14 gaps)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>35</td>
+<td>r2-network-critical</td>
+<td>NOT CLEAN</td>
+<td>Yes (802.1s wrong, WiFi 6E constraints, AP mobility, security)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>36</td>
+<td>r2-network-curious</td>
+<td>NOT CLEAN</td>
+<td>Yes (drawings mismatch, claim 78/55 contradiction, fire claims)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>37</td>
+<td>r2-risk-critical</td>
+<td>NOT CLEAN</td>
+<td>Yes (egress not passive, fire claim language, AED mobility)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>—</td>
+<td>r2-risk-curious</td>
+<td>NOT CLEAN</td>
+<td>Yes (drawings mismatch, emergency egress, fire suppression)</td>
+<td>None noted</td>
+</tr>
+<tr>
+<td>—</td>
+<td>r2-illust-critical</td>
+<td>NOT CLEAN</td>
+<td>Yes (drawings list mismatch, 5 minor figure fixes)</td>
+<td>None noted</td>
+</tr>
+</tbody>
+</table>
+<h3>Summary Counts</h3>
+<ul>
+<li><strong>CLEAN (no issues):</strong> 0 agents</li>
+<li><strong>MOSTLY CLEAN (minor/opportunities only):</strong> 4 agents (patent-law-curious, mfg-curious, ptab-critical, ada-critical)</li>
+<li><strong>NOT CLEAN (new issues found):</strong> 33 agents</li>
+</ul>
+<hr />
+<h2>2. ALL NEW CRITICAL FINDINGS (Not in Round 1)</h2>
+<h3>TIER 1: UNIVERSAL CONSENSUS BLOCKERS (cited by 20+ agents)</h3>
+<p><strong>C1. DRAWINGS LIST MISMATCH (lines 1004-1005)</strong>
+Figs 13/14 listed as "Inter-tile manifold" and "Pop-up utility" but actual PNGs are three-part architecture. Result: independent claims 58 and 61 have NO figure; claims 78-89 have figures but are unlisted.
+<em>Cited by:</em> Nearly every agent. <strong>FIX BEFORE FILING.</strong></p>
+<p><strong>C2. SECTION 16 INTERNAL CONTRADICTION (line 466)</strong>
+States "trough channels do not carry irrigation water (all utilities route through inter-tile manifolds)" immediately before §16.1-16.3 describe sub-channel water delivery. Threatens claims 25, 26, 51.
+<em>Cited by:</em> 20+ agents. <strong>FIX BEFORE FILING.</strong></p>
+<h3>TIER 2: HIGH-SEVERITY NEW ISSUES (cited by 5+ agents)</h3>
+<p><strong>C3. CLAIM 55/78 ANTECEDENT CONFLICT</strong>
+Claim 55 requires autonomous self-propelled repositioning; dependent claim 78 says pan has "no integrated drive mechanism." Logical contradiction.
+<em>Cited by:</em> hort-curious, vc-curious, network-curious, ada-curious, product-curious</p>
+<p><strong>C4. CLAIM 39/41 ANTECEDENT BASIS (§112(b))</strong>
+"Roller chassis," "elevator boxes," "tile mesh network," "chassis load cells," "elevator limit switches" used with definite articles but never introduced. Hardware-tying fix created new indefiniteness.
+<em>Cited by:</em> lit-critical, sw-critical, vc-critical, hosp-critical, mfg-curious, sw-curious</p>
+<p><strong>C5. CLAIM 30 FORWARD REFERENCE + TERMINOLOGY MISMATCH</strong>
+References "claim 43" (higher-numbered) and says "horizontal-slide" while claim 43 says "horizontal-transfer."
+<em>Cited by:</em> patent-law-critical, civil-curious, ptab-curious, landscape-critical, sw-curious, lit-critical</p>
+<p><strong>C6. FIRE-SUPPRESSION HYDRAULICS IMPOSSIBLE (Claims 71, 76)</strong>
+2 GPM / 60 PSI micro-pumps in series cannot deliver NFPA sprinkler flows. "Pressure-boosted pipeline" is physically unachievable as described.
+<em>Cited by:</em> mech-eng-curious, sw-critical, fire-critical, fire-curious, vc-critical, network-curious, risk-critical</p>
+<p><strong>C7. FIG 2 CONTRADICTS §2.3</strong>
+Fig 2B shows trough-floor elevator at ~12" travel; §2.3 describes container-integrated lift at 3-6". Fundamentally different mechanisms.
+<em>Cited by:</em> landscape-critical, landscape-curious, env-curious, acoustics-critical, acoustics-curious, ada-curious</p>
+<p><strong>C8. CLAIM 78/82 "FLAT FEATURELESS BOTTOM" vs ACTUAL PAN CONTENTS</strong>
+Pan carries micro-pump, 3-way valve, MCU, manifold connectors, power buffer per spec, but claim says "flat featureless bottom."
+<em>Cited by:</em> civil-curious, sw-critical, acoustics-critical, risk-curious</p>
+<h3>TIER 3: SIGNIFICANT NEW ISSUES (cited by 2-4 agents)</h3>
+<p><strong>C9.</strong> Claim 43/48 near-duplicate (both recite 2mm settle) — patent-law-critical, hort-curious, hosp-curious, product-curious
+<strong>C10.</strong> "needfor" typo line 39 — 15+ agents (cosmetic but universal)
+<strong>C11.</strong> Orphan "682 tiles" in §26.21 — landscape-critical, mfg-curious, product-curious
+<strong>C12.</strong> Dangling cross-ref §24.3 "Section 46" — landscape-critical, mfg-curious, product-curious
+<strong>C13.</strong> Cross-ref §20.2(l) "Section 18" should be §14.2 — landscape-critical, mfg-curious
+<strong>C14.</strong> §15.1 missing space after bold — hort-curious, sw-curious
+<strong>C15.</strong> Placeholder text still in lines 6, 9 — lit-curious, vc-curious, risk-curious, acoustics-critical
+<strong>C16.</strong> Two incompatible elevator definitions (§15 vs §20B) — mfg-critical, hosp-curious, civil-critical
+<strong>C17.</strong> 3mm engagement tolerance insufficient for outdoor conditions — mech-eng-curious, product-critical
+<strong>C18.</strong> Pan-to-trough retention force contradiction (wind vs chassis release) — mech-eng-curious, product-critical, risk-critical
+<strong>C19.</strong> Sub-surface chassis/elevator communication gap — product-curious, env-curious
+<strong>C20.</strong> Emergency egress depends on motion (not passive) — risk-critical, risk-curious, ada-curious
+<strong>C21.</strong> Gas fire-feature tiles mechanically undefined for repositioning — fire-curious, risk-critical
+<strong>C22.</strong> Weight-reduction percentages inconsistent (35-45% vs 40-60%) — vc-critical
+<strong>C23.</strong> Abstract exceeds 150-word limit (~850-1400 words) — 8+ agents
+<strong>C24.</strong> Fig 8 system architecture is stale (no three-part, no mesh) — elec-curious, network-critical
+<strong>C25.</strong> Claim 1 anticipated by admitted prior art (Harvest/Kiva) — lit-curious, vc-critical, network-curious, ptab-curious</p>
+<hr />
+<h2>3. CROSS-DOMAIN CONFLICTS BETWEEN FIXES</h2>
+<table>
+<thead>
+<tr>
+<th>Conflict</th>
+<th>Domains</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>§16 Dry vs Wet</strong></td>
+<td>Civil + Hort + Product + Env</td>
+<td>Drainage fix (dry troughs) contradicts hydroponic sub-channel claims 25/26/51. Fig 11 "All channels DRY" vs §16.1-16.3 wet sub-channels.</td>
+</tr>
+<tr>
+<td><strong>Claim 39 Alice fix vs §112(b)</strong></td>
+<td>Patent-Law + Litigation + SW</td>
+<td>Hardware-tying fix for Alice/§101 introduced antecedent-basis indefiniteness. Net-neutral or worse per lit-critical.</td>
+</tr>
+<tr>
+<td><strong>Fire "supplement" disclaimer vs Claims 71/76</strong></td>
+<td>Fire + Risk + Litigation</td>
+<td>Spec §26.12 disclaims independent fire suppression, but claims 71/76 positively recite "fire suppression system" without caveat.</td>
+</tr>
+<tr>
+<td><strong>§2.3 preferred embodiment vs §20B preferred embodiment</strong></td>
+<td>Env + Civil + Acoustics</td>
+<td>Two contradictory architectures both labeled "preferred." Container-integrated lift vs passive pan with separate chassis.</td>
+</tr>
+<tr>
+<td><strong>Claim 78 "flat bottom" vs §20B.1 pan contents</strong></td>
+<td>SW + Civil + Acoustics</td>
+<td>Claim language contradicts spec description of pump/valve/MCU on pan bottom.</td>
+</tr>
+<tr>
+<td><strong>Claim 55 "autonomous" vs Claim 78 "no drive"</strong></td>
+<td>Hort + VC + Network</td>
+<td>Parent claim requires self-propulsion; dependent claim removes all drive.</td>
+</tr>
+<tr>
+<td><strong>Powered roller on sending only (Claim 43) vs both sides (Claim 48/spec)</strong></td>
+<td>Patent-Law</td>
+<td>Claim 43 rewrite recites roller on sending side only; spec and Claim 48 require both sides.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. FIXES VERIFIED AS HOLDING (Round 1 items confirmed resolved)</h2>
+<ul>
+<li>✅ Flexible egress timing (§7) — site-specific, no numeric trap</li>
+<li>✅ §13.4 power architecture — trough-primary and manifold-primary coexist</li>
+<li>✅ Cost disclaimer §20B.4 — "illustrative estimates" language present</li>
+<li>✅ §21.4 weatherproofing cross-ref to §14.11 drain-before-energize</li>
+<li>✅ Claim 43 rewrite tracks spec (powered roller conveyor)</li>
+<li>✅ Claims 39/41 Alice §101 hardware-tying (conceptually improved, execution has §112 issue)</li>
+<li>✅ Fire suppression "supplements" language in §26.12</li>
+<li>✅ ASCE 7 parametric wind loading</li>
+<li>✅ Formwork alternatives in §20B.6</li>
+<li>✅ Figs 15/16 removal (stale references cleaned)</li>
+</ul>
+<hr />
+<h2>5. FINAL RECOMMENDATION</h2>
+<h3>GO / NO-GO: <strong>CONDITIONAL GO for Provisional Filing</strong></h3>
+<p><strong>Rationale:</strong> A provisional patent application has a low formal bar. None of the issues found are fatal for a provisional, which is not examined. However, several issues directly weaken the priority date for key claims and should be fixed in the filing window.</p>
+<h3>MUST-FIX BEFORE FILING (4 items, ~1-2 hours)</h3>
+<ol>
+<li><strong>Fix drawings list (lines 1004-1005)</strong> — Update to describe the three-part architecture figures actually present. Note manifold/pop-up figures are missing. (30 min)</li>
+<li><strong>Fix §16 line 466 contradiction</strong> — Scope "do not carry water" to the manifold-only embodiment. One sentence edit. (10 min)</li>
+<li><strong>Fix "needfor" typo line 39</strong> and placeholder text lines 6, 9. (5 min)</li>
+<li><strong>Fix claim 30 forward-reference</strong> — Either renumber or inline the limitation. Also align "slide" vs "transfer" terminology. (15 min)</li>
+</ol>
+<h3>SHOULD-FIX BEFORE FILING (5 items, ~1-2 hours)</h3>
+<ol>
+<li>Fix claim 55/78 conflict (make 78 independent or loosen 55)</li>
+<li>Fix claim 39/41 antecedent basis (introduce chassis/elevator in preamble)</li>
+<li>Fix claim 78/82 "flat featureless bottom" to "bottom lacking integrated locomotion hardware"</li>
+<li>Harmonize fire claims 71/76 with §26.12 "supplement" disclaimer</li>
+<li>Fix dangling cross-refs (§24.3 "Section 46", §20.2(l) "Section 18")</li>
+</ol>
+<h3>FIX IN NON-PROVISIONAL CONVERSION (12-month window)</h3>
+<ul>
+<li>Add manifold + pop-up utility figures</li>
+<li>Redraw Fig 2 for consistency with §2.3 or §20B</li>
+<li>Update Fig 8 system architecture</li>
+<li>Add flowchart figure for software method claims</li>
+<li>Trim abstract to 150 words</li>
+<li>Reconcile weight-reduction percentages</li>
+<li>Add sub-surface comms disclosure for chassis/elevator</li>
+<li>Address fire-suppression hydraulics (reframe as misting/cooling)</li>
+<li>Add continuous-egress invariant claim</li>
+<li>Numerous enablement-strengthening paragraphs identified by domain experts</li>
+</ul>
+<h3>CROWN JEWEL CLAIMS (strongest after R2 fixes)</h3>
+<ol>
+<li><strong>Claim 82</strong> — Three-part architecture (pan/chassis/elevator with shared fleet). Strongest novelty.</li>
+<li><strong>Claim 43</strong> — Terrace transit (planter never traverses slope). Unique outdoor capability.</li>
+<li><strong>Claim 58</strong> — Inter-tile connectivity manifold. Strong standalone licensing vehicle.</li>
+<li><strong>Claim 86</strong> — Software-defined landscape zones. Highest commercial value.</li>
+<li><strong>Claim 66</strong> — Automated event orchestration with signed readiness report.</li>
+<li><strong>Claim 50</strong> — Surface grid + sub-surface tunnel + depot (operational security).</li>
+<li><strong>Claim 55</strong> — Universal tile family. Broadest platform claim.</li>
+</ol>
+<hr />
+<p><em>Report compiled from 37 Round 2 expert review agents across 18 domains.</em></p>
+
+</body>
+</html>
