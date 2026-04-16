@@ -782,7 +782,9 @@ At $15M debt: debt service ~$1.2M, net cash flow ~$1.1M, DSCR ~1.9x.
 
 ### Philosophy
 - **NOT a mass-tourism destination.** Not Disney. Not a theme park. A genuine labyrinth.
-- Fairly exclusive access on certain days, limited numbers
+- **Open daily** (revised from Sundays-only), driven by treasure hunt demand and reconfigurable maze capability
+- Controlled daily admissions; throttle demand with limited supply when needed
+- High price, respectful clientele who value the experience
 - Always fully sold out; throttle demand with limited supply
 - High price, high-class clientele who respect the place
 
@@ -885,6 +887,121 @@ At $15M debt: debt service ~$1.2M, net cash flow ~$1.1M, DSCR ~1.9x.
 - Use dry, puzzled tone of 18th-century correspondence and early academic inquiry
 - Let the internet do the rest
 - The experience starts when someone reads something and can't quite verify it
+
+### The Backstory (Official Narrative)
+
+The property's most recent owner built the hotel in 2032 around what was already an older hedge maze of uncertain origin. The maze had been growing and evolving on the property for an indeterminate period before the current development. Prior owners are not available to disclose details about its history. (Note: pay previous property owner for an NDA if possible; their silence becomes part of the mystery.)
+
+Key elements of the official narrative:
+- The current owner (unnamed, operating through an LLC) recognized the maze's significance and built the hotel and park to preserve and share it
+- The maze has never been fully mapped due to problems with tunnel collapses in certain older sections (none remotely open to the public)
+- Some areas where hedge grew over appear externally as dense vegetation nobody can pass through
+- The Labyrinth Park Archaeological Trust has chosen not to disturb the natural state of the maze's more ancient, as-yet unexplored portions
+- Certain "ancient" portions are being carefully preserved and opened to the public over time, in limited showings, on select days and times
+- The 2 years of pre-opening construction (2030-2032) are accounted for as "the most recent phase of the maze's evolution"
+
+**What makes this defensible (not fraud):**
+- The maze WAS built before the hotel opened (by 2 years). True.
+- Prior owners ARE unavailable. True (NDA or simply not contacted).
+- The maze HAS never been fully mapped... by the public. True.
+- Some sections ARE inaccessible. True (closed sections, sealed passages).
+- The narrative never claims a specific false age. It says "uncertain origin."
+
+### Community Mythology Engine
+- Sponsor a few anonymous social media posts to seed mystery (drone footage of "secret regions," speculation threads)
+- Let Reddit do the rest. Someone WILL start a subreddit. Someone WILL fly a drone. The resulting debate is free marketing.
+- Academic partnerships (UNC, Wake Forest) conducting real research on the property lend credibility
+- The line between what's real and what's curated becomes genuinely impossible to determine from outside
+
+---
+
+## 21B. The Labyrinth Park Archaeological Trust & Treasure System
+
+### Overview
+The Labyrinth Park Archaeological Trust (operated by the 501(c)(3) education/conservation nonprofit) maintains a standing offer to purchase significant archaeological finds discovered on the property. This is framed as an acquisition policy, not a game or contest.
+
+### The Artifacts
+
+**Tier 1: Clay Medallions ($100-500, frequent)**
+- Hand-pressed clay discs with spiral/labyrinth motifs, each unique but from the same "tradition"
+- Commissioned from artisan ceramicists, properly aged
+- Hidden in plain sight: on stone shelves, in wall niches, on small pedestals in alcoves
+- Guests don't dig; they NOTICE. The medallion sits in a room that just opened today via reconfiguration
+- Trust "purchases" each based on its markings; some are more "significant" than others
+- Finder's name on a card in the museum: "Discovered by [Name], [Date], in [Location]"
+- Budget: ~$50-100K/year
+
+**Tier 2: Carved Stone Tablets ($5,000-$25,000, a few per year)**
+- Larger tablets with Siouan/Minoan hybrid pictographs
+- Hidden in rooms that only open on specific dates (solstices, equinoxes, full moons)
+- Require finding a specific rare path AND being there at the right time
+- Trust acquires with ceremony: press release, photo with discoverer, museum display
+- Budget: ~$25-50K/year amortized
+
+**Tier 3: Major Artifacts ($100,000, once every 1-3 years)**
+- Carved gorgets (shell medallions echoing real Siouan artifacts) or bronze labrys (double axes)
+- Museum-quality, heavy, obviously precious
+- Hidden in rarest rooms: behind the waterfall cave, at the end of paths that open on one unpredictable day per year
+- Full ceremony: giant check from the Trust, press conference, glass case and plaque
+- Budget: ~$50K/year amortized
+
+**Tier 4: The Grand Artifact ($1,000,000, once per decade or never)**
+- **The Thread of Ariadne:** A golden thread (actual gold wire, coiled on a spindle). Or a solid gold labrys.
+- Material value alone is significant; mythological value within the Labyrinth Park story is beyond price
+- May never be found. The POSSIBILITY that it exists is what matters.
+- Trust's standing offer to purchase for $1M is posted permanently
+- Budget: $100K/year amortized (if ever claimed)
+
+### How It Works (Operationally)
+
+**Placement:**
+- Artifacts placed on surfaces (shelves, niches, pedestals, alcoves). Never buried. Never inside anything.
+- Rooms containing artifacts are only accessible via reconfigured maze paths
+- Yesterday's artifact room is today's sealed dead end
+- Staff restock during overnight reconfiguration; nobody sees placement
+
+**Anti-Cheating:**
+- No digging allowed (grounds rule, enforced, immediate ejection)
+- Artifacts in plain sight, not hidden inside or under anything
+- Movable hedge sections mean you can't camp out waiting for a room to open
+- Security cameras in artifact rooms ("preservation monitoring cameras for the archaeological site")
+- The app shows you reached a room but never indicates if something is in it
+
+**Framing (Not a Game):**
+- This is NOT "prize money." It is "acquisition funding."
+- The Trust "purchases" artifacts from discoverers for their scholarly and preservation value
+- The money is "but an afterthought" compared to the artifact's significance
+- Discoverers are called "archivists" not "winners"
+- Ceremony language: "The Trust is pleased to acquire this significant find..."
+
+### The Museum of Discovered Artifacts
+- Growing glass-case collection in the hotel or visitor center
+- Each artifact displayed with: photo of discoverer, date, location in maze, description
+- Giant ceremonial check photos on the wall
+- By Year 20: 200+ medallions, a dozen tablets, several gorgets, wall of discoverer photos
+- Guests who found a $100 medallion in 2035 bring grandchildren in 2055 to see their name
+- The museum itself becomes an attraction and a reason to visit
+
+### Financial Structure
+| Tier | Annual Amortized Cost |
+|------|----------------------|
+| Clay medallions | $50-100K |
+| Stone tablets | $25-50K |
+| Major artifacts | $50K |
+| Grand artifact | $100K |
+| **Total** | **$200-300K/year** |
+
+- All funded through the 501(c)(3) Trust, via donations and tax-deductible contributions
+- The park charges admission; the Trust acquires artifacts. Entities stay clean.
+- At 2% of projected revenue, this is insanely high ROI marketing
+- Every discovery is a global news story you can't buy
+
+### Impact on Operating Model
+- Park can now operate DAILY (not just Sundays) because treasure hunt drives constant demand
+- Maze reconfiguration ensures family retains bespoke access to 2/3 of property at all times
+- Daily attendance target: 500-2,000 visitors
+- Revenue projection at scale: $9-18M/year from admissions alone (on top of hotel $5.5M)
+- Matches or exceeds Biltmore revenue potential
 
 ---
 
