@@ -587,6 +587,71 @@ The invention encompasses the following variations:
 
 **20.7 Mixed-Geometry Transitions.** Where square and hexagonal zones meet, transition tiles (for example, a trapezoidal or compound-footprint tile) reconcile the two grids while preserving utility continuity across the interface.
 
+### 20B. Three-Part Modular Architecture
+
+**20B.1 System Overview.** In a preferred embodiment, the mobile landscape tile is decomposed into three independent, cooperating components that operate in three nested trough levels:
+
+(a) **Planter Pan (Part 1, uppermost).** The surface payload container (hedge planter, lawn tray, furniture deck, or any tile from the family of Section 20.2). The planter pan has a flat bottom surface with no integrated wheels, drive motors, suspension, braking, navigation, or locomotion mechanism of any kind. The pan cannot move itself; all locomotion is provided by the roller chassis (Part 2). The pan sits in the outermost (widest) trough level when at rest, and is lifted and transported by the roller chassis.
+
+Although the planter pan carries no locomotion hardware, it is not a passive concrete tray. Each pan integrates the following onboard systems:
+
+- **Micro-pump and 3-way valve manifold** (per Section 26.18): a single small booster pump and solenoid valve manifold providing irrigate mode, fire suppression mode, and bypass mode (re-pressurizing flow to downstream tiles).
+- **Inter-tile connectivity manifold hardware on all external edges** (per Section 21): the physical connectors, solenoids, seals, check valves, contactors, and self-aligning guides for power, data, fiber, water supply, water return, and fire suppression couplings.
+- **Basic control electronics** for manifold engagement and disengagement sequencing, including the staged connection logic of Section 21.3 (mechanical engagement, water coupler engagement, data engagement, low-voltage handshake, 48V contactor closure, water valve opening, and the reverse sequence on separation).
+- **Horticultural sensors**: soil moisture, temperature, and (for hydroponic configurations) EC and pH sensors in the root zone, reporting to the central controller through the data mesh.
+- **Small onboard power buffer** (supercapacitor or compact lithium iron phosphate cell, approximately 5-20 Wh) that maintains manifold state, sensor operation, and control electronics during the brief period of chassis engagement and disengagement, when the pan is momentarily disconnected from both trough power and neighbor power. This buffer is not sized for locomotion (the pan has none) but ensures that manifold solenoids hold position and sensors continue reporting during transit.
+
+The pan is, in essence, a "smart bucket with plumbing": it knows what it contains, manages its own irrigation and fire suppression, engages and disengages its own edge connections, and monitors its own plant health, but it relies entirely on the roller chassis for physical movement. Because the pan excludes all locomotion hardware (the heaviest and most expensive subsystems), it remains substantially lighter and less costly than a monolithic self-propelled tile. A typical hedge planter pan may cost $400-800 to manufacture.
+
+(b) **Roller Chassis (Part 2, middle level).** A motorized wheeled platform that travels in a middle-depth trough channel, slightly narrower than the outermost trough. The roller chassis includes: self-leveling suspension, omnidirectional drive wheels, fail-safe brakes, position sensors, wireless communication, edge AI processor, and onboard battery. The chassis is slightly narrower than the planter pan, allowing it to travel freely beneath pans that are seated in the outer trough. To engage a planter pan, the roller chassis positions itself beneath the pan and raises its upper bearing surface by approximately 3 millimeters, accepting the full weight of the pan. The chassis then lifts the pan clear of the outer trough walls (via cooperation with the elevator box, Part 3) and drives to a new location. Upon arrival, the process reverses: the pan is lowered into the destination outer trough and the chassis retracts its bearing surface by 3mm, disengaging from the pan and becoming free to travel to its next assignment.
+
+The roller chassis is a REUSABLE transport vehicle, not a permanent component of each tile. An installation with 600 planter pans may require only 20-30 active roller chassis at any given time. A single chassis can reposition dozens of pans per night during a reconfiguration cycle. When not in use, chassis park in sub-surface depot stations.
+
+The roller chassis also transports COVER TILES: when a planter pan is removed from a trough position, a roller chassis retrieves a cover tile (stone surface, lawn tray, or blank panel) from a cover depot, transports it to the vacated position, and seats it in the outer trough. The cover tile's surface aligns perfectly with the surrounding path or landscape, concealing the trough and presenting a seamless surface. This cover delivery occurs immediately after pan removal, maintaining continuous visual integrity of the landscape.
+
+(c) **Elevator Box (Part 3, deepest level).** A compact lifting mechanism that travels in the narrowest, deepest center trough channel. The elevator box includes a vertical lift mechanism (scissor jack, hydraulic cylinder, or screw jack) capable of raising the roller chassis (with or without a planter pan on it) from the middle trough level up to ground level for transit across the surface, or for terrace-level transfers. The elevator box is independent, self-propelled within its center channel, and relocatable to any position where a lift operation is needed. An installation may require only 10-15 elevator boxes for a property with hundreds of trough positions, as they roam to where they are needed.
+
+**20B.2 Three-Trough Nesting.** The trough infrastructure comprises three nested channel levels at each position:
+
+(a) **Outer trough (widest):** Receives the planter pan. Width matches the pan footprint. Depth sufficient to seat the pan with its surface flush with surrounding grade. When occupied by a pan, the inter-tile manifolds on the pan edges engage with manifolds on adjacent pans.
+
+(b) **Middle trough (intermediate width):** Below and narrower than the outer trough. The roller chassis travels in this channel, passing beneath seated pans without disturbing them. The middle trough forms a continuous travel network connecting all outer trough positions across the property.
+
+(c) **Center trough (narrowest):** Below and narrower than the middle trough. The elevator box travels in this deepest channel. The center trough also forms a continuous network, allowing elevator boxes to reach any position.
+
+All three trough levels may be cast as a single precast concrete section for manufacturing efficiency and alignment precision, or may be assembled from stacked channel sections.
+
+**20B.3 Operating Sequences.**
+
+**Relocating a planter pan:**
+1. Elevator box travels through center trough to the position beneath the target pan.
+2. Roller chassis travels through middle trough to the same position.
+3. Chassis raises its bearing surface 3mm, engaging the pan bottom.
+4. Elevator box lifts the chassis (with pan) until the pan clears the outer trough walls.
+5. Chassis drives the pan through the middle trough network (or across the surface if fully elevated to grade) to the destination.
+6. Elevator box at the destination (same box if it traveled alongside, or a different box already in position) lowers the chassis until the pan seats in the destination outer trough.
+7. Chassis retracts its bearing surface, disengaging from the pan.
+8. Chassis is now free to accept its next assignment.
+
+**Covering a vacated position:**
+1. Immediately after a pan is removed, a roller chassis retrieves a cover tile from a nearby cover depot.
+2. The cover tile is transported and seated in the vacated outer trough, presenting a seamless surface.
+3. The cover tile may be a stone surface panel, a lawn tray with living grass, a decorative panel, or a blank structural cover, selected to match the surrounding landscape context.
+
+**Autonomous fleet management:**
+The central controller manages the fleet of roller chassis and elevator boxes as shared resources, dispatching them to assignments based on the nightly reconfiguration schedule, transit distances, battery state of charge, and maintenance status. Chassis and elevator boxes charge at depot stations when idle.
+
+**20B.4 Cost Advantages.** The three-part architecture dramatically reduces system cost compared to a monolithic design where every planter pan includes its own drive mechanism:
+
+- Planter pans (smart, with pump/valve/sensors/manifolds, no locomotion): $400-800 each
+- 600 pans at $600 average: $360,000
+- 30 roller chassis (full drive system): $2,000-4,000 each = $60,000-120,000
+- 15 elevator boxes: $1,500-3,000 each = $22,500-45,000
+- Cover tile inventory (200 covers at $100-200): $20,000-40,000
+- Total system: $462,500-565,000
+
+Compared to the monolithic design (600 units at $1,400-2,950 each = $840,000-1,770,000), the three-part architecture saves 45-68% on hardware cost while providing equivalent or superior capability.
+
 ### 21. Inter-Tile Connectivity Manifold
 
 **21.1 Per-Edge Manifold.** Each tile base carries an inter-tile connectivity manifold on each external edge (four on square tiles, six on hexagonal tiles). Each manifold carries, at minimum: (a) a 48V DC power coupling rated for at least 50 amps continuous, (b) a data coupling comprising both an LC-format singlemode or multimode fiber connector and a shielded gigabit Ethernet contact set, (c) a water supply quick-connect rated 30 to 50 psi, 3/4-inch nominal, and (d) a water return quick-connect of equal rating, such that any two adjacent tiles exchange power, data, and water across their shared edge without any external cabling.
@@ -862,6 +927,16 @@ The following informal claims outline the scope of the invention. Formal claims 
 **76.** The system of claim 55, wherein each tile base includes a single micro-pump and a 3-way solenoid valve manifold on the water supply path, the valve manifold switchable between irrigate mode (pump drives local wicking circuit), fire suppression mode (pump drives local suppression head), and bypass mode (pump re-pressurizes flow to downstream tiles without local consumption), and wherein the central controller assembles a pressure-boosted pipeline from water source to fire zone by commanding intervening tiles to bypass mode and fire zone tiles to suppression mode.
 
 **77.** The system of claim 55, wherein each tile supports at least two power operating modes: a normal idle mode drawing approximately 2 to 5 watts per tile, and an ultra-low power mode drawing less than 0.1 watts per tile, and wherein the central controller transitions tiles between modes based on occupancy, scheduling, and battery state, such that dormant landscape areas sustain chains of 200 or more tiles from a single power injection point.
+
+**78.** The system of claim 55, wherein each mobile tile base is decomposed into three independent cooperating components: (i) a planter pan comprising the surface payload and inter-tile connectivity manifolds but no integrated drive mechanism, having a flat featureless bottom; (ii) a roller chassis comprising motorized wheels, self-leveling suspension, braking, and navigation, traveling in a middle trough channel beneath the planter pan; and (iii) an elevator box comprising a vertical lift mechanism, traveling in a deepest center trough channel beneath the roller chassis; wherein the roller chassis engages the planter pan by raising its bearing surface, the elevator box lifts the chassis and pan assembly for transit, and the roller chassis disengages upon seating the pan at a destination trough.
+
+**79.** The system of claim 78, wherein the roller chassis is a reusable shared-fleet transport vehicle, the number of active roller chassis being substantially fewer than the number of planter pans, and wherein the central controller dispatches chassis to pan-relocation assignments as shared resources.
+
+**80.** The system of claim 78, wherein the roller chassis also transports cover tiles that are seated in vacated outer trough positions immediately after pan removal, presenting a seamless surface that conceals the trough infrastructure and matches the surrounding landscape.
+
+**81.** The system of claim 78, wherein the trough infrastructure comprises three nested channel levels cast as a single precast concrete section or assembled from stacked channel sections, the outer trough receiving the planter pan, the middle trough providing a travel network for roller chassis, and the center trough providing a travel network for elevator boxes.
+
+**82.** (Independent) A three-part modular landscape tile transport system comprising: a plurality of passive planter pans each having a flat bottom, inter-tile connectivity manifolds on external edges, and no integrated drive mechanism; a fleet of self-propelled roller chassis each configured to travel in a middle trough channel beneath the planter pans, to engage a selected pan by raising a bearing surface, and to transport the pan to a destination; and a fleet of self-propelled elevator boxes each configured to travel in a center trough channel beneath the roller chassis and to lift a chassis with or without an engaged pan from the middle trough level to a higher level for surface transit or inter-terrace transfer; wherein the number of roller chassis and elevator boxes is substantially fewer than the number of planter pans, and wherein a central controller dispatches chassis and elevator boxes as shared fleet resources.
 
 ---
 
