@@ -1,0 +1,52 @@
+[
+  {
+    "prompt": "Aerial view of a magnificent 70-acre estate in the North Carolina Piedmont at golden hour. Rolling hills at 800 feet elevation, covered with an enormous elaborate hedge maze stretching across the landscape. A small luxury boutique hotel nestled among the hedges with terracotta roofs. Dense forest borders the property. No mountains visible, just rolling green Piedmont countryside extending to the horizon. Warm late afternoon light casting long shadows through the maze corridors. Photorealistic, architectural photography style, cinematic composition, shot from a helicopter at 500 feet altitude.",
+    "filename": "01_aerial_estate.png",
+    "aspect_ratio": "16:9"
+  },
+  {
+    "prompt": "A luxury car driving through a narrow hedge-walled corridor at dusk. The hedges are 10 feet tall, perfectly manicured, forming a living tunnel. Warm pathway lighting embedded in the ground illuminates the lane. The car's headlights glow against the dark green hedge walls. The path curves ahead mysteriously. This is the arrival experience at an ultra-luxury boutique hotel, driving through a hedge labyrinth to reach the entrance. Photorealistic, moody, cinematic, warm golden and deep green tones. Shot from slightly above and behind the car.",
+    "filename": "02_arrival_labyrinth.png",
+    "aspect_ratio": "16:9"
+  },
+  {
+    "prompt": "Interior of an ultra-luxury boutique hotel suite, 800 square feet. Private stone terrace visible through floor-to-ceiling windows overlooking a manicured Italian garden with cypress trees and a reflecting pool. Inside: king bed with white linen, stone fireplace burning low, deep soaking tub visible through an archway. Warm wood and stone materials, contemporary rustic design. Evening lighting, candles on the mantle. The mood is intimate, exclusive, mysterious. Think Auberge Resorts or Relais and Chateaux quality. Photorealistic architectural interior photography.",
+    "filename": "03_hotel_suite.png",
+    "aspect_ratio": "16:9"
+  },
+  {
+    "prompt": "A person walking through a tall formal hedge maze corridor, viewed from behind. The hedges are 13 feet tall, perfectly trimmed, creating a deep green canyon. Dappled sunlight filters through. Ahead, the path splits into two directions. On a small stone shelf built into the hedge wall, barely visible, sits a small clay disc with a spiral pattern etched into it, catching the light. The person hasn't noticed it yet. Photorealistic, mysterious atmosphere, muted greens and warm stone tones. Shot at eye level looking down the corridor.",
+    "filename": "04_maze_discovery.png",
+    "aspect_ratio": "3:4"
+  },
+  {
+    "prompt": "A 2-acre natural swimming pond at sunset in the North Carolina countryside. Sandy beach on one shore with Adirondack chairs. Crystal clear heated water reflecting the sky. An artificial stream feeds into the pond over smooth rocks. Tall hedge walls frame the background, with a rustic stone bridge visible in the distance. Families and couples scattered around the beach. Steam rising gently from the warm water in the cool evening air. Photorealistic, warm golden hour lighting, landscape photography.",
+    "filename": "05_swimming_pond.png",
+    "aspect_ratio": "16:9"
+  },
+  {
+    "prompt": "Cross-section architectural illustration of an underground tunnel system beneath a landscaped garden. The tunnel is a precast concrete box culvert, 12 feet wide, well-lit with warm lighting. A small electric cart drives through. Above the tunnel, 4 feet of earth, then manicured lawn and hedge walls of a garden maze. Buildings emerge from artificial hills on either side, their lower levels opening into the tunnel at ground level while their upper floors appear to sit naturally atop hills. Technical but beautiful illustration style, like a high-end architectural rendering cutaway. Warm earth tones, clean lines.",
+    "filename": "06_tunnel_cutaway.png",
+    "aspect_ratio": "16:9"
+  },
+  {
+    "prompt": "A small mysterious room hidden inside a hedge maze. Stone walls, open to the sky above. In the center, an ancient-looking stone well with a wrought iron frame and bucket. Moss grows on the stones. A single shaft of sunlight illuminates the well. The entrance is a narrow gap in the hedge wall that you could easily walk past without noticing. Vines and climbing roses frame the entrance. The mood is enchanted, secret, timeless. Photorealistic, fantasy-tinged, warm and cool tones contrasting.",
+    "filename": "07_wishing_well.png",
+    "aspect_ratio": "3:4"
+  },
+  {
+    "prompt": "A glass display case in an elegant hotel lobby. Inside the case: several clay discs with spiral patterns, a carved stone tablet with pictographic symbols, and a weathered journal page with faded handwriting. A small brass plaque reads text that is not legible. The case is illuminated with warm museum lighting against a dark wood paneled wall. A vase of fresh roses sits beside the case. The overall feeling is of a private collection of mysterious provenance, not a museum. Photorealistic, warm, intimate, slightly mysterious lighting.",
+    "filename": "08_museum_artifacts.png",
+    "aspect_ratio": "4:3"
+  },
+  {
+    "prompt": "A Rose Cross (Rosicrucian symbol) made of wrought iron and living climbing roses, standing in a sunken stone motorcourt. The cross is about 8 feet tall, with deep red roses blooming at the intersection of the cross beams and climbing up the vertical shaft. Stone walls rise around the motorcourt with water sheeting down their surfaces. The sky is visible above. Morning light catches the water and the roses. The mood is sacred, mysterious, deeply personal. Photorealistic, dramatic lighting from above.",
+    "filename": "09_rose_cross.png",
+    "aspect_ratio": "3:4"
+  },
+  {
+    "prompt": "A foggy morning in a formal hedge maze. Ground-level mist drifts through the corridors, knee-high, obscuring the paths. The hedges are tall and dark green, disappearing into the fog. A decorative stone bridge arches over a sunken path crossing, barely visible in the mist. Warm golden light begins to break through from the east. A single bird perches on top of the hedge. The atmosphere is otherworldly, ancient, alive. Photorealistic landscape photography, moody, ethereal, inspired by English estate gardens.",
+    "filename": "10_fog_morning.png",
+    "aspect_ratio": "16:9"
+  }
+]

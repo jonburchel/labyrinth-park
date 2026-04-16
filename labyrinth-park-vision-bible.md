@@ -561,6 +561,41 @@ At $15M debt: debt service ~$1.2M, net cash flow ~$1.1M, DSCR ~1.9x.
 - **The overall effect:** A place built by someone who has studied deeply without ever declaring allegiance. An homage to the greats, meant to inspire speculation of every kind, but only honest speculation reflecting genuine spiritual kinship.
 - **Obelisk (Station 1):** Symbolism TBD. Carries Egyptian, Masonic, and Hermetic associations inherently. The specific meaning and design to be determined.
 
+### The Initiation Well (MUST-HAVE) — For Sam
+- Full reproduction of the **Inverted Tower from Quinta da Regaleira, Sintra, Portugal**
+- **Dedicated to Sam**, inspired by their trip together to Sintra
+- Spiral stone staircase descending ~90 feet underground, nine levels
+- Gothic arches, Templar cross motifs, Masonic/Rosicrucian symbolism throughout
+- At the bottom: tunnels branch off connecting to the underground network
+- Above ground: appears as a mysterious stone circle in a garden
+- Construction: precast concrete rings stacked, finished with carved stone veneer
+- Excavation spoil becomes another artificial hill
+- Estimated cost: $300-500K (fraction of tunnel budget)
+- Becomes a vertical junction in the tunnel network AND arguably the single most photographed feature on the property
+- Connects perfectly to the esoteric symbolism, tunnel infrastructure, and the theme of descent into mystery
+- May serve as one of the Legendary-difficulty artifact locations
+
+### Sacred Spots — Each Kid's Trip
+Each of Jon's kids gets a permanent sacred spot in the labyrinth, inspired by a mystical place from a trip they took together. These are deeply personal monuments disguised as esoteric attractions. The kids may or may not ever know their spot was inspired by their journey.
+
+| Kid | Trip | Sacred Spot | Inspiration |
+|-----|------|-------------|-------------|
+| Sam | Sintra, Portugal | The Initiation Well | Inverted Tower, Quinta da Regaleira |
+| Amy | Ingolstadt, Germany | TBD | Birthplace of the Illuminati (1776, Adam Weishaupt). Possible: a hidden chamber with Illuminati symbolism, an owl shrine, or a reproduction of a Bavarian vault. |
+| [Others] | [Future trips] | TBD | Each trip will produce a feature |
+
+### Oral History Program
+- Film elderly locals in their homes recounting tales they "heard growing up" about the old Southerland estate
+- Stories about high hedges that grew naturally, paths that would turn and you'd come out somewhere you didn't go in
+- Professional documentary-quality production with intimate, lo-fi feel
+- Conducted by the 501(c)(3) Archaeological Trust as genuine Piedmont oral history preservation
+- Interviews are 90% REAL local history (Trading Path, Quaker settlements, tobacco farming) with 10% coached emphasis on mysterious hedgerow stories
+- Subjects compensated via NDA; may never disclose compensation or that specific stories were suggested
+- Released as "Piedmont Oral History Project" on YouTube; low viewership but the footage EXISTS, timestamped, from real people, on the record
+- Creative editing can make interviews seem more intriguing than they actually were
+- In 20 years, researchers investigating Labyrinth Park find these interviews and cannot dismiss them
+- **The final layer of the mythology: the recorded voices of real people, gone by then, who swear their grandmothers warned them about the hedgerows on the summit**
+
 ---
 
 ## 10. Themed Worlds & Gardens

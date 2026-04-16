@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Labyrinth Park: A Vision</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');
+
+/* ═══════════════════════════════════════
+   CSS RESET & ROOT VARIABLES
+   ═══════════════════════════════════════ */
+:root {
+  --forest-deep:    #0B2B1A;
+  --forest:         #1A3C2A;
+  --forest-mid:     #2D5A3F;
+  --forest-light:   #3B7A57;
+  --gold:           #C5A55A;
+  --gold-light:     #D4B96E;
+  --gold-pale:      #E8D5A3;
+  --cream:          #FAF7F0;
+  --cream-warm:     #F5EFE0;
+  --cream-deep:     #EDE5D0;
+  --parchment:      #F0E8D4;
+  --ink:            #1C1C1C;
+  --ink-soft:       #2E2E2E;
+  --ink-light:      #555555;
+  --stone:          #8A8475;
+  --stone-light:    #B8B0A0;
+  --rose:           #8B4050;
+  --rose-soft:      #A65D6F;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 18px;
+}
+
+body {
+  font-family: 'Lora', 'Georgia', serif;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ═══════════════════════════════════════
+   TYPOGRAPHY
+   ═══════════════════════════════════════ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: 3.6rem; }
+h2 { font-size: 2.4rem; margin-bottom: 1.5rem; }
+h3 { font-size: 1.6rem; margin-bottom: 1rem; }
+h4 { font-size: 1.2rem; margin-bottom: 0.75rem; }
+
+p {
+  margin-bottom: 1.4rem;
+  max-width: 42em;
+}
+
+.section-content p {
+  text-align: left;
+}
+
+strong { font-weight: 600; }
+
+em { font-style: italic; }
+
+a {
+  color: var(--forest-mid);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold-pale);
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+/* ═══════════════════════════════════════
+   CONFIDENTIAL WATERMARK
+   ═══════════════════════════════════════ */
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+.section::after {
+  content: 'CONFIDENTIAL';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-35deg);
+  font-family: 'Playfair Display', serif;
+  font-size: 8rem;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.018);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  letter-spacing: 0.15em;
+}
+
+/* ═══════════════════════════════════════
+   SECTION LAYOUTS
+   ═══════════════════════════════════════ */
+.section {
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-content {
+  max-width: 860px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Alternating section backgrounds */
+.bg-cream { background: var(--cream); }
+.bg-warm  { background: var(--cream-warm); }
+.bg-deep  { background: var(--cream-deep); }
+.bg-parchment { background: var(--parchment); }
+
+.bg-dark {
+  background: var(--forest-deep);
+  color: var(--cream);
+}
+.bg-dark h2, .bg-dark h3, .bg-dark h4 { color: var(--gold-light); }
+.bg-dark .section-label { color: var(--gold); border-color: var(--gold); }
+.bg-dark a { color: var(--gold-light); border-bottom-color: rgba(197,165,90,0.3); }
+.bg-dark a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+.bg-dark::after { color: rgba(255, 255, 255, 0.025); }
+.bg-dark .pull-quote { border-left-color: var(--gold); color: var(--cream); }
+.bg-dark .pull-quote cite { color: var(--gold-pale); }
+.bg-dark .table-elegant th { background: var(--forest); color: var(--gold-light); }
+.bg-dark .table-elegant td { border-color: rgba(255,255,255,0.08); color: var(--cream-warm); }
+.bg-dark .table-elegant tr:hover td { background: rgba(255,255,255,0.03); }
+
+.bg-forest {
+  background: var(--forest);
+  color: var(--cream);
+}
+.bg-forest h2, .bg-forest h3, .bg-forest h4 { color: var(--gold-light); }
+.bg-forest .section-label { color: var(--gold); border-color: var(--gold); }
+.bg-forest a { color: var(--gold-light); }
+.bg-forest::after { color: rgba(255, 255, 255, 0.025); }
+.bg-forest .pull-quote { border-left-color: var(--gold); color: var(--cream); }
+.bg-forest .pull-quote cite { color: var(--gold-pale); }
+.bg-forest .table-elegant th { background: var(--forest-deep); color: var(--gold-light); }
+.bg-forest .table-elegant td { border-color: rgba(255,255,255,0.08); color: var(--cream-warm); }
+
+/* ═══════════════════════════════════════
+   SECTION LABELS & DECORATIVE ELEMENTS
+   ═══════════════════════════════════════ */
+.section-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  color: var(--stone);
+  border-top: 2px solid var(--gold);
+  padding-top: 0.75rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+
+.chapter-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  font-weight: 300;
+  color: var(--gold-pale);
+  opacity: 0.5;
+  line-height: 1;
+  margin-bottom: -0.5rem;
+  display: block;
+}
+
+.bg-dark .chapter-number,
+.bg-forest .chapter-number { color: var(--gold); opacity: 0.25; }
+
+/* Maze-like decorative borders */
+.maze-divider {
+  width: 100%;
+  max-width: 400px;
+  height: 4px;
+  margin: 3rem auto;
+  position: relative;
+  background: transparent;
+}
+
+.maze-divider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--gold-pale) 15%,
+    var(--gold) 50%,
+    var(--gold-pale) 85%,
+    transparent 100%
+  );
+}
+
+.maze-divider::after {
+  content: '◆';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.6rem;
+  color: var(--gold);
+  background: inherit;
+  padding: 0 1rem;
+}
+
+.bg-cream .maze-divider::after { background: var(--cream); }
+.bg-warm .maze-divider::after { background: var(--cream-warm); }
+.bg-deep .maze-divider::after { background: var(--cream-deep); }
+.bg-parchment .maze-divider::after { background: var(--parchment); }
+.bg-dark .maze-divider::after { background: var(--forest-deep); }
+.bg-forest .maze-divider::after { background: var(--forest); }
+
+/* Spiral motif for section starts */
+.section-content::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 2rem;
+  border: 2px solid var(--gold-pale);
+  border-radius: 0 0 50% 0;
+  border-top: none;
+  border-left: none;
+  opacity: 0.4;
+}
+
+.bg-dark .section-content::before,
+.bg-forest .section-content::before {
+  border-color: var(--gold);
+  opacity: 0.2;
+}
+
+/* ═══════════════════════════════════════
+   PULL QUOTES
+   ═══════════════════════════════════════ */
+.pull-quote {
+  border-left: 3px solid var(--gold);
+  padding: 1.5rem 0 1.5rem 2rem;
+  margin: 2.5rem 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 38em;
+}
+
+.pull-quote cite {
+  display: block;
+  margin-top: 0.75rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+/* ═══════════════════════════════════════
+   TABLES
+   ═══════════════════════════════════════ */
+.table-elegant {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.9rem;
+}
+
+.table-elegant th {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  padding: 1rem 1.2rem;
+  background: var(--forest-deep);
+  color: var(--gold-light);
+  text-align: left;
+  border-bottom: 2px solid var(--gold);
+}
+
+.table-elegant td {
+  padding: 0.85rem 1.2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.table-elegant tr:hover td {
+  background: rgba(197, 165, 90, 0.04);
+}
+
+.table-elegant .total td {
+  font-weight: 700;
+  border-top: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
+  background: rgba(197, 165, 90, 0.06);
+}
+
+.table-elegant .subtotal td {
+  font-weight: 600;
+  border-top: 1px solid var(--gold-pale);
+}
+
+.table-elegant td.number {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-family: 'Lora', serif;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin: 2rem 0;
+}
+
+/* ═══════════════════════════════════════
+   COVER PAGE
+   ═══════════════════════════════════════ */
+#cover {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: var(--forest-deep);
+  color: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+
+#cover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(197,165,90,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(59,122,87,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(197,165,90,0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+#cover::after {
+  content: 'CONFIDENTIAL';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-35deg);
+  font-family: 'Playfair Display', serif;
+  font-size: 10rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.015);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  letter-spacing: 0.15em;
+}
+
+.cover-content {
+  position: relative;
+  z-index: 1;
+}
+
+.cover-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 4rem;
+  opacity: 0.8;
+}
+
+.cover-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 5.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+  color: var(--cream);
+  text-shadow: 0 2px 40px rgba(0,0,0,0.3);
+}
+
+.cover-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--gold-light);
+  margin-bottom: 5rem;
+}
+
+.cover-line {
+  width: 80px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 2rem;
+}
+
+.cover-meta {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--stone-light);
+  opacity: 0.7;
+}
+
+/* ═══════════════════════════════════════
+   CONFIDENTIAL NOTICE
+   ═══════════════════════════════════════ */
+.confidential-notice {
+  background: var(--forest);
+  color: var(--cream);
+  text-align: center;
+  padding: 1.5rem 2rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--gold);
+}
+
+/* ═══════════════════════════════════════
+   TABLE OF CONTENTS
+   ═══════════════════════════════════════ */
+#toc {
+  padding: 5rem 2rem;
+  background: var(--cream-warm);
+}
+
+#toc .section-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.toc-list li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(197, 165, 90, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.toc-list li a {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  border-bottom: none;
+  flex: 1;
+}
+
+.toc-list li a:hover {
+  color: var(--forest-mid);
+}
+
+.toc-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  color: var(--gold);
+  font-weight: 600;
+  margin-right: 1.5rem;
+  min-width: 2rem;
+}
+
+.toc-dots {
+  flex: 1;
+  border-bottom: 1px dotted var(--stone-light);
+  margin: 0 0.5rem;
+  opacity: 0.3;
+}
+
+/* ═══════════════════════════════════════
+   SPECIAL ELEMENTS
+   ═══════════════════════════════════════ */
+.key-stat {
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-right: 0.3rem;
+}
+
+.bg-cream .key-stat,
+.bg-warm .key-stat,
+.bg-deep .key-stat,
+.bg-parchment .key-stat { color: var(--forest-mid); }
+
+.stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  margin: 2.5rem 0;
+}
+
+.stat-item {
+  text-align: center;
+  flex: 1;
+  min-width: 140px;
+}
+
+.stat-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  display: block;
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--stone);
+  margin-top: 0.5rem;
+}
+
+.bg-dark .stat-label,
+.bg-forest .stat-label { color: var(--stone-light); }
+
+.inline-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--stone);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.feature-card {
+  padding: 1.5rem;
+  border: 1px solid rgba(197, 165, 90, 0.2);
+  border-radius: 2px;
+}
+
+.feature-card h4 {
+  font-size: 1rem;
+  color: var(--forest-mid);
+  margin-bottom: 0.5rem;
+}
+
+.bg-dark .feature-card {
+  border-color: rgba(197, 165, 90, 0.15);
+}
+.bg-dark .feature-card h4 { color: var(--gold-light); }
+
+.bg-forest .feature-card {
+  border-color: rgba(197, 165, 90, 0.15);
+}
+.bg-forest .feature-card h4 { color: var(--gold-light); }
+
+/* Closing section special */
+#closing .cover-title {
+  font-size: 3rem;
+}
+
+/* ═══════════════════════════════════════
+   VISION IMAGES
+   ═══════════════════════════════════════ */
+.vision-image {
+  width: 100%;
+  margin: 2.5rem 0;
+}
+
+.vision-image img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 3px;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.12),
+    0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.vision-image figcaption {
+  margin-top: 0.85rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--stone);
+  text-align: center;
+  font-style: italic;
+}
+
+.bg-dark .vision-image figcaption,
+.bg-forest .vision-image figcaption {
+  color: var(--stone-light);
+}
+
+.bg-dark .vision-image img,
+.bg-forest .vision-image img {
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.35),
+    0 1px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* ═══════════════════════════════════════
+   PRINT STYLES
+   ═══════════════════════════════════════ */
+@media print {
+  html { font-size: 11pt; }
+  
+  .section {
+    min-height: auto;
+    padding: 2rem 1rem;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  #cover {
+    min-height: auto;
+    padding: 3rem 1rem;
+    page-break-after: always;
+  }
+
+  .cover-title { font-size: 3rem; }
+
+  .bg-dark, .bg-forest {
+    background: white !important;
+    color: black !important;
+  }
+
+  .bg-dark h2, .bg-dark h3, .bg-dark h4,
+  .bg-forest h2, .bg-forest h3, .bg-forest h4 {
+    color: var(--forest-deep) !important;
+  }
+
+  .bg-dark .section-label,
+  .bg-forest .section-label {
+    color: var(--stone) !important;
+    border-color: var(--gold) !important;
+  }
+
+  .bg-dark .pull-quote,
+  .bg-forest .pull-quote {
+    color: var(--ink-soft) !important;
+  }
+
+  .bg-dark .table-elegant th,
+  .bg-forest .table-elegant th {
+    background: var(--forest-deep) !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .bg-dark .table-elegant td,
+  .bg-forest .table-elegant td {
+    color: var(--ink) !important;
+    border-color: rgba(0,0,0,0.1) !important;
+  }
+
+  .bg-dark .stat-value,
+  .bg-forest .stat-value { color: var(--forest-deep) !important; }
+  
+  .bg-dark .stat-label,
+  .bg-forest .stat-label { color: var(--ink-light) !important; }
+
+  .section::after {
+    font-size: 5rem;
+    color: rgba(0, 0, 0, 0.03) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .table-elegant th {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a { border-bottom: none !important; }
+
+  .vision-image {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .vision-image img {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════ */
+@media (max-width: 768px) {
+  html { font-size: 16px; }
+  .cover-title { font-size: 3.2rem; }
+  .cover-subtitle { font-size: 1.3rem; }
+  .section { padding: 4rem 1.5rem; }
+  h2 { font-size: 2rem; }
+  .pull-quote { font-size: 1.1rem; padding-left: 1.5rem; }
+  .chapter-number { font-size: 3.5rem; }
+  .stat-value { font-size: 2rem; }
+  .stat-row { gap: 1.5rem; }
+  .section::after { font-size: 4rem; }
+}
+
+@media (max-width: 480px) {
+  .cover-title { font-size: 2.4rem; }
+  .cover-subtitle { font-size: 1.1rem; }
+  h2 { font-size: 1.7rem; }
+  .stat-row { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     CONFIDENTIAL NOTICE
+     ═══════════════════════════════════════ -->
+<div class="confidential-notice">
+  This document is confidential. Do not distribute.
+</div>
+
+<!-- ═══════════════════════════════════════
+     COVER PAGE
+     ═══════════════════════════════════════ -->
+<section id="cover">
+  <div class="cover-content">
+    <div class="cover-label">A Confidential Vision Document</div>
+    <h1 class="cover-title">Labyrinth Park</h1>
+    <p class="cover-subtitle">A Vision.</p>
+    <div class="cover-line"></div>
+    <p class="cover-meta">Confidential &middot; April 2026</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     TABLE OF CONTENTS
+     ═══════════════════════════════════════ -->
+<section id="toc" class="section bg-warm">
+  <div class="section-content" style="max-width:700px;">
+    <span class="section-label">Contents</span>
+    <h2 style="margin-bottom:2rem;">The Story, in Order</h2>
+    <ol class="toc-list">
+      <li><span class="toc-number">I</span><a href="#dream">The Dream</a></li>
+      <li><span class="toc-number">II</span><a href="#property">The Property</a></li>
+      <li><span class="toc-number">III</span><a href="#hotel">The Hotel</a></li>
+      <li><span class="toc-number">IV</span><a href="#labyrinth">The Labyrinth</a></li>
+      <li><span class="toc-number">V</span><a href="#worlds">The Worlds</a></li>
+      <li><span class="toc-number">VI</span><a href="#tunnels">The Tunnels</a></li>
+      <li><span class="toc-number">VII</span><a href="#mythology">The Mythology</a></li>
+      <li><span class="toc-number">VIII</span><a href="#treasure">The Treasure</a></li>
+      <li><span class="toc-number">IX</span><a href="#farm">The Farm</a></li>
+      <li><span class="toc-number">X</span><a href="#esoteric">The Esoteric</a></li>
+      <li><span class="toc-number">XI</span><a href="#residence">The Residence</a></li>
+      <li><span class="toc-number">XII</span><a href="#business">The Business</a></li>
+      <li><span class="toc-number">XIII</span><a href="#privacy">The Privacy</a></li>
+      <li><span class="toc-number">XIV</span><a href="#timeline">The Timeline</a></li>
+      <li><span class="toc-number">XV</span><a href="#closing">The Closing</a></li>
+    </ol>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     I. THE DREAM
+     ═══════════════════════════════════════ -->
+<section id="dream" class="section bg-dark">
+  <div class="section-content">
+    <span class="chapter-number">I</span>
+    <span class="section-label">The Dream</span>
+    <h2>Not a Theme Park. Not a Fantasy.<br>A Genuine Labyrinth.</h2>
+
+    <p>Labyrinth Park is not a theme park. It is not a facade. It is not a performance of mystery. It is a genuine labyrinth: mysterious, ever-shifting, never fully known, and perhaps carrying with it some element of danger worked into something positive. Visitors will only ever see a fraction of what is really happening.</p>
+
+    <p>It is, first and foremost, a home. A real expression of the person who built it. Not a spy who pretends to live in a fortress, but a genuinely mysterious person who does live in a fortress, from which exude bizarre wonders that nobody imagined. He is exactly what he is, and nothing more or less. The mystery is not faked. It is real because the labyrinth <em>is</em> him.</p>
+
+    <div class="pull-quote">
+      Jon wanted to be like a spy, with tunnels and security and hidden passages. But he is not a spy, and pretending to be one felt hollow. With Labyrinth Park, the mystery is not faked. He IS a genuinely mysterious person, who DOES live in a fortress, about which nobody knows very much, and from which exude bizarre wonders that nobody imagined.
+    </div>
+
+    <p>But it is also a hotel, to serve guests when the home overflows. A business that makes the vision financially possible. A contribution to the community, not reclusive consumption of it. A living labyrinth that no visitor will ever fully explore, even across a lifetime of returns.</p>
+
+    <p>Five principles guide every decision. <strong>Genuine over performed:</strong> every mystery is real. The tunnels are real tunnels, the hidden passages lead to real places, the archaeology is conducted by real universities. <strong>Scarcity over abundance:</strong> limited admissions, sections that open and close; the complete experience is a moving target that can never be captured. <strong>Discovery over presentation:</strong> guests find things; they are not shown things. <strong>Community over consumption:</strong> the hotel creates jobs, the nonprofits serve real missions, the farm feeds real people. <strong>Disney discipline, not Disney culture:</strong> we borrow Imagineering's spatial compression, sight-line management, and world-building rigor; we do not borrow their mass-market, IP-driven mentality.</p>
+
+    <div class="maze-divider"></div>
+
+    <p>What you are reading is the complete picture. Every detail. Every number. Every secret. This document is shared with four or five people on earth, and you are one of them. What follows is a vision that will take a decade to build and a lifetime to complete. It is the whole story, from the first acre to the last legend.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     II. THE PROPERTY
+     ═══════════════════════════════════════ -->
+<section id="property" class="section bg-cream">
+  <div class="section-content">
+    <span class="chapter-number">II</span>
+    <span class="section-label">The Property</span>
+    <h2>Sixty Acres in the North Carolina Piedmont</h2>
+
+    <p>The property sits at the end of Southerland Drive in Browns Summit, North Carolina, approximately twenty minutes north of Greensboro. Two parcels totaling 59.82 acres, zoned agricultural, rolling terrain at roughly 800 feet elevation. Wooded, with existing internal trails. The land rises to one of the highest points in Guilford County, a detail that matters both for drainage and for myth.</p>
+
+    <p>The asking price is $875,000. It last sold for $200,000 in 2019, which suggests significant room for negotiation. The target acquisition window is approximately 2031 to 2032, by which time the seller will have been listed for five or more years, and patience will have done much of the negotiating work.</p>
+
+    <figure class="vision-image">
+      <img src="images/vision/01_aerial_estate.png" alt="Aerial view of the Labyrinth Park estate, showing the hedge maze, rolling hills, and garden zones from above">
+      <figcaption>Concept rendering: the estate from above, hedge maze and themed lands interwoven across sixty acres of Piedmont rolling hills</figcaption>
+    </figure>
+
+    <div class="stat-row">
+      <div class="stat-item">
+        <span class="stat-value">60</span>
+        <span class="stat-label">Acres</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">800 ft</span>
+        <span class="stat-label">Elevation</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">20 min</span>
+        <span class="stat-label">to PTI Airport</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">40 min</span>
+        <span class="stat-label">to Wine Country</span>
+      </div>
+    </div>
+
+    <p>Location matters. The Piedmont Triad International Airport (GSO) is twenty to twenty-five minutes away, with direct flights to major hubs. The Yadkin Valley wine country, North Carolina's premier wine region, is forty minutes west. The Blue Ridge Parkway is ninety minutes northwest. Greensboro, Winston-Salem, and High Point collectively form a metro area of 1.7 million people. Raleigh-Durham (2.2 million) and Charlotte (2.7 million) are within sixty to ninety minutes.</p>
+
+    <p>The property is at the end of a road in the Moss Creek neighborhood, with a horse farm on its rear boundary. No natural springs or water crossings exist; all water features will be engineered from scratch. This is not a limitation. It is a canvas.</p>
+
+    <h3>Land Allocation</h3>
+    <p>The sixty acres divide into three broad zones, each with a distinct character and purpose.</p>
+
+    <table class="table-elegant">
+      <thead>
+        <tr>
+          <th>Zone</th>
+          <th>Acres</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Owner's Residence &amp; Hedge Buffer</td><td class="number">6.0</td><td>Five-acre inner sanctuary, hidden within the hedge maze, plus buffer</td></tr>
+        <tr><td>Hotel, Spa &amp; Restaurant</td><td class="number">2.0</td><td>Compact luxury footprint with Italian Garden</td></tr>
+        <tr><td>Italian Garden &amp; Hotel Maze</td><td class="number">1.5</td><td>Exclusive guest amenity</td></tr>
+        <tr><td>Food Production</td><td class="number">7.0</td><td>Vineyard, hop yard, orchards, herb and vegetable gardens</td></tr>
+        <tr><td>Hedge Maze Corridors</td><td class="number">8.0</td><td>Four-plus miles of walkable path</td></tr>
+        <tr><td>Themed Lands &amp; Experiences</td><td class="number">12.0</td><td>36 distinct worlds, gardens, and discoveries</td></tr>
+        <tr><td>Swimming Pond &amp; Beach</td><td class="number">2.5</td><td>Two-acre heated, swimmable pond with sandy beach</td></tr>
+        <tr><td>Exotic Animals &amp; Petting Zoo</td><td class="number">1.5</td><td>Llamas, gentle creatures; predation-free habitats</td></tr>
+        <tr><td>Horse Farm</td><td class="number">17.0</td><td>Leased to Lisa's 501(c)(3) charity</td></tr>
+        <tr><td>Solar, Winery, Brewery, Roads</td><td class="number">2.5</td><td>Infrastructure and production facilities</td></tr>
+        <tr class="total"><td>Total</td><td class="number">60.0</td><td></td></tr>
+      </tbody>
+    </table>
+
+    <p>The property is roughly square, about 1,617 feet on a side, with a perimeter of nearly a mile. Every inch of that perimeter will eventually disappear behind thirteen-foot hedges, and inside those hedges, a world will unfold that nobody on the outside can see, map, or fully comprehend.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     III. THE HOTEL
+     ═══════════════════════════════════════ -->
+<section id="hotel" class="section bg-forest">
+  <div class="section-content">
+    <span class="chapter-number">III</span>
+    <span class="section-label">The Hotel</span>
+    <h2>The Reserve at Labyrinth Park</h2>
+
+    <p>Sixteen luxury suites, each 600 to 1,000 square feet, with private terrace or garden patio, fireplace, and soaking tub. Some configurable as two-bedroom suites for families. A hotel small enough to feel like a private estate and large enough to generate the revenue that funds everything else.</p>
+
+    <figure class="vision-image">
+      <img src="images/vision/03_hotel_suite.png" alt="Concept rendering of a luxury hotel suite with private terrace, fireplace, and views into the hedge maze">
+      <figcaption>Concept rendering: a suite at The Reserve, with private terrace opening into the garden and the labyrinth beyond</figcaption>
+    </figure>
+
+    <p>Guests arrive on a Modified American Plan: breakfast and dinner are included in the nightly rate. Thursday through Sunday, a 35-seat prix fixe restaurant opens to outside reservations. A dedicated Italian Garden of roughly one acre serves as an exclusive guest amenity, unreachable from the public park. A spa modeled on the Icelandic Skjól bathing sequence offers warm pools, cold plunges, sauna, steam, scrub rooms, and outdoor stone pathways connecting them all. A casual café near the park visitor entrance handles daytime traffic.</p>
+
+    <div class="pull-quote">
+      The hotel breathes labyrinth from the first moment of arrival. Returning guests never drive the same route twice.
+    </div>
+
+    <p>The arrival experience begins the mystery. The drive into the hotel passes through a reconfigurable hedge labyrinth that changes nightly: roughly a quarter-mile of road, sixty seconds at fifteen miles per hour, winding through eight-to-ten-foot hedge walls with eight to ten movable junction points. Between 38 and 307 unique route configurations are possible, a new one each night, configured after the last arrival and before the first morning departure. At least one point features a dramatic bridge crossover where the road dips eight feet below grade, passing under a hedge-walled bridge carrying another route segment overhead. Guests at dinner compare notes: "You went under the bridge? We went over it."</p>
+
+    <figure class="vision-image">
+      <img src="images/vision/02_arrival_labyrinth.png" alt="Concept rendering of the hotel arrival labyrinth, a car winding through tall hedge walls at dusk">
+      <figcaption>Concept rendering: the hotel arrival labyrinth at dusk, a new route every evening, never the same drive twice</figcaption>
+    </figure>
+
+    <h3>Secret Suite Access</h3>
+    <p>Select hotel suites, the exact number still under consideration, contain concealed, lockable entrances into the tunnel network. These are locked from inside by default and never used inappropriately. They allow family guests to travel between the hotel and the main residence via finely finished tunnel corridors, without interacting with hotel guests. The tunnels between the hotel and residence are finished like residential hallways, with art and beautiful lighting. Walking between them feels like strolling between wings of a single estate, not traveling between separate buildings.</p>
+
+    <h3>Brand Affiliation</h3>
+    <p>Three luxury hotel brands are the targets for affiliation: <strong>Auberge Resorts Collection</strong> (ultra-luxury, 15 to 80 rooms, unique identity per property), <strong>Relais &amp; Châteaux</strong> (the world's most respected small luxury estate collection), and <strong>Small Luxury Hotels of the World</strong> (broader but prestigious). Brand engagement will begin during the architectural design phase, as each has specific room size and amenity standards that inform the building program. The operating model is a management agreement, not a lease: 3 to 5 percent of gross revenue as a base fee plus 8 to 15 percent of gross operating profit as an incentive. The owner retains ownership, brand approval, budget approval, and chef and menu direction.</p>
+
+    <h3>Financial Projections (Stabilized, Year 3+)</h3>
+
+    <table class="table-elegant">
+      <thead><tr><th>Revenue Stream</th><th>Annual</th></tr></thead>
+      <tbody>
+        <tr><td>Rooms (16 suites, $900/night MAP, 70% occupancy)</td><td class="number">$3.68M</td></tr>
+        <tr><td>Restaurant (hotel guests + external Thu-Sun)</td><td class="number">$1.10M</td></tr>
+        <tr><td>Spa</td><td class="number">$400K</td></tr>
+        <tr><td>Events, private dining, buyouts</td><td class="number">$300K</td></tr>
+        <tr class="total"><td>Total Revenue</td><td class="number">$5.48M</td></tr>
+      </tbody>
+    </table>
+
+    <table class="table-elegant">
+      <thead><tr><th>Cost Category</th><th>Annual</th></tr></thead>
+      <tbody>
+        <tr><td>Labor (25-30 FTE, all departments)</td><td class="number">$1.50M</td></tr>
+        <tr><td>Food &amp; beverage cost</td><td class="number">$500K</td></tr>
+        <tr><td>Management fee (base + incentive)</td><td class="number">$300K</td></tr>
+        <tr><td>Insurance, utilities, marketing</td><td class="number">$400K</td></tr>
+        <tr><td>Maintenance, reserves, supplies</td><td class="number">$200K</td></tr>
+        <tr><td>Miscellaneous operating</td><td class="number">$300K</td></tr>
+        <tr class="total"><td>Total Operating Cost</td><td class="number">$3.20M</td></tr>
+      </tbody>
+    </table>
+
+    <div class="stat-row">
+      <div class="stat-item">
+        <span class="stat-value">$2.28M</span>
+        <span class="stat-label">Gross Operating Profit</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">$1.31M</span>
+        <span class="stat-label">Net Cash Flow</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">2.37x</span>
+        <span class="stat-label">Debt Service Coverage</span>
+      </div>
+    </div>
+
+    <p>Hotel construction is budgeted at $12.5 to $16.5 million, including the inn building, site work, Italian Garden, entry infrastructure, furnishings, fixtures, equipment, kitchen, spa, architect, engineering, permits, and brand fees. The hotel is expected to operate at a loss in Year 1 (40 to 50 percent occupancy), approach breakeven in Year 2 (60 to 65 percent), and reach stabilized operations at 70-plus percent occupancy in Year 3. Early losses are covered by personal funds and sheltered by bonus depreciation.</p>
+
+    <p>This hotel is not the vision. It is the engine that makes the vision possible. Every dollar of surplus cash flow funds the next phase of the labyrinth.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     IV. THE LABYRINTH
+     ═══════════════════════════════════════ -->
+<section id="labyrinth" class="section bg-warm">
+  <div class="section-content">
+    <span class="chapter-number">IV</span>
+    <span class="section-label">The Labyrinth</span>
+    <h2>Four Miles of Living Maze.<br>Patent Pending.</h2>
+
+    <p>The hedge maze is the physical heart of Labyrinth Park. More than four miles of walkable path wind through 36 themed worlds, connecting destinations with corridors that range from convenient and easy to navigate to deliberately, deliciously difficult. The property is surrounded by thirteen-foot hedges, appearing from outside as a single, vast, impenetrable maze. Amenity areas are clear and accessible. Challenge sections are twisty, complex, and intentionally hard to solve.</p>
+
+    <figure class="vision-image">
+      <img src="images/vision/10_fog_morning.png" alt="Morning fog drifting through the hedge maze corridors at dawn">
+      <figcaption>Concept rendering: dawn in the labyrinth, ground fog drifting through corridors that were not here yesterday</figcaption>
+    </figure>
+
+    <p>The hedge system requires approximately 8.9 miles (47,000 linear feet) of hedge rows: 0.9 miles for the perimeter, 7 miles of internal maze walls, and the rest in featured and signature zones. Five tiers of species create the living architecture: Green Giant Arborvitae for bulk corridors (reaching 13 feet in 3 to 4 years), Nellie R. Stevens Holly for the impenetrable perimeter (spiny leaves, 80 to 100-plus year lifespan), European Beech for formal areas (retains copper-brown leaves through winter), and English Yew for signature gardens (500-plus year lifespan, Versailles quality). The total hedge investment is approximately $2.9 million.</p>
+
+    <div class="pull-quote">
+      The complete experience is a moving target that can never be captured.
+    </div>
+
+    <h3>The Reconfiguring Maze</h3>
+    <p>This is the breakthrough. The maze reconfigures itself.</p>
+
+    <p>Sixty movable hedge sections, each a living plant container mounted on a motorized platform, reposition overnight using a patented trough-and-elevator mechanism. Each container rests in a concrete trough set into the path surface. When it is time to move, an integrated elevator lifts the container roughly five inches, exposing a concealed roller assembly. The hedge unit rolls to a new trough position under powered, autonomous guidance, then lowers itself flush into its new home. In its resting state, each unit is visually indistinguishable from a permanently planted hedge.</p>
+
+    <p>The patent application title is "Autonomously Reconfigurable Living Landscape Maze System and Method." A provisional patent application has been prepared, and the filing fee is $320.</p>
+
+    <figure class="vision-image">
+      <img src="images/vision/04_maze_discovery.png" alt="A visitor discovering a hidden alcove within the hedge maze, light filtering through leaves">
+      <figcaption>Concept rendering: discovery in the maze, a room that opened this morning and will be sealed again by tomorrow</figcaption>
+    </figure>
+
+    <div class="stat-row">
+      <div class="stat-item">
+        <span class="stat-value">60</span>
+        <span class="stat-label">Movable Sections</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">4.6 &times; 10<sup>27</sup></span>
+        <span class="stat-label">Possible Configurations</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">4+ mi</span>
+        <span class="stat-label">Walkable Path</span>
+      </div>
+    </div>
+
+    <p>With 60 mobile units, each capable of 4 discrete positions, and a rotation system where only 20 of the 60 are open at any time, the system produces 4.6 &times; 10<sup>27</sup> unique visitor-facing configurations. At one new configuration per day, exhausting them all would take approximately 1.3 &times; 10<sup>25</sup> years, exceeding the age of the universe by a factor of ten to the fifteenth power. The maze is, for all practical purposes, infinite.</p>
+
+    <h3>Section Rotation</h3>
+    <p>Only about one-third of the maze's sections are open at any given time. Every one to three weeks, sections open or close; sometimes two or three, sometimes none. The pattern never repeats across several years. Closed sections are used for maintenance, re-theming, replanting, or construction of new features. By the time a dedicated visitor has seen everything, new things have been created. A hand-drawn map in the visitor center shows today's open sections, slightly cryptic, not quite to scale. Part of the experience is figuring out the map itself. Regulars photograph each week's version and compare. The maps become collectible artifacts.</p>
+
+    <h3>The Guest App</h3>
+    <p>A digital guest navigation application, integrated with the central control system, provides wayfinding information adapted to the current maze configuration. It uses progressive revelation: the more you explore, the more the app reveals. An emergency mode can simultaneously reposition all mobile hedge units to create clear egress paths, ensuring any visitor can reach an exit within five minutes from any point in the maze.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     V. THE WORLDS
+     ═══════════════════════════════════════ -->
+<section id="worlds" class="section bg-deep">
+  <div class="section-content">
+    <span class="chapter-number">V</span>
+    <span class="section-label">The Worlds</span>
+    <h2>Thirty-Six Worlds. Each One Complete.</h2>
+
+    <p>Every section of the labyrinth is its own self-contained world. You do not walk "through" them; you enter them, and for a moment, you forget everything outside. Accessed through the ever-present hedge system, each world has its own atmosphere, its own logic, its own reason for being. False facades cover utilitarian surfaces. Nothing breaks the spell.</p>
+
+    <h3>The Grand Landscapes</h3>
+    <p>Three distinct woodland trail zones thread through the northern acreage. <strong>Zone A</strong> is dense mature forest: winding paths under canopy, discovery moments where shafts of light fall across a mossy clearing. <strong>Zone B</strong> is a fern gully with bamboo, a different biome entirely, where the sound of a hidden stream precedes its appearance. <strong>Zone C</strong> is an elevated ridge walk with long views through trees.</p>
+
+    <p>The <strong>Rose Garden</strong> sits elevated on the ridgeline, formal and precise, with a secret inner garden accessible only through a hedge portico or through the tunnel system below. Two exits lead deeper into the maze. The <strong>Culture Garden</strong> is a formal lawn with sculpture on plinths, framed by architectural hedge walls. The <strong>Nature Garden</strong> is English wild style, dense with butterfly and pollinator species, with a rustic round open pavilion perched above a steep bank overlooking an artificial stream.</p>
+
+    <p>A <strong>Wildflower Meadow</strong> of one acre blazes with seasonal color. Mowed paths wind through tall grass, leading to clearings that feel discovered rather than designed. The <strong>Open Meadow and Event Lawn</strong> (one and a half acres) hosts weddings, concerts, and gatherings, placed strategically far from the residence for sound isolation.</p>
+
+    <h3>The Living Collections</h3>
+    <p>The <strong>Butterfly Pavilion</strong> is a semi-enclosed habitat surrounded by flowering gardens. The <strong>Aviary</strong> is a walk-through bird habitat. The <strong>Tropical Greenhouse</strong> is a climate-controlled interior world of lush, alien vegetation. A <strong>Japanese Garden</strong> with a stone-edged koi pond offers a formal viewing deck. Two additional koi ponds hide elsewhere: one naturalistic, discovered by surprise in the maze; one near the residence, private, the owner's favorite.</p>
+
+    <p>A <strong>Duck Pond</strong> hosts live ducks in a peaceful, hedge-enclosed sitting area. A <strong>Geese Meadow</strong> offers a small fenced meadow with water access. The <strong>Children's Maze</strong> is a simple maze-within-a-maze designed for young visitors. A <strong>Zen Rock Garden</strong> of raked gravel and stones creates a contemplative pause in the journey.</p>
+
+    <p>The <strong>Sunken Amphitheater</strong> seats 50 to 100 for outdoor performances. The <strong>Moon Garden</strong>, planted entirely with white and silver flowers, glows at night and fills the air with fragrance.</p>
+
+    <h3>The Swimming Pond</h3>
+    <p>Two acres of engineered swimming pond, disguised as a natural body of water but meticulously clean and swimmable, with a sandy beach, heated year-round, and artificial streams flowing in and out. Reached through an easy-to-remember maze path from the hotel, this is the single feature with the highest Instagram potential on the entire property.</p>
+
+    <figure class="vision-image">
+      <img src="images/vision/05_swimming_pond.png" alt="The two-acre heated swimming pond with sandy beach, surrounded by lush landscaping and hedge walls">
+      <figcaption>Concept rendering: the two-acre swimming pond, heated year-round, sandy beach, artificial streams, reached through the maze</figcaption>
+    </figure>
+
+    <h3>The Pocket Discoveries</h3>
+    <p>And then there are the tiny moments. The things you stumble upon. A <strong>Wishing Well</strong> hidden in a maze wall, barely ten feet square, where coins echo as they fall. A <strong>Reading Nook</strong> with a bench and a bookshelf tucked into the hedge. A <strong>Sundial Circle</strong> open to the sky. A <strong>Whispering Gallery</strong> where a curved wall carries whispers thirty feet across the space. Three <strong>Stone Bridge Crossings</strong> where the path rises over tunnels below. A small, climbable <strong>Folly Tower</strong> offering an overhead view of the maze. A <strong>Mosaic Floor Room</strong> revealed when a hedge opening reconfigures. A <strong>Bell Garden</strong> of tuned wind chimes creating an ambient sonic experience. A short stretch of <strong>Mirror Maze</strong> with mirrored hedge walls. A <strong>Fog Garden</strong> where misting systems create ground-level fog at dawn. A <strong>Firepit Circle</strong> for evening gathering. A <strong>Stargazing Clearing</strong> with zero light pollution and reclining stone benches. Four <strong>Secret Doors</strong>, hidden hedge doors that lead to nowhere, or to somewhere. A <strong>Grotto</strong>, a small cave-like space with a water feature. A <strong>Compass Rose</strong> in inlaid stone at a major maze intersection.</p>
+
+    <p>And, stretched through the hedge wall itself, a <strong>tin-can telephone</strong>. Two cans, connected by a string, punched through from one corridor to another. You pick it up and hear your child laughing on the other side of a wall you cannot see through.</p>
+
+    <figure class="vision-image">
+      <img src="images/vision/07_wishing_well.png" alt="A hidden wishing well tucked into a small alcove in the hedge maze wall">
+      <figcaption>Concept rendering: a wishing well hidden in the maze wall, barely ten feet square, where coins echo as they fall</figcaption>
+    </figure>
+
+    <div class="pull-quote">
+      Guests find things. They are not shown things. The wishing well, the whispering gallery, the fog garden: you stumble into them.
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     VI. THE TUNNELS
+     ═══════════════════════════════════════ -->
+<section id="tunnels" class="section bg-dark">
+  <div class="section-content">
+    <span class="chapter-number">VI</span>
+    <span class="section-label">The Tunnels</span>
+    <h2>One Mile Below the Surface</h2>
+
+    <p>Beneath the rolling hills and winding paths, a network of tunnels connects every part of the property. The main structure is a six-spoke wheel: three tunnels crossing at sixty-degree angles, converging on the five-acre central residence. Each tunnel runs edge to edge across the full property. Total main tunnel length: 5,350 linear feet, just over one mile. Average spoke length from center to edge: 892 feet.</p>
+
+    <div class="stat-row">
+      <div class="stat-item">
+        <span class="stat-value">5,350</span>
+        <span class="stat-label">Linear Feet</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">6</span>
+        <span class="stat-label">Spoke Tunnels</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">4</span>
+        <span class="stat-label">Functional Networks</span>
+      </div>
+    </div>
+
+    <p>Tunnel widths vary by function. High-bandwidth sections near the hotel and residence are 25 feet wide by 15 feet tall, large enough for vehicles, utility routing, staff movement, and secret passages all running in parallel. Standard service corridors are 12 by 14 feet, accommodating golf carts and utility lines. Remote park sections narrow to 8 by 8 feet, enough for two golf carts to pass. And some passages, the intimate ones, the truly secret ones, are just 3 to 6 feet wide. Pedestrian only.</p>
+
+    <p>Numerous side tunnels interconnect the spokes, extending special-purpose passages. Wherever possible, tunnels are embedded within larger utility structures or behind building foundations, minimizing excavation costs. Construction uses shallow excavation (4 to 6 feet into soft clay, staying above the water table at 800-foot elevation), with precast concrete sections laid in the trench. The excavated dirt becomes the material for artificial hills and berming above, creating the rolling landscape that makes the property so beautiful while hiding the infrastructure that makes it so functional.</p>
+
+    <figure class="vision-image">
+      <img src="images/vision/06_tunnel_cutaway.png" alt="Cutaway rendering showing the tunnel network beneath the landscape, with hedge maze and buildings above">
+      <figcaption>Concept rendering: cutaway view of the tunnel superstructure beneath the landscape, six spokes converging at the central residence</figcaption>
+    </figure>
+
+    <h3>Four Overlapping Networks</h3>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h4>Public Spectacle</h4>
+        <p style="font-size:0.9rem;">About 10 to 15 percent of total footage. Stone bridge crossings, decorative tunnel moments. Themed, lit, photographable. What guests see and remember.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Donor Experience</h4>
+        <p style="font-size:0.9rem;">About 5 percent. Curated behind-the-scenes tours. "Let me show you something most people never see." A tiny fragment of the real network, presented as the whole.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Service Backbone</h4>
+        <p style="font-size:0.9rem;">About 70 percent. Power, water, fiber, HVAC, staff movement, golf cart logistics. Functional, well-lit, not pretty. All utilities routed underground. No above-ground infrastructure anywhere on the property.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Owner's Private</h4>
+        <p style="font-size:0.9rem;">About 10 to 15 percent. Finely finished residential corridors. Beautiful, intimate, invisible. Known in full to exactly one person.</p>
+      </div>
+    </div>
+
+    <p>The tunnels between the hotel and the residence are finished like residential hallways: artwork, beautiful lighting, the feeling of passing between wings of a single home. The distance is calibrated so that a walk from hotel suite to main house feels like a pleasant stroll, no golf cart needed. But the guest crossing that corridor passes under a bermed hill and a high wall, unaware that they have traveled between two completely separate buildings.</p>
+
+    <div class="pull-quote">
+      Guests see rolling hills with nestled buildings. They have no awareness of the tunnel grid underneath.
+    </div>
+
+    <h3>The Initiation Well</h3>
+    <p>And then there is the feature that, above all others, is non-negotiable. A full reproduction of the Inverted Tower at Quinta da Regaleira in Sintra, Portugal: the Poço Iniciático, the Initiation Well. From the surface, it appears as a mysterious stone circle set into a garden clearing, perhaps an old foundation, perhaps a ceremonial platform. But step through the entrance and you begin to descend. A spiral stone staircase winds downward through nine levels, roughly ninety feet into the earth, each landing separated by Gothic arches carved from stone. The number nine is deliberate: nine levels of hell, nine degrees of initiation, nine circles of the Masonic and Templar rites that inspired the original. Light filters from above and fades as you descend, replaced by the glow of embedded fixtures in the stone. The staircase is open in the center, so that looking up from the bottom you see the sky as a distant circle framed by the receding spiral of the tower. Looking down from the top, you see a visitor ninety feet below, impossibly small, standing at the convergence of tunnels that radiate outward into the underground network.</p>
+
+    <p>At the bottom, the well connects directly to the tunnel superstructure. You can descend into the earth through what appears to be an ancient ceremonial shaft and emerge, minutes later, in a completely different part of the property. For donors and high-tier visitors granted access, this is the single most memorable experience on the estate. For everyone else, it is a rumor: something glimpsed through a locked gate, something mentioned by a fellow guest who cannot quite explain where they went or how they got back.</p>
+
+    <figure class="vision-image">
+      <img src="images/vision/11_inverted_tower.png" alt="The Initiation Well, a spiral stone staircase descending ninety feet underground through Gothic arches, inspired by Quinta da Regaleira">
+      <figcaption>Concept rendering: the Initiation Well, a full reproduction of the Inverted Tower at Quinta da Regaleira, nine levels descending into the tunnel network</figcaption>
+    </figure>
+
+    <div class="pull-quote">
+      From the surface, a mysterious stone circle. From the bottom, ninety feet below, the sky is a distant point of light and tunnels radiate into darkness.
+    </div>
+
+    <p>Two separate architectural teams work on the tunnel system; neither sees the complete plans. The primary architect designs the residence, hotel, and known tunnel network. A secondary structural engineer, under separate NDA, handles private passages, receiving only structural tie-in points, never the full site plan. The threat model is not betrayal but compulsion: no single person can reveal the complete network under pressure, bribery, or subpoena. Only one person holds the master plan.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     VII. THE MYTHOLOGY
+     ═══════════════════════════════════════ -->
+<section id="mythology" class="section bg-parchment">
+  <div class="section-content">
+    <span class="chapter-number">VII</span>
+    <span class="section-label">The Mythology</span>
+    <h2>A Legend, Not a Brand</h2>
+
+    <p>Labyrinth Park never confirms, never advertises, and never explains. This is the Denial Doctrine, and it is absolute. The park never confirms that the maze reconfigures itself. Never confirms that artifacts are placed by staff. Never acknowledges the existence or nature of the tunnel network, the identity of the owner, the age or origin of the maze, or how any specific section is accessed.</p>
+
+    <p>The official position, on everything: <em>"We've heard these reports. Some aspects of the property continue to surprise us. We don't have a complete understanding of the property's full history or behavior."</em></p>
+
+    <div class="pull-quote">
+      Legends don't have press releases.
+    </div>
+
+    <p>The mythology is built on real history, woven into something stranger. The <strong>Great Trading Path</strong> (the Occaneechi Path) was a major Native American trade route through Guilford County. The Occaneechi were guardians and middlemen. The Saura and Keyauwee were Siouan-speaking Piedmont peoples. The property is mythologized as sitting on a forgotten branch of the old trading path. Nearby, <strong>Quaker meeting houses at New Garden</strong> had documented secret tunnels, part of the Underground Railroad. Legend holds that some passages predated European construction, a perfect parallel to the actual hidden tunnels beneath Labyrinth Park. <strong>Browns Summit</strong> itself sits at one of the highest elevations in Guilford County; high places have always been places of vision, watchtowers, sanctuaries. And forty miles south, the <strong>Devil's Tramping Ground</strong> in Chatham County is a famous barren circle where nothing grows, invoking the Piedmont as a place of uncanny geometry.</p>
+
+    <h3>The Fabricated Artifacts</h3>
+    <p>Under glass in the hotel lobby, with a brass plaque reading "From the Labyrinth Park archives. Provenance under review," sit the commissioned artifacts. A weathered journal page, attributed to a Quaker surveyor circa the 1790s: <em>"the hedgerows on the Brown summit will not be made to grow strait, tho' I have replanted them twice."</em> A hand-drawn map fragment, "found during grading," showing a spiral path with Siouan pictographs and a notation: <em>"do not cut the old growth on the high circle."</em> A framed letter from a (fictional) UNC-Chapel Hill folklorist in the 1930s, requesting permission to study "the unusual growth patterns on the Southerland parcel." One or two pieces in the restaurant. A map in the spa changing room. Scattered, discovered by guests, never consumed.</p>
+
+    <h3>The Origin Myth</h3>
+    <div class="pull-quote">
+      The Siouan peoples called the high ground "the place where paths remember." Traders on the Occaneechi Path knew that above a certain elevation in the Piedmont, the forest grew in spirals, as if the land itself was turning. The Quakers who came later built their meeting houses with hidden rooms below, and whispered that some passages had been there before they arrived. No one has ever satisfactorily explained why the hedgerows on the old summit property grow in curves rather than straight lines, or why visitors who wander the woods sometimes emerge from a direction they did not enter.
+    </div>
+
+    <h3>The Official Narrative</h3>
+    <p>The property's most recent owner built the hotel around what was already an older hedge maze of uncertain origin. The maze had been growing and evolving on the property for an indeterminate period before the current development. Prior owners are not available to disclose details about its history. Some areas where hedge grew over appear externally as dense vegetation nobody can pass through. The Labyrinth Park Archaeological Trust has chosen not to disturb the natural state of the maze's more ancient, as-yet unexplored portions.</p>
+
+    <p>Every statement is technically true. The maze <em>was</em> built before the hotel opened (by two years). Prior owners <em>are</em> unavailable. The maze <em>has</em> never been fully mapped by the public. Some sections <em>are</em> inaccessible. The narrative never claims a specific false age. It says "uncertain origin." This is not fraud. It is stagecraft.</p>
+
+    <h3>The Five-Year Legend Cultivation</h3>
+    <p>Year 1: locals notice, post on Facebook groups. Year 2: regional travel bloggers write "The Strangest Park in NC." Year 3: a Reddit thread goes viral. Year 4: Atlas Obscura writes it up, then the New York Times travel section calls. Year 5 and beyond: the internet has done the marketing. The official response is still, "We've heard these reports." A few strategically anonymous social media posts seed the mystery early (drone footage of "secret regions," speculation threads), but nothing is traceable to the organization. The academic partnerships with UNC and Wake Forest, conducting real research on the property, lend credibility. The line between what is real and what is curated becomes genuinely impossible to determine from outside.</p>
+
+    <p>Staff play their part, but their ignorance is mostly genuine. All employees enter through a separate service gate and travel to work areas via service tunnels. Most staff never drive or walk the guest arrival labyrinth. When guests say "the driveway was different today!" staff genuinely don't know. Employment agreements include perpetual non-disclosure of operational details. Staff may say: "I've heard guests mention that." They may say: "It does seem different sometimes." They may say: "We're still learning about the property ourselves." They may never confirm deliberate human engineering of any mystery.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     VIII. THE TREASURE
+     ═══════════════════════════════════════ -->
+<section id="treasure" class="section bg-forest">
+  <div class="section-content">
+    <span class="chapter-number">VIII</span>
+    <span class="section-label">The Treasure</span>
+    <h2>The Archaeological Trust</h2>
+
+    <p>The Labyrinth Park Archaeological Trust maintains a standing offer to purchase significant archaeological finds discovered on the property. This is not framed as a game, a contest, or a sweepstakes. It is framed as an acquisition policy of a serious, if somewhat eccentric, scholarly organization. Discoverers are called "archivists," not winners. The money is "but an afterthought" compared to the artifact's significance. The ceremony language: "The Trust is pleased to acquire this significant find."</p>
+
+    <h3>Four Tiers of Artifacts</h3>
+
+    <table class="table-elegant">
+      <thead>
+        <tr>
+          <th>Tier</th>
+          <th>Artifact</th>
+          <th>Value</th>
+          <th>Frequency</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. Medallions</strong></td>
+          <td>Hand-pressed clay discs with spiral and labyrinth motifs, each unique, commissioned from artisan ceramicists, properly aged</td>
+          <td class="number">$100 - $500</td>
+          <td>Frequent (many per year)</td>
+        </tr>
+        <tr>
+          <td><strong>2. Stone Tablets</strong></td>
+          <td>Larger tablets with Siouan-Minoan hybrid pictographs, hidden in rooms that only open on astronomical dates (solstices, equinoxes, full moons)</td>
+          <td class="number">$5,000 - $25,000</td>
+          <td>A few per year</td>
+        </tr>
+        <tr>
+          <td><strong>3. Major Artifacts</strong></td>
+          <td>Carved gorgets (shell medallions echoing real Siouan artifacts) or bronze labrys (double axes), museum-quality</td>
+          <td class="number">$100,000</td>
+          <td>Once every 1-3 years</td>
+        </tr>
+        <tr>
+          <td><strong>4. The Grand Artifact</strong></td>
+          <td><strong>The Thread of Ariadne:</strong> a golden thread (actual gold wire, coiled on a spindle), or a solid gold labrys. Material value alone is significant; mythological value is beyond price.</td>
+          <td class="number">$1,000,000</td>
+          <td>Once per decade, or never</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Artifacts are placed on surfaces (shelves, niches, pedestals, alcoves), never buried, never hidden inside anything. The rooms containing artifacts are only accessible via reconfigured maze paths. Yesterday's artifact room is today's sealed dead end. No digging is allowed, enforced with immediate ejection. The movable hedge sections mean you cannot camp out waiting for a room to open. Security cameras in artifact rooms are described as "preservation monitoring cameras for the archaeological site."</p>
+
+    <h3>The $1 Million Protocol</h3>
+    <p>The Thread of Ariadne is physically placed in its room on exactly one day per year. The day is chosen by an algorithm based on parameters set only by the owner. The path to the room opens on that day only, at Legendary difficulty. If undiscovered, the artifact is physically retrieved the following morning. Nobody ever knows which day it was, including all staff. Only the central control system and the owner know the schedule. The digital twin simulates each day's configuration to verify the artifact room is reachable at the intended difficulty within park operating hours.</p>
+
+    <div class="pull-quote">
+      The possibility that it exists is what matters. The Trust's standing offer to purchase for one million dollars is posted permanently.
+    </div>
+
+    <h3>Placement and Retrieval</h3>
+    <p>Humanoid robots retrieve artifacts from a deep, private stockroom (adjacent to the server room at the heart of the maze, accessible only by the owner via biometric lock) and place them in designated rooms during overnight reconfiguration. The robots navigate via the tunnel network, unseen by the public or most staff. At most two or three of the most trusted staff may be aware that robots carry objects; they do not know what, where, when, or why. Undiscovered artifacts are retrieved by robots the following night and returned to inventory.</p>
+
+    <h3>The Museum of Discovered Artifacts</h3>
+    <p>A growing glass-case collection in the hotel or visitor center displays each artifact with a photo of its discoverer, the date, the location in the maze, and a description. By Year 20: 200-plus medallions, a dozen tablets, several gorgets, and a wall of discoverer photos. Guests who found a $100 medallion in 2035 bring their grandchildren in 2055 to see their name on the wall. The museum itself becomes an attraction and a reason to return.</p>
+
+    <figure class="vision-image">
+      <img src="images/vision/08_museum_artifacts.png" alt="The Museum of Discovered Artifacts, glass cases displaying clay medallions, stone tablets, and discoverer photographs">
+      <figcaption>Concept rendering: the Museum of Discovered Artifacts, a growing collection of finds, each displayed with the name and photograph of its discoverer</figcaption>
+    </figure>
+
+    <p>The treasure program transforms the park into a daily destination. With artifacts driving demand, the park operates daily (not just Sundays), with 500 to 2,000 visitors per day at scale. Revenue projections from admissions alone: $9 to $18 million per year, on top of the hotel's $5.5 million. Combined, this matches or exceeds the revenue potential of Biltmore Estate.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     IX. THE FARM
+     ═══════════════════════════════════════ -->
+<section id="farm" class="section bg-cream">
+  <div class="section-content">
+    <span class="chapter-number">IX</span>
+    <span class="section-label">The Farm</span>
+    <h2>Labyrinth Farms</h2>
+
+    <p>The agricultural operations on the property are branded collectively as Labyrinth Farms, and they serve a dual purpose: supplying the hotel restaurant with ingredients grown fewer than 500 feet from the kitchen, and providing guests with a living, working landscape that deepens the experience of being here.</p>
+
+    <p>A <strong>vineyard</strong> of two and a half acres grows estate wine grapes: Cabernet Franc (award-winning in the Yadkin Valley), Petit Verdot (for depth and structure), Viognier (the aromatic white that thrives in the Piedmont), and Chambourcin (a bulletproof hybrid for North Carolina humidity). Production at maturity runs 3 to 6 tons per year, yielding 1,500 to 4,000 bottles. The wine is estate-only, served exclusively at the restaurant, sold only in the park. Scarcity is the brand. The label reads "Labyrinth Park Estate."</p>
+
+    <p>A <strong>hop yard</strong> of one acre grows Cascade and Chinook hops on 15 to 20-foot bine trellises. The signature product: "Labyrinth Harvest Ale," a wet-hop beer brewed within hours of harvest, using fresh hops picked that morning. Available only on the property for approximately two weeks each September. The estate <strong>winery</strong> ($250K to $450K, a 1,500-square-foot building with crush pad, destemmer, press, fermentation tanks, and French oak barrels) and the estate <strong>brewery</strong> ($400K to $700K, a 7-barrel brewhouse with taproom) are both destinations within the labyrinth. The hop trellis grows up the brewery's exterior wall. The winery crush pad overlooks the vineyard.</p>
+
+    <div class="pull-quote">
+      Guests walk through the ingredients before they taste them.
+    </div>
+
+    <p><strong>Orchards</strong> produce fruit. <strong>Berry patches</strong> grow blackberries, blueberries, and strawberries. <strong>Cherry trees</strong> serve the restaurant and u-pick programs. <strong>Vegetable and herb gardens</strong> supply the kitchen daily. <strong>Chickens</strong> provide fresh eggs. <strong>Wagyu cattle</strong> (possibly five head) produce premium beef for the restaurant. When production exceeds hotel demand, orchards and berry patches open for paid u-pick visits. Summer camp kids from the horse charity spend an hour picking berries, eat what they want, turn the rest over to the farm. The farm makes pies for them the next day; the surplus goes to the restaurant.</p>
+
+    <p>The <strong>horse farm</strong> occupies seventeen acres on the north portion of the property, leased to Lisa's 501(c)(3) charity. Eight to twelve horses serve hotel programs, educational access for children, and boarding for outside clients. <strong>Llamas</strong> and other gentle animals live in a one-and-a-half-acre petting zoo area, given predation-free existences with all the food, company, and friends they could want. Every animal on this property lives a good life.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     X. THE ESOTERIC
+     ═══════════════════════════════════════ -->
+<section id="esoteric" class="section bg-dark">
+  <div class="section-content">
+    <span class="chapter-number">X</span>
+    <span class="section-label">The Esoteric</span>
+    <h2>A Spiritual Autobiography in Stone</h2>
+
+    <p>Scattered throughout the property, integrated into stonework, metalwork, floor patterns, garden layouts, and water features, is a complete system of esoteric symbolism drawn from the world's contemplative traditions. Nothing is labeled. Nothing is explained. Guests who recognize symbols feel a jolt of recognition. Those who don't see beautiful decorative stonework.</p>
+
+    <p>The arrival sequence tells the story. At <strong>Station 1</strong>, the largest and most formal approach, an outer hexagon 92 feet across frames a center hexagonal still pool, from which rises a 23-foot obelisk, its Egyptian and Masonic associations carried inherently. Smooth water walls flow down tilted, modernist surfaces as 4-inch channels carry water outward from the pool. At <strong>Station 3</strong>, the motorcourt itself, sunken twelve feet below the lawn, rose bushes grow around a <strong>Rose Cross</strong>, the Rosicrucian emblem: roses blooming at the intersection of the cross, representing the unfolding of spiritual knowledge. This is the first thing a guest sees upon arriving at the home. At <strong>Station 2</strong>, between the obelisk and the motorcourt, stands a living <strong>Tree of Life</strong>, carefully selected and trained, sacred across all esoteric traditions: the Kabbalistic sephirot, the Norse Yggdrasil, the Hermetic tradition.</p>
+
+    <figure class="vision-image">
+      <img src="images/vision/09_rose_cross.png" alt="The Rose Cross in the motorcourt, roses blooming at the intersection of a stone cross, water sheeting down surrounding walls">
+      <figcaption>Concept rendering: the Rose Cross in the sunken motorcourt, roses blooming at the intersection, the first thing a guest sees upon arrival</figcaption>
+    </figure>
+
+    <div class="pull-quote">
+      Every symbol has meaning and intention. Nothing is random, nothing is merely decorative. The symbols collectively tell a story, forming a map that leads to things in the physical maze and to things that are only reachable in the world of the mind and spirit.
+    </div>
+
+    <h3>The Traditions</h3>
+    <p><strong>Rosicrucian:</strong> the Rose Cross in the motorcourt, rose motifs throughout the Rose Garden, the number seven recurring in design. <strong>Masonic:</strong> a compass rose inlaid at a maze intersection, square-and-compass geometry in stonework, the all-seeing eye in a water feature or tunnel entrance carving. <strong>Templar:</strong> a red cross pattée set into a wall stone, a circular meditation space echoing the Temple Church in London. <strong>Hermetic:</strong> <em>"Quod est superius est sicut quod est inferius"</em> ("As above, so below") carved in Latin, perfect for a place where the world above mirrors a hidden world below. <strong>Kabbalistic:</strong> the Tree of Life at Station 2, sephirotic geometry embedded in garden layouts and floor patterns. <strong>Alchemical:</strong> symbols of transformation (the philosopher's stone, the ouroboros, <em>solve et coagula</em>), appropriate for a property that transforms raw land into living art.</p>
+
+    <p><strong>Persian and Babylonian:</strong> the word "paradise" comes from Persian <em>pairidaeza</em>, meaning "walled garden." Labyrinth Park is a walled garden. Ziggurat and stepped forms appear in the landscaping. <strong>Egyptian:</strong> solar symbolism, the Aten disc; the solar array could be oriented with a nod to Akhenaten's sun worship. The obelisk at Station 1 carries this resonance inherently. <strong>Sikh:</strong> the Khanda (double-edged sword with circle and two kirpans) as a symbol of spiritual sovereignty and the unity of God, subtly and respectfully integrated. <strong>Sacred geometry:</strong> the Flower of Life and Metatron's Cube in floor patterns, golden ratio in architectural proportions, Fibonacci spirals in garden planting patterns. <strong>Illuminati:</strong> an owl sculpture in the Nature Garden, watching from a branch; pyramid and eye motifs.</p>
+
+    <p><strong>Minoan</strong> mythology runs throughout the property's DNA. The <strong>labrys</strong> (double-headed axe) appears as a subtle recurring symbol in stonework and metalwork. The <strong>Greek key</strong> (meander) pattern defines paths, tile work, and stone borders. <strong>Ariadne's thread</strong> is made literal: a golden line embedded in the maze floor as wayfinding. The <strong>Minotaur</strong> is referenced obliquely, never literally. <strong>Daedalus</strong>, the master builder, is the archetype honored in the architecture itself.</p>
+
+    <p>The overall effect is a place built by someone who has studied deeply without ever declaring allegiance. An homage to the greats, meant to inspire speculation of every kind, but only honest speculation reflecting genuine spiritual kinship. One tradition is explicitly excluded: the Golden Dawn and derivative ceremonial magic organizations. No connection, no kinship.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     XI. THE RESIDENCE
+     ═══════════════════════════════════════ -->
+<section id="residence" class="section bg-warm">
+  <div class="section-content">
+    <span class="chapter-number">XI</span>
+    <span class="section-label">The Residence</span>
+    <h2>The Hexagonal House at the Center of Everything</h2>
+
+    <p>At the heart of the labyrinth, hidden within a five-acre circular carve-out, surrounded by the hedge maze on all sides, visually and acoustically separated from the hotel by bermed hills and high walls, sits the residence. It is the center, geographically and spiritually, of the entire property.</p>
+
+    <p>The main house is hexagonal, with 23-foot edges and three wings (designated A, B, and C, each approximately 687 square feet) radiating from a central atrium of roughly 1,374 square feet. A rotated scalene triangle forms the upper level, asymmetric to optimize room widths and door clearances, containing three rooms: bedroom (approximately 826 square feet), office (approximately 826 square feet), and bathroom (approximately 740 square feet). Total plan area: roughly 7,200 square feet. The atrium floor sits two feet below entry grade, with the roof soaring 43 to 49 feet above, creating a 45-foot void that is the vertical soul of the building.</p>
+
+    <p>Three levels are built into the hillside. The top level, the owner's private quarters, is the only one visible from the lawn approach. The middle level contains guest suites in Wings A and B, embedded in the hill with private rear courtyards facing downhill. The lower level opens fully to grade at the rear pool terrace, containing shared living space in Wing C. Two elevators serve all levels: a public glass architectural elevator (maglev when available) and a private, concealed elevator with a hidden door.</p>
+
+    <h3>Three Separate Entrances</h3>
+    <p>The <strong>main guest entrance</strong> begins at a gate (a flush cattle grid, no columns), passes through 50 feet of naturalistic planting, then a 200-foot hedgerow lane, arriving at a circular turnabout with flanking fountains. The land rises, and at the high point, the first reveal of the house appears through a gap in the hedge. Then descent, as the land rises around you. A lawn berm tunnel (precast box culvert, 10 to 12 feet clear) passes under the lawn, and you emerge in the motorcourt, sunken twelve feet below the lawn grade, open to the sky, with water sheeting down battered stone walls all around you. The <strong>service and guesthouse entrance</strong> is at a separate gate, roughly sixty degrees around the perimeter. The <strong>owner's entrance</strong> is an abrupt hillside tunnel entrance with no ceremony, leading directly to a private below-grade garage.</p>
+
+    <h3>The Guesthouse</h3>
+    <p>Nearby, appearing from all exterior views as an entirely independent estate, sits the guesthouse: hexagonal (without an atrium), approximately 1,374 square feet per level across two levels, totaling roughly 2,750 square feet. Master bedroom suite, bunkroom, living and kitchen above; game room, recreation, bar, and party room below, facing its own pool, hot tub, and cold plunge. A large connector garage space, hidden behind an ivy retaining wall at the shared pool terrace, links the two houses. A secret tunnel connection runs between them as well.</p>
+
+    <h3>The Heart of the Maze</h3>
+    <p>At the lowest point on the entire property, deep within the residential core, beneath the residence, at the convergence of the tunnel network, sits the server room. Significant compute capacity, unusual for a hospitality organization even by 2038 standards. Climate-controlled, secured, redundantly powered by solar, grid, and generator. This is the true center of the labyrinth. Every myth has something at the center of the maze.</p>
+
+    <div class="pull-quote">
+      The Minotaur at the center of the labyrinth is not a beast. It is a mind.
+    </div>
+
+    <p>The property is designed so that its owner can move through the entire estate via the private tunnel network without encountering any staff or guests. The owner is a reclusive presence: known to exist, rarely seen, adding to the mystique. The mind at the center never leaves.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     XII. THE BUSINESS
+     ═══════════════════════════════════════ -->
+<section id="business" class="section bg-deep">
+  <div class="section-content">
+    <span class="chapter-number">XII</span>
+    <span class="section-label">The Business</span>
+    <h2>The Engine Behind the Dream</h2>
+
+    <p>The vision is magnificent. The business is rigorous. Both are required.</p>
+
+    <h3>Entity Structure</h3>
+    <p><strong>Labyrinth Park LLC</strong> (for-profit) owns all 60 acres and operates the park, hotel, and all commercial activities. <strong>Labyrinth Park Trust LLC</strong> (for-profit subsidiary) commissions and places artifacts, pays treasure rewards, and operates the museum displays, functioning as the promotional arm. <strong>Lisa's Horse Charity</strong> (501(c)(3)) operates therapeutic and educational equine programs for underserved youth, with an independent board and Lisa as Executive Director, leasing the 30-acre horse farm at fair market rate. A second <strong>Education and Conservation Nonprofit</strong> (501(c)(3)) runs botanical education, school field trips, conservation programs, and veteran and senior programs, paying the LLC a fair-market facility-use fee. The nonprofits are genuine arm's-length tenants with genuine charitable missions, never vehicles for family control of nonprofit assets.</p>
+
+    <h3>Tax Strategy</h3>
+    <p>The tax strategy is layered and potent. <strong>Roth conversions</strong> begin during Florida residency (no state income tax), withdrawing $475K to $520K per year from pre-tax 401(k) while staying within the 24 percent federal bracket, saving roughly $60K-plus in NC state tax over three years and converting $1.4 to $1.6 million into Roth. <strong>Bonus depreciation</strong> (100 percent, permanent under OBBBA) applies to all land improvements: paths, landscaping, fencing, lighting, irrigation, drainage, parking, hedge maze hardscaping (15-year property), plus benches, signage, fixtures, equipment, spa equipment, and kitchen equipment (5 to 7-year property). A <strong>cost segregation study</strong> on the inn reclassifies 30 to 40 percent of the $12 to $15 million build cost into accelerated categories, producing $3.6 to $6 million in bonus-eligible deductions. A <strong>conservation easement</strong> on 20 to 30 acres of undeveloped horse farm acreage provides a charitable deduction for the reduction in property value, deductible up to 50 percent of AGI with a 15-year carryforward. <strong>QBI deduction</strong> (20 percent) on net business income kicks in once the park and inn are profitable.</p>
+
+    <h3>Revenue at Scale</h3>
+
+    <table class="table-elegant">
+      <thead>
+        <tr>
+          <th>Revenue Source</th>
+          <th>Annual (Stabilized)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Hotel (rooms, restaurant, spa, events)</td><td class="number">$5.48M</td></tr>
+        <tr><td>Park admissions (500-2,000 visitors/day)</td><td class="number">$9 - $18M</td></tr>
+        <tr class="total"><td>Combined Revenue at Scale</td><td class="number">$14.5 - $23.5M</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Financing: No Equity Partners</h3>
+    <p>Sole ownership is non-negotiable. The financing strategy relies on staged capital deployment and aggressive use of the tax code to make equity nearly free on an after-tax basis.</p>
+
+    <p>The hotel is financed via an <strong>SBA 504 loan</strong>, which requires only 10 to 15 percent equity for hospitality projects. Owner's equity: $1.5 to $2.5 million. Loan: $10 to $13.5 million. Bonus depreciation covers the equity outlay, pulling taxable income well below the RMD crunch threshold. The residence is financed separately via conventional mortgage ($1 million down payment), by which point the hotel is already generating revenue.</p>
+
+    <table class="table-elegant">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Cash Required</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Land (purchased outright, used as loan equity)</td><td class="number">$700K - $875K</td></tr>
+        <tr><td>Hotel SBA equity (10-15% of $15M)</td><td class="number">$1.5 - $2.5M</td></tr>
+        <tr><td>Design and soft costs before loan closes</td><td class="number">$200 - $400K</td></tr>
+        <tr class="total"><td>Total Cash at Launch</td><td class="number">$2.4 - $3.8M</td></tr>
+      </tbody>
+    </table>
+
+    <h3>The Self-Funding Flywheel</h3>
+    <p>Hotel cash flow services its own debt ($970K per year). Surplus ($1.3M per year at stabilization) funds further property development. By Year 4 to 5, the property feeds itself, no longer pulling from savings. Every phase after the hotel opens is funded by revenue from the phase before it.</p>
+
+    <h3>Total Project Cost (All Phases, 10+ Years)</h3>
+    <table class="table-elegant">
+      <thead><tr><th>Component</th><th>Cost</th></tr></thead>
+      <tbody>
+        <tr><td>Land</td><td class="number">$700K - $875K</td></tr>
+        <tr><td>Hotel, spa, restaurant</td><td class="number">$12.5 - $16.5M</td></tr>
+        <tr><td>Personal residence (compound)</td><td class="number">$6.8 - $10.6M</td></tr>
+        <tr><td>Hedge and labyrinth system</td><td class="number">$2.9M</td></tr>
+        <tr><td>Tunnel superstructure (main network)</td><td class="number">$4.3 - $8.0M</td></tr>
+        <tr><td>Park infrastructure (paths, water, lighting)</td><td class="number">$1 - $2M</td></tr>
+        <tr><td>Winery and brewery</td><td class="number">$500K - $800K</td></tr>
+        <tr><td>Vineyard, hop yard, gardens</td><td class="number">$100 - $200K</td></tr>
+        <tr><td>Swimming pond, water features, greenhouse, aviary</td><td class="number">TBD</td></tr>
+        <tr class="total"><td>Total Estimated</td><td class="number">$30 - $40M+</td></tr>
+      </tbody>
+    </table>
+
+    <p>The starting position (projected around 2032, age approximately 58): a net worth of $8 to $12 million, grown from the current $3.6 million through continued portfolio growth. At $8 million it is feasible but tight. At $10 million, comfortable with margin for error. At $15 million, a certainty.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     XIII. THE PRIVACY
+     ═══════════════════════════════════════ -->
+<section id="privacy" class="section bg-dark">
+  <div class="section-content">
+    <span class="chapter-number">XIII</span>
+    <span class="section-label">The Privacy</span>
+    <h2>The Owner Nobody Knows</h2>
+
+    <p>Labyrinth Park LLC is the entity that owns the property and operates every commercial activity. But the name on the LLC is not a person. It is a registered agent, an anonymous representative, behind a Wyoming-organized limited liability company chosen specifically for the state's strong privacy protections. The owner's name does not appear on any public filing.</p>
+
+    <p>The "board" is referenced occasionally in official communications. Nobody has ever met the board. When decisions are announced, they come from "the property's leadership." When questions are directed upward, they are received by an email address. The architects work under NDAs that prohibit disclosure of client identity to each other. This is standard practice for high-net-worth clients; architects experienced with this arrangement do not consider it unusual.</p>
+
+    <p>Two separate architectural teams, neither seeing the complete plans. Two separate tunnel contractors from the earlier design phase, neither seeing the full layout. The permitting strategy files every space to code, inspected and permitted, but each building is filed as a separate individual project. No inspector sees the unified site plan. Concealed doors are installed after final inspection as interior modifications, which do not require permits. Passages are permitted as utility chases or mechanical rooms.</p>
+
+    <div class="pull-quote">
+      The threat model is not betrayal but compulsion. No single person can reveal the complete network under pressure, bribery, or subpoena. Only one person holds the master plan.
+    </div>
+
+    <p>The perimeter is a roughly circular precast concrete wall, twelve feet high (twenty-four feet at the rose garden ridgeline section), with an inward cant that creates an anti-climb profile, thorny climbers on the outside face, and a concealed sensor cable in the cap. The wall is hidden between two layers of hedge: inner corridor and outer corridor. At completion, the wall is completely invisible, swallowed by living green on both sides.</p>
+
+    <p>Key security and operations staff who hold secrets are paid extremely well ($120K-plus for roles that carry confidentiality obligations). NDAs specify $500K in liquidated damages, written on the page they sign, surviving termination indefinitely. Post-employment consulting retainers of $5K per year for ten years after departure, with annual NDA re-certification, ensure silence endures. Cost: $5K times 3 key staff times 10 years, $150K total. Insurance against loose lips. People do not risk a great job, and they do not bite the hand that is still feeding them.</p>
+
+    <p>The owner can move through the entire estate via the private tunnel network without encountering any staff or guests. Known to exist, rarely seen. A presence, not a person. Adding to the mystique of a place that already has more mystique than it knows what to do with.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     XIV. THE TIMELINE
+     ═══════════════════════════════════════ -->
+<section id="timeline" class="section bg-cream">
+  <div class="section-content">
+    <span class="chapter-number">XIV</span>
+    <span class="section-label">The Timeline</span>
+    <h2>A Decade to Build. A Lifetime to Complete.</h2>
+
+    <p>The vision unfolds across four overlapping phases, preceded by a six-year pre-acquisition period of quiet preparation.</p>
+
+    <h3>Pre-Acquisition (2026 to 2032)</h3>
+    <p>The first real dollar is $320 for the patent filing, followed by $30K to $50K for a feasibility study. Beyond that, the pre-acquisition years are about positioning, not spending. In 2028: engage a tax CPA and tax attorney to structure entities and plan the Roth conversion strategy. In 2029: begin Florida Roth conversions ($475K to $520K per year at 24 percent), and begin informal conversations with the primary architect, Toby Witte of Wittehaus. In 2030: commission the HVS or CBRE feasibility study and begin brand conversations with Auberge, Relais &amp; Châteaux, and SLH. Late 2030: architect under contract, schematic design begins, informed by brand standards. In 2031: land acquisition or option agreement, negotiating from strength with a seller who has been listed for five-plus years. Year zero, 2032: construction loan closes, ground is broken. Everything above is complete.</p>
+
+    <h3>Phase 1: Land and Hotel (Years 0 to 3)</h3>
+    <p>Acquire land. Begin inn, spa, and restaurant construction, financed by SBA 504. Build the initial park: a half-mile hedge maze, the Italian Garden, entry landscaping, a visitor café. Plant the perimeter hedge (Tier 2 Nellie Stevens Holly, double-stagger row) and bulk maze corridors (Tier 1 Green Giant Arborvitae). Begin excavation of the main tunnel network. Apply bonus depreciation on all land improvements. Most of the property hides behind hedge and construction activity. Budget: approximately $15 to $20 million.</p>
+
+    <h3>Phase 2: Hotel Opens, Home Begins (Years 2 to 3)</h3>
+    <p>The hotel opens and the operator begins generating revenue. Construction continues on the main house, funded by hotel cash flow and a separate home loan. The park and hedge maze expand. Lisa's horse charity begins leasing the farm acreage. NC residency is established after the Roth conversion years are complete.</p>
+
+    <h3>Phase 3: Home Livable, Property Expansion (Years 3 to 5)</h3>
+    <p>The main house becomes livable, with move-in around Year 5. The five-acre inner sanctuary is well-developed. A conservation easement is placed on the horse farm acres. Guesthouse construction begins. Full grounds, water features, and maze expansion proceed. Hotel revenue matures toward stabilized occupancy. Budget for Phase 2 and 3: approximately $8 to $12 million.</p>
+
+    <h3>Phase 4: Full Build-Out (Years 5 to 10+)</h3>
+    <p>The full compound is operational. The winery and brewery are constructed (Year 5 to 6). Vineyard and hop yard are established. The swimming pond, duck pond, koi ponds, butterfly pavilion, aviary, and tropical greenhouse are built. Remaining maze sections are completed with premium formal hedges. Robotics integration for grounds and security begins in earnest; by full build-out, roughly twelve humanoid gardening robots and twelve specialty gardening robots roam the property 24/7/365 under the management of three humans and one head gardener. QBI deductions kick in on net business income. Everything is running as an integrated operation: park, charities, hotel, farm. Budget for Phase 4: approximately $5 to $8 million.</p>
+
+    <div class="maze-divider"></div>
+
+    <h3>Key Advisors Needed</h3>
+    <table class="table-elegant">
+      <thead><tr><th>Role</th><th>Who</th><th>When</th></tr></thead>
+      <tbody>
+        <tr><td>Tax CPA (RE + hospitality)</td><td>TBD</td><td>2028</td></tr>
+        <tr><td>Tax attorney</td><td>TBD</td><td>2028</td></tr>
+        <tr><td>Hospitality consultant</td><td>HVS or CBRE Hotels</td><td>2030</td></tr>
+        <tr><td>Primary architect</td><td>Toby Witte / Wittehaus</td><td>2029</td></tr>
+        <tr><td>Secondary structural engineer</td><td>Referred by Toby, under NDA</td><td>2031</td></tr>
+        <tr><td>Realtor</td><td>Angie</td><td>When ready for land</td></tr>
+        <tr><td>SBA 504 lender</td><td>TBD</td><td>2031</td></tr>
+        <tr><td>Brand contact</td><td>Auberge / R&amp;C / SLH</td><td>2030</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Market Context</h3>
+    <p>No luxury estate property exists in the Piedmont Triad, the largest Southeast metro area without one. The nearest comparable is Barnsley Resort in rural Georgia, four hours south, a 3,000-acre property commanding $350 to $800-plus per night with strong occupancy. Grandover Resort in Greensboro is a corporate conference hotel, not a boutique experience. The Kimpton Cardinal in Winston-Salem is an urban hotel without grounds. The wedding and event market is underserved. The location rates a 7 out of 10, market opportunity an 8.5. No brand recognition exists initially, and the property must be entirely self-contained, but these are problems that the labyrinth itself solves. You don't need to tell people to come. You need to make them unable to stop talking about why they came.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     XV. THE CLOSING
+     ═══════════════════════════════════════ -->
+<section id="closing" class="section bg-dark" style="text-align:center;">
+  <div class="section-content" style="display:flex; flex-direction:column; align-items:center;">
+    <div class="maze-divider" style="margin-bottom:4rem;"></div>
+
+    <h2 style="font-size:2.6rem; max-width:600px; margin-left:auto; margin-right:auto; margin-bottom:2rem; color:var(--cream);">The owner never leaves.<br>The maze never stops.<br>The legend never ends.</h2>
+
+    <div class="maze-divider" style="margin-top:3rem; margin-bottom:3rem;"></div>
+
+    <p style="max-width:500px; margin-left:auto; margin-right:auto; font-size:0.95rem; color:var(--stone-light); text-align:center;">
+      This document contains the complete vision for Labyrinth Park as of April 2026. It is shared with fewer than five people. You are one of them. Guard it accordingly.
+    </p>
+
+    <div style="margin-top:4rem;">
+      <span class="section-label" style="color:var(--gold); border-color:var(--gold);">Confidential</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════ -->
+<footer style="background:var(--forest-deep); color:var(--stone); text-align:center; padding:2rem; font-family:'Cormorant Garamond',serif; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase;">
+  Labyrinth Park &middot; Confidential Vision Document &middot; April 2026
+</footer>
+
+</body>
+</html>
