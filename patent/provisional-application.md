@@ -537,7 +537,7 @@ The invention encompasses the following variations:
 
 **19.3 Recurring Revenue Ecosystem.** The platform may be commercially implemented through recurring-service arrangements in which control software, predictive maintenance, fleet monitoring, certified replacement modules, reserve plant inventory, nutrient formulations, and service robotics are supplied on a subscription or managed-service basis. The infrastructure may therefore function as a recurring-revenue ecosystem in which installed trough networks remain in place while mobile units, control features, and operational capabilities are upgraded over time.
 
-**19.4 Standardized Interface Architecture.** The invention may define standardized physical and digital interfaces for mobile living barrier modules, including trough geometry, lift engagement points, utility couplers, safety-state signaling, and command/telemetry protocols, thereby enabling certified interoperability among components from multiple sources. Such interface standardization may support a platform ecosystem in which third-party modules remain compatible only by practicing one or more patented interface requirements.
+**19.4 Standardized Interface Architecture.** The invention may define standardized physical and digital interfaces for mobile living barrier modules, including trough geometry, lift engagement points, utility couplers, safety-state signaling, and command/telemetry protocols, thereby enabling certified interoperability among components from multiple sources.
 
 **19.5 Non-Maze Market Applications.** In non-maze embodiments, the platform may define temporary or persistent circulation, privacy, screening, queuing, crowd-separation, valet-routing, outdoor-dining partitioning, exhibit layout, or security perimeters in airports, resorts, stadiums, campuses, zoos, municipalities, festival grounds, transportation hubs, and mixed-use developments. Such embodiments may be permanent installations or retrofit overlays applied to existing paved, landscaped, or event-programmable spaces.
 
@@ -613,7 +613,7 @@ The roller chassis also transports COVER TILES: when a planter pan is removed fr
 
 **20B.2 Three-Trough Nesting.** The trough infrastructure comprises three nested channel levels at each position:
 
-(a) **Outer trough (widest):** Receives the planter pan. Width matches the pan footprint. Depth sufficient to seat the pan with its surface flush with surrounding grade. When occupied by a pan, the inter-tile manifolds on the pan edges engage with manifolds on adjacent pans.
+(a) **Outer trough (widest):** Receives the planter pan. Width matches the pan footprint. Depth sufficient to seat the pan with its surface flush with surrounding grade. When occupied by a pan, the inter-tile manifolds on the pan edges engage with manifolds on adjacent pans. The outer trough floor includes an open slot, grate, or removable panel through which the roller chassis bearing surface in the middle trough engages the underside of the seated planter pan.
 
 (b) **Middle trough (intermediate width):** Below and narrower than the outer trough. The roller chassis travels in this channel, passing beneath seated pans without disturbing them. The middle trough forms a continuous travel network connecting all outer trough positions across the property.
 
@@ -638,6 +638,8 @@ All three trough levels may be cast as a single precast concrete section for man
 2. The cover tile is transported and seated in the vacated outer trough, presenting a seamless surface.
 3. The cover tile may be a stone surface panel, a lawn tray with living grass, a decorative panel, or a blank structural cover, selected to match the surrounding landscape context.
 
+Modular surface covers may carry inter-tile connectivity manifolds at the below-grade outer trough rim, maintaining utility continuity across mixed pan-occupied and cover-occupied trough positions. A cover tile seated adjacent to a planter pan may exchange power, data, and water through below-grade manifold connections, enabling a hedge section to receive utilities from what appears on the surface to be ordinary lawn or paving.
+
 **Autonomous fleet management:**
 The central controller manages the fleet of roller chassis and elevator boxes as shared resources, dispatching them to assignments based on the nightly reconfiguration schedule, transit distances, battery state of charge, and maintenance status. Chassis and elevator boxes charge at depot stations when idle.
 
@@ -652,6 +654,8 @@ The central controller manages the fleet of roller chassis and elevator boxes as
 
 Compared to the monolithic design (600 units at $1,400-2,950 each = $840,000-1,770,000), the three-part architecture saves 45-68% on hardware cost while providing equivalent or superior capability.
 
+All cost figures in this section are illustrative estimates based on conceptual component selection and are subject to significant variation based on vendor pricing, manufacturing volume, material selection, and integration complexity. Actual system costs may be substantially higher or lower than stated ranges.
+
 ### 21. Inter-Tile Connectivity Manifold
 
 **21.1 Per-Edge Manifold.** Each tile base carries an inter-tile connectivity manifold on each external edge (four on square tiles, six on hexagonal tiles). Each manifold carries, at minimum: (a) a 48V DC power coupling rated for at least 50 amps continuous, (b) a data coupling comprising both an LC-format singlemode or multimode fiber connector and a shielded gigabit Ethernet contact set, (c) a water supply quick-connect rated 30 to 50 psi, 3/4-inch nominal, and (d) a water return quick-connect of equal rating, such that any two adjacent tiles exchange power, data, and water across their shared edge without any external cabling.
@@ -660,7 +664,7 @@ Compared to the monolithic design (600 units at $1,400-2,950 each = $840,000-1,7
 
 **21.3 Connection Sequence.** Upon adjacency (detected by a proximity sensor or by trough-seated state of both tiles), the manifold executes a staged connection: (i) mechanical engagement (guides and seals), (ii) water couplers engage with integral check valves closed, (iii) fiber and Ethernet connectors engage, (iv) a low-voltage (24V) discovery/handshake exchanges tile identity and permits contactor closure, (v) the 48V DC contactor closes through a pre-charge resistor to limit inrush, (vi) water check valves open on command after both sides confirm pressure and leak status. Disconnection reverses the sequence, with water valves closing, DC contactor opening, data connectors retracting, and mechanical release last.
 
-**21.4 Weatherproofing.** Each manifold is rated NEMA 4X or IP66 when mated and IP54 when unmated (covered by a spring-loaded shutter). Water connectors use dripless quick-disconnect fittings with dual O-ring seals. DC contacts are gold-flashed and reside inside a sealed cavity with a hydrophobic vent. Fiber connectors are APC-polished and sealed; Ethernet contacts are gold-plated and spring-loaded. A heater element (3 to 10 W) prevents condensation and ice formation within the cavity during freeze events.
+**21.4 Weatherproofing.** Each manifold is rated NEMA 4X or IP66 when mated and IP54 when unmated (covered by a spring-loaded shutter). Water connectors use dripless quick-disconnect fittings with dual O-ring seals. DC contacts are gold-flashed and reside inside a sealed cavity with a hydrophobic vent. Fiber connectors are APC-polished and sealed; Ethernet contacts are gold-plated and spring-loaded. A heater element (3 to 10 W) prevents condensation and ice formation within the cavity during freeze events. In below-grade installations where manifolds are positioned at or below the outer trough rim, the drain-before-energize interlocks and insulation-resistance monitoring of Section 14.11 apply to all manifold electrical contacts, inhibiting contactor closure while water is detected in the coupling cavity.
 
 **21.5 Fault Isolation and Per-Link Protection.** Each manifold link is independently protected. The DC coupling includes an electronic fuse (eFuse) with programmable trip, reverse-polarity protection, arc-fault detection, and ground-fault detection. The data coupling includes a managed switch port with link-level authentication, port isolation, and automatic disable upon repeated CRC errors or link flap. The water coupling includes a flow meter, pressure sensor, and motorized isolation valve that closes upon loss of pressure downstream (indicating a disconnection or leak) or on command. Any single faulted link can be isolated without disabling other links at the same manifold and without affecting the tile's other three (or five) edges.
 
