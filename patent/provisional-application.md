@@ -619,7 +619,15 @@ The roller chassis also transports COVER TILES: when a planter pan is removed fr
 
 (c) **Center trough (narrowest):** Below and narrower than the middle trough. The elevator box travels in this deepest channel. The center trough also forms a continuous network, allowing elevator boxes to reach any position.
 
-All three trough levels may be cast as a single precast concrete section for manufacturing efficiency and alignment precision, or may be assembled from stacked channel sections.
+All three trough levels may be cast as a single precast concrete section for manufacturing efficiency and alignment precision, or may be assembled from stacked channel sections. Chassis wheels run on bearing plates (A36 steel, machined) mounted on the middle-to-center step ledges. Pans rest directly on the outer-to-middle step ledges when seated.
+
+**20B.2B Interlock Systems.** Three categories of mechanical interlocks secure the system:
+
+(a) **Pan-to-pan interlocks.** Adjacent planter pans engage each other at their shared edges via retractable pins, tongue-and-groove profiles, magnetic latches, or spring-loaded hook catches. These interlocks distribute crowd loads, wind loads, and dynamic loads (dancing, equipment) across multiple pans, preventing individual pan tipping, rocking, or displacement. The interlock mechanism engages automatically when two pans are seated in adjacent trough positions and disengages automatically when either pan is lifted by its roller chassis. Interlock engagement may be verified by contact sensors reported to the central controller.
+
+(b) **Pan-to-trough retention.** Each pan is secured against vertical displacement (wind uplift, crowd surge, accidental impact) by retention clips, spring latches, or gravity-engaged detent features integrated into the outer trough ledge. These features prevent the pan from being lifted, shifted, or rocked by external forces while seated, but release automatically when the roller chassis applies controlled upward force from below during the pickup sequence.
+
+(c) **Pan-to-chassis engagement.** When a roller chassis engages a pan for transport, the 3mm bearing rise is supplemented by positive locking clips, magnetic catches, or spring-loaded pins that secure the pan to the chassis during transit. These locks prevent the pan from sliding, bouncing, or separating from the chassis during movement over irregular surfaces, terrace transitions, or emergency stops. Locks engage automatically when the chassis bearing surface contacts the pan bottom and disengage automatically when the chassis lowers the pan into the destination trough.
 
 **20B.3 Operating Sequences.**
 
@@ -961,6 +969,12 @@ The following informal claims outline the scope of the invention. Formal claims 
 **85.** The system of claim 83, wherein the trough grid is constructed from standardized precast concrete slab sections, each containing a defined number of parallel trough channels with pre-formed junction cross-channels, the sections placed side by side on a prepared sub-grade and grouted at joints.
 
 **86.** (Independent) A software-defined configurable landscape system comprising: a uniform grid of standardized recessed trough channels covering a surface area; a fleet of mobile roller chassis traveling within the trough channels; a plurality of interchangeable surface payload pans seatable in the trough channels; and a central controller that designates regions of the grid as specific surface zones through software configuration without physical modification of the trough infrastructure, such that any region may serve as hedge maze, open lawn, event space, garden, or any other designated function, and may change designation on any schedule.
+
+**87.** The system of claim 78, further comprising pan-to-pan interlocks on shared edges of adjacent planter pans that engage automatically when pans are seated in adjacent trough positions and disengage automatically when either pan is lifted, the interlocks distributing crowd loads, wind loads, and dynamic loads across multiple pans to prevent individual pan tipping, rocking, or displacement.
+
+**88.** The system of claim 78, further comprising pan-to-trough retention features integrated into the outer trough ledge that secure each seated pan against vertical displacement from wind uplift or impact, the retention features releasing automatically when the roller chassis applies controlled upward force during the pickup sequence.
+
+**89.** The system of claim 78, further comprising pan-to-chassis locking features that positively secure the pan to the roller chassis during transport, preventing sliding, bouncing, or separation during movement over irregular surfaces, terrace transitions, or emergency stops, the locking features engaging automatically upon chassis bearing contact and disengaging automatically upon pan seating at the destination trough.
 
 ---
 

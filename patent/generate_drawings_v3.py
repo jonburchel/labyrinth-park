@@ -355,17 +355,27 @@ def fig11_three_level_trough():
                  ctr_w - 2*w, ctr_d,
                  facecolor='#e0ffe0', edgecolor='none', alpha=0.15))
 
-    # Bearing brackets on the STEP LEDGES (where chassis wheels run)
+    # Bearing plates on MIDDLE-TO-CENTER STEP (where chassis wheels actually run)
     bp_h = 0.06
-    # Left bracket (on the outer-to-middle step)
-    bp_y = -outer_d
-    ax.add_patch(patches.Rectangle((outer_l + w + 0.1, bp_y - bp_h),
-                 mid_l - outer_l - w - 0.2, bp_h,
+    bp_y = -outer_d - mid_d  # the middle-to-center step, NOT the outer-to-middle step
+    # Left bearing plate
+    ax.add_patch(patches.Rectangle((mid_l + w + 0.1, bp_y - bp_h),
+                 ctr_l - mid_l - w - 0.2, bp_h,
                  facecolor='#ffcc00', edgecolor='black'))
-    # Right bracket
-    ax.add_patch(patches.Rectangle((mid_r + 0.1, bp_y - bp_h),
-                 outer_r - w - mid_r - 0.2, bp_h,
+    # Right bearing plate
+    ax.add_patch(patches.Rectangle((ctr_r + 0.1, bp_y - bp_h),
+                 mid_r - w - ctr_r - 0.2, bp_h,
                  facecolor='#ffcc00', edgecolor='black'))
+
+    # Pan-to-pan interlock pins (shown on outer ledge edges)
+    for ix in [outer_l + w + 0.3, outer_r - w - 0.5]:
+        ax.add_patch(patches.Rectangle((ix, -outer_d + 0.02), 0.15, 0.25,
+                     facecolor='#cc4444', edgecolor='black', linewidth=0.8))
+
+    # Pan-to-trough retention clips (hold pan down against wind)
+    for ix in [outer_l + w + 1.0, outer_r - w - 1.15]:
+        ax.plot([ix, ix + 0.15, ix + 0.15], [-outer_d + 0.3, -outer_d + 0.3, -outer_d + 0.05],
+               'k-', linewidth=2)
 
     # Surface cover (dashed)
     ax.add_patch(patches.Rectangle((outer_l, -0.1), outer_w, 0.1,
@@ -376,14 +386,16 @@ def fig11_three_level_trough():
     # Labels
     labels = [
         ((-3.5, -0.7), (outer_l + 0.5, -0.7),
-         'OUTER CHANNEL\n(pan sits here)'),
+         'OUTER CHANNEL\n(pan sits on ledge)'),
         ((-3.5, -2.5), (mid_l + 0.5, -outer_d - mid_d/2),
-         'MIDDLE CHANNEL\n(chassis travels\non step ledges)'),
+         'MIDDLE CHANNEL\n(chassis travels)'),
         ((-3.5, -4.5), (ctr_l + 0.5, -outer_d - mid_d - ctr_d/2),
-         'CENTER CHANNEL\n(elevator travels;\nonly floor)'),
-        ((13, -0.7), (outer_r - w - 0.3, bp_y - bp_h/2),
-         'Bearing surface\n(on step ledge;\nA36 steel)'),
-        ((13, -3.0), (outer_r - 0.5, -outer_d - 1),
+         'CENTER CHANNEL\n(elevator; only floor)'),
+        ((13, -2.8), (ctr_r + 0.2, bp_y - bp_h/2),
+         'Bearing plates\n(A36 steel on\nmiddle-to-center\nstep ledge)'),
+        ((13, -0.5), (outer_r - w - 0.4, -outer_d + 0.15),
+         'Pan-to-pan interlocks\n+ retention clips\n(on outer ledge)'),
+        ((13, -5.0), (outer_r - 0.5, -outer_d - mid_d - 0.5),
          'All channels DRY\nUtilities in pan\nmanifolds only'),
     ]
     for text_pos, target, label in labels:
