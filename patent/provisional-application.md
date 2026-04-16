@@ -70,7 +70,25 @@ Each mobile hedge unit comprises:
 
 **2.2 Plant Material.** Living hedge plants of species suitable for the regional climate and capable of tolerating periodic repositioning. Suitable species include but are not limited to: Thuja standishii x plicata (Green Giant Arborvitae), Ilex x 'Nellie R. Stevens' (Nellie Stevens Holly), Fagus sylvatica (European Beech), Taxus baccata (English Yew), Buxus sempervirens (Common Boxwood), and Prunus laurocerasus (Cherry Laurel). Plants are maintained at heights of 8-15 feet to create opaque visual barriers when viewed from ground level.
 
-**2.3 Motorized Transport Platform.** The plant container is mounted on a powered wheeled or tracked platform capable of self-propelled movement along the prepared positioning surface. The platform includes:
+**2.3 Trough-and-Elevator Mechanism (Preferred Embodiment).** In the preferred embodiment, each mobile hedge unit operates using a trough-and-elevator system:
+
+- **Receiving trough:** A concrete channel (trough) is set into the path surface at each position where a mobile hedge unit may rest. The trough is sized to receive the base of the plant container such that when the container is lowered into the trough, the bottom edge of the hedge plant meets the surrounding ground level seamlessly. When the trough is unoccupied, it presents as a drainage channel or expansion joint in the paving, indistinguishable from normal landscape infrastructure.
+
+- **Elevator mechanism:** Each mobile hedge unit includes an integrated vertical lift mechanism (scissor jack, pneumatic cylinder, cam mechanism, or similar) capable of raising the plant container approximately 3-6 inches (preferably 5 inches) above the trough rim. This lift height is sufficient to expose a roller or wheel assembly beneath the container base, clearing the trough walls and allowing horizontal movement along the path surface.
+
+- **Roller/wheel assembly:** Concealed beneath the plant container base, exposed only when the elevator mechanism is in the raised position. Comprises powered wheels (electric drive motors) capable of self-propelled movement along the prepared path surface between trough positions. Wheels are rubber or polyurethane for smooth, quiet operation on concrete or paved surfaces.
+
+- **Operating sequence:**
+  1. CLOSED (wall): Container rests in trough, hedge at ground level, mechanism invisible. Visually indistinguishable from a permanently planted hedge.
+  2. RAISING: Elevator lifts container approximately 5 inches, exposing roller assembly above trough walls.
+  3. TRANSIT: Container rolls out of trough onto flush path surface, traverses to destination trough under powered drive or autonomous guidance.
+  4. POSITIONING: Container rolls onto destination trough while in raised position, aligns with trough.
+  5. LOWERING: Elevator lowers container into destination trough. Hedge base meets ground level. Mechanism concealed.
+  6. OPEN (path clear): Vacated trough remains in path surface, appearing as drainage channel or expansion joint. Pedestrians walk over it without obstruction.
+
+- **Locking mechanisms:** Mechanical pins, electromagnetic brakes, or detent systems engage when the container is lowered into a trough, securing it against wind loads, accidental contact, or unauthorized movement.
+
+**2.4 Alternative Transport Mechanism.** In alternative embodiments, the plant container may be mounted on a continuously wheeled or tracked platform as described: The plant container is mounted on a powered wheeled or tracked platform capable of self-propelled movement along the prepared positioning surface. The platform includes:
 
 - Electric drive motors (one or more) powered by onboard rechargeable batteries or wired connection to embedded power supply in the positioning surface;
 - Steerable wheels, omnidirectional wheels (mecanum or holonomic), or tracked drive systems;
@@ -80,24 +98,34 @@ Each mobile hedge unit comprises:
 - Onboard rechargeable power supply with provisions for autonomous or manual recharging;
 - Obstruction detection sensors (LIDAR, ultrasonic, infrared, or camera-based) to prevent collisions during repositioning.
 
-**2.4 Irrigation Integration.** Each mobile hedge unit includes flexible or quick-connect irrigation fittings that allow the unit to connect to water supply at any of its discrete positions within its positioning zone. Alternatively, the unit carries an onboard water reservoir sufficient for operation between scheduled irrigation connections.
+**2.5 Irrigation Integration.** Each mobile hedge unit includes flexible or quick-connect irrigation fittings that allow the unit to connect to water supply at any of its discrete positions within its positioning zone. In the trough-and-elevator embodiment, irrigation supply connections may be integrated into the trough base, automatically engaging when the container is lowered into position. Alternatively, the unit carries an onboard water reservoir sufficient for operation between scheduled irrigation connections.
 
 ### 3. Prepared Positioning Surfaces (Positioning Zones)
 
 Each mobile hedge unit operates within a bounded positioning zone comprising:
 
-**3.1 Surface.** A level, load-bearing prepared surface (reinforced concrete slab, compacted aggregate with paving, precast concrete panels, or similar) capable of supporting the fully loaded weight of the mobile hedge unit (estimated 2,000-10,000 lbs depending on container size and plant maturity).
+**3.1 Surface.** A level, load-bearing prepared surface (reinforced concrete slab, compacted aggregate with paving, precast concrete panels, or similar) capable of supporting the fully loaded weight of the mobile hedge unit (estimated 2,000-10,000 lbs depending on container size and plant maturity). The surface between trough positions must be smooth and flush to allow roller transit.
 
-**3.2 Guidance Infrastructure.** One or more of the following embedded in or on the positioning surface:
+**3.2 Trough Positions (Preferred Embodiment).** Concrete troughs are set into the path surface at each position where a mobile hedge unit may rest. Each trough is:
+
+- Sized to receive the specific container base dimensions with close tolerance;
+- Set at a depth such that the lowered container positions the hedge plant base flush with surrounding grade;
+- Constructed with smooth interior walls to guide container descent during lowering;
+- Optionally fitted with irrigation supply connections at the base;
+- Optionally fitted with electrical connections for charging onboard systems;
+- Designed to appear as a drainage channel or expansion joint when unoccupied.
+
+**3.3 Guidance Infrastructure.** One or more of the following embedded in or on the positioning surface to guide units between trough positions:
 
 - Flush rail channels or tracks (recessed below surface grade to be invisible to pedestrians);
 - RFID markers or magnetic strips at discrete positions;
 - Optical guide lines or painted markers (visible or UV-fluorescent);
-- GPS reference points with differential correction for centimeter-level accuracy.
+- GPS reference points with differential correction for centimeter-level accuracy;
+- Physical edge guides or shallow channels connecting trough positions.
 
-**3.3 Discrete Positions.** Each positioning zone provides a plurality of discrete positions (preferably 4-12 positions) at which the mobile hedge unit may be secured. Positions are arranged in a grid, radial, linear, or custom pattern suited to the local maze geometry. The spacing between positions is sufficient to create meaningfully different path configurations when the unit is repositioned (typically 3-20 feet between adjacent positions).
+**3.4 Discrete Positions.** Each positioning zone provides a plurality of discrete trough positions (preferably 4-12 positions) at which the mobile hedge unit may be secured. Positions are arranged in a grid, radial, linear, or custom pattern suited to the local maze geometry. The spacing between positions is sufficient to create meaningfully different path configurations when the unit is repositioned (typically 3-20 feet between adjacent positions).
 
-**3.4 Flush Integration.** The positioning surface is designed to be flush with surrounding pedestrian path surfaces, such that the rails, channels, or guidance infrastructure are not readily visible to or hazardous for pedestrians walking across the zone when the mobile hedge unit is not in transit.
+**3.5 Flush Integration.** The positioning surface, including all troughs and guidance infrastructure, is designed to be flush with surrounding pedestrian path surfaces. Unoccupied troughs and guidance channels are not readily identifiable as maze infrastructure by casual observation, appearing instead as standard landscape drainage or paving features.
 
 ### 4. Central Control System
 
