@@ -361,12 +361,13 @@ def fig3_positioning_zone():
     ax.add_patch(patches.Rectangle((4, 10), 3, 1.2, facecolor='#333333', edgecolor='black', linewidth=2))
     ax.text(5.5, 10.6, '10', ha='center', va='center', fontsize=9, color='white', fontweight='bold')
 
-    # Movement paths between troughs (dashed lines)
+    # Movement paths between troughs (dashed lines, orthogonal only)
     connections = [
         ((5.5, 5.2), (5.5, 10)), ((5.5, 11.2), (5.5, 15)),
         ((7, 10.6), (12, 10.6)), ((7, 4.6), (12, 4.6)),
-        ((5.5, 5.2), (12, 4.6)), ((13.5, 5.2), (13.5, 10)),
+        ((13.5, 5.2), (13.5, 10)),
         ((13.5, 11.2), (13.5, 15)),
+        ((7, 15.6), (12, 15.6)),
     ]
     for start, end in connections:
         ax.plot([start[0], end[0]], [start[1], end[1]], 'k--', linewidth=1, alpha=0.5)

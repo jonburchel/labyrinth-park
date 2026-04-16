@@ -267,12 +267,13 @@ def fig10_planter_crosssection():
 
 
 def fig11_trough_crosssection():
-    """Trough cross-section with sub-channel and materials"""
+    """Trough cross-section - DRY trough, no water or power in trough.
+    All utilities route through inter-tile manifolds on the devices themselves."""
     fig, ax = plt.subplots(1, 1, figsize=(12, 8))
     ax.set_xlim(-3, 15)
     ax.set_ylim(-5, 4)
     ax.set_aspect('equal')
-    ax.set_title('FIG. 11 - Trough Infrastructure Cross-Section', fontsize=12, fontweight='bold')
+    ax.set_title('FIG. 11 - Trough Infrastructure Cross-Section (Dry Trough)', fontsize=12, fontweight='bold')
 
     # Ground surface
     ax.fill_between([-3, 2], [0]*2, [-0.2]*2, color='#cccccc')
@@ -284,12 +285,12 @@ def fig11_trough_crosssection():
     ax.text(0, 0.3, 'PATH', fontsize=7, ha='center', color='#666')
     ax.text(12.5, 0.3, 'PATH', fontsize=7, ha='center', color='#666')
 
-    # Main trough
+    # Main trough (DRY structural channel)
     trough_l = 2
     trough_r = 10
     trough_d = 2.5
-    # Concrete walls
     wall_t = 0.4
+    # Concrete walls
     ax.add_patch(patches.Rectangle((trough_l, -trough_d), wall_t, trough_d,
                  facecolor='#999', edgecolor='black', linewidth=1.5))
     ax.add_patch(patches.Rectangle((trough_r - wall_t, -trough_d), wall_t, trough_d,
@@ -298,55 +299,53 @@ def fig11_trough_crosssection():
     ax.add_patch(patches.Rectangle((trough_l, -trough_d - wall_t), trough_r - trough_l, wall_t,
                  facecolor='#999', edgecolor='black', linewidth=1.5))
 
-    # Sub-channel (water) below trough
-    sub_top = -trough_d - wall_t
-    sub_h = 0.6
-    ax.add_patch(patches.Rectangle((trough_l + 1, sub_top - sub_h), trough_r - trough_l - 2, sub_h,
-                 facecolor='#4488cc', edgecolor='black', linewidth=1, alpha=0.5))
-    ax.text(6, sub_top - sub_h/2, 'WATER', ha='center', fontsize=7, color='white', fontweight='bold')
+    # Trough interior is EMPTY/DRY
+    ax.add_patch(patches.Rectangle((trough_l + wall_t, -trough_d), 
+                 trough_r - trough_l - 2*wall_t, trough_d,
+                 facecolor='#f5f5f0', edgecolor='none'))
+    ax.text(6, -trough_d/2, 'DRY\nSTRUCTURAL\nCHANNEL', ha='center', va='center',
+           fontsize=8, color='#888', style='italic')
 
-    # Bearing plate (steel, machined)
+    # Bearing plate (steel, machined) on trough floor
     bp_y = -trough_d + 0.05
     ax.add_patch(patches.Rectangle((trough_l + wall_t + 0.5, bp_y), 2, 0.1,
                  facecolor='#ffcc00', edgecolor='black', linewidth=1))
     ax.add_patch(patches.Rectangle((trough_r - wall_t - 2.5, bp_y), 2, 0.1,
                  facecolor='#ffcc00', edgecolor='black', linewidth=1))
 
-    # Power contacts in trough floor
-    for px in [4, 6, 8]:
-        ax.add_patch(patches.Rectangle((px - 0.15, -trough_d + 0.02), 0.3, 0.08,
-                     facecolor='#cc6600', edgecolor='black'))
-
-    # Elevator bay (deeper recess)
+    # Elevator bay (deeper recess below trough floor)
+    sub_top = -trough_d - wall_t
     bay_w = 4
     bay_d = 1.5
     bay_l = trough_l + (trough_r - trough_l)/2 - bay_w/2
     bay_r = bay_l + bay_w
-    ax.add_patch(patches.Rectangle((bay_l, sub_top - sub_h - bay_d), bay_w, bay_d,
+    ax.add_patch(patches.Rectangle((bay_l, sub_top - bay_d), bay_w, bay_d,
                  facecolor='#ddd', edgecolor='black', linewidth=1, linestyle='--'))
-    ax.text(6, sub_top - sub_h - bay_d/2, 'ELEVATOR BAY\n(when installed)', 
+    ax.text(6, sub_top - bay_d/2, 'ELEVATOR BAY\n(when installed)',
            ha='center', fontsize=6, color='#666', style='italic')
 
-    # Conduit corridor
-    for cy in [-3.5, -3.8]:
-        ax.add_patch(plt.Circle((trough_l + 0.7, cy), 0.15, facecolor='#ff6600', edgecolor='black'))
-        ax.add_patch(plt.Circle((trough_r - 0.7, cy), 0.15, facecolor='#ff6600', edgecolor='black'))
+    # Drainage channels (small, just for rainwater, not irrigation)
+    for dx in [trough_l + 1, trough_r - 1.3]:
+        ax.add_patch(patches.Rectangle((dx, -trough_d), 0.3, 0.2,
+                     facecolor='#ccc', edgecolor='black', linewidth=0.5))
 
     # Surface cover (when trough empty, shown as dashed outline above)
     ax.add_patch(patches.Rectangle((trough_l, -0.15), trough_r - trough_l, 0.15,
                  facecolor='none', edgecolor='black', linewidth=1, linestyle=':'))
-    ax.text(6, 0.5, '(surface cover when\ntrough unoccupied)', ha='center', fontsize=6, 
+    ax.text(6, 0.5, '(surface cover when\ntrough unoccupied)', ha='center', fontsize=6,
            color='gray', style='italic')
+
+    # Note about utilities
+    ax.text(6, 2.5, 'ALL UTILITIES (power, water, data, fire suppression)\nroute through INTER-TILE MANIFOLDS on the devices,\nNOT through the trough. Trough is dry structural channel.',
+           ha='center', fontsize=7, style='italic', color='#444',
+           bbox=dict(boxstyle='round,pad=0.3', facecolor='#ffffcc', edgecolor='#cc9', alpha=0.9))
 
     # Labels
     labels = [
-        ((-2.5, -1), (trough_l + 0.2, -1), '22 - Trough wall\n(5,000 psi concrete)'),
-        ((-2.5, -2.5), (trough_l + 0.2, -trough_d + 0.1), '60 - Trough floor'),
+        ((-2.5, -1), (trough_l + 0.2, -1), '22 - Trough wall\n(5,000 psi concrete,\nair-entrained)'),
+        ((-2.5, -2.5), (trough_l + 0.2, -trough_d + 0.1), '60 - Trough floor\n(with drainage slots)'),
         ((12.5, bp_y), (trough_r - wall_t - 0.5, bp_y + 0.05), '62 - Steel bearing plate\n(A36, machined +/-0.5mm)'),
-        ((12.5, -trough_d + 0.05), (8.15, -trough_d + 0.06), '64 - Power contacts\n(blind-mate, IP67)'),
-        ((12.5, sub_top - sub_h/2), (trough_r - 1, sub_top - sub_h/2), '66 - Sub-channel\n(nutrient water loop)'),
-        ((-2.5, -3.6), (trough_l + 0.7, -3.5), '68 - Conduit corridor\n(power, data, fiber)'),
-        ((12.5, -3.8), (bay_r, sub_top - sub_h - bay_d/2), '70 - Elevator bay recess\n(drop-in module)'),
+        ((12.5, -3.8), (bay_r, sub_top - bay_d/2), '70 - Elevator bay recess\n(drop-in module)'),
     ]
     for text_pos, target, label in labels:
         ax.annotate(label, xy=target, xytext=text_pos, fontsize=7,
