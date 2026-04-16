@@ -384,43 +384,18 @@ A reconfigurable outdoor landscape maze system uses living plants in mobile cont
 
 ## DRAWINGS
 
-[To be prepared before filing. Recommended drawings:]
+The following drawings are included with this application:
 
-1. Fig. 1 - System overview showing maze footprint with mobile and fixed hedge sections
-2. Fig. 2 - Detail of a single mobile hedge unit (side view, showing container, plant, platform, wheels, locking mechanism)
-3. Fig. 3 - Detail of positioning zone (top view, showing discrete positions, flush rail channels, guidance infrastructure)
-4. Fig. 4 - Two different maze configurations using the same set of mobile hedge units
-5. Fig. 5 - Guest navigation application screens (full map, progressive reveal, destination guidance, exit mode)
-6. Fig. 6 - Emergency configuration showing direct egress paths
-7. Fig. 7 - Anti-aerial-observation features (cross-section showing false path, overhead canopy, tunnel integration)
-8. Fig. 8 - System architecture diagram (mobile units, central control, guest app, emergency system)
-
-[Hand-drawn sketches are acceptable for provisional filing.]
-
----
-
-## FILING INSTRUCTIONS
-
-### To file this provisional patent application:
-
-1. Go to https://www.uspto.gov/patents/apply
-2. Create a USPTO.gov account if you don't have one
-3. Select "File Online" via "Patent Center"
-4. Choose "Provisional Application for Patent"
-5. Upload this document as the specification
-6. Prepare and upload simple drawings (hand-drawn is fine)
-7. Complete the cover sheet (form SB/16) with inventor information
-8. Pay the filing fee: $320 (small entity) or $160 (micro entity*)
-9. Save your confirmation number and filing date
-
-*Micro entity status: You may qualify if your gross income is less than 3x the median household income (~$225,000 in 2026) and you haven't been named as inventor on more than 4 prior applications.
-
-### After Filing
-- You have 12 months to convert to a full (non-provisional) utility patent application
-- During this period, you may mark the invention as "Patent Pending"
-- You may file a new provisional before the 12 months expires to extend priority
-- Consult a patent attorney before the 12-month deadline to prepare formal claims
+1. Fig. 1 - System overview showing maze footprint with mobile and fixed hedge sections (top view)
+2. Fig. 2A - Mobile hedge unit in CLOSED position: container seated in trough, hedge flush with grade
+3. Fig. 2B - Mobile hedge unit in RAISED position: trough floor raised to grade, rollers on surface, ready for transit
+4. Fig. 3 - Positioning zone detail (top view) showing trough positions and movement paths
+5. Fig. 4A/4B - Two different maze configurations using the same set of mobile hedge units
+6. Fig. 5A/5B/5C - Guest navigation application screens (progressive reveal, destination guidance, emergency exit)
+7. Fig. 6A/6B - Emergency egress configuration (normal vs. all-open comparison)
+8. Fig. 7 - Anti-aerial-observation features (cross-section: pergola, false path, tunnel connection)
+9. Fig. 8 - System architecture block diagram
 
 ---
 
-*This document is a draft provisional patent application. Review all details for accuracy before filing. This is not legal advice. Consider consulting a registered patent attorney or agent for review before filing.*
+*This document is a provisional patent application. Review all details for accuracy before filing. This is not legal advice. Consider consulting a registered patent attorney or agent for review before filing.*

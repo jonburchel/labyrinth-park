@@ -21,6 +21,9 @@ archive/**/*.glb
 archive/**/*.obj
 archive/**/*.blend
 
+# Patent PDFs (generated, contain inventor info, don't commit)
+patent/*.pdf
+
 # Python
 __pycache__/
 *.pyc

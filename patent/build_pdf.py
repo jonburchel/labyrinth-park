@@ -1,15 +1,19 @@
 """
 Convert provisional patent application from Markdown to a clean,
 print-ready HTML file suitable for Print-to-PDF for USPTO filing.
+Also generates password-protected PDF for confidential sharing.
 """
 
 import markdown
 import os
 import glob
+import sys
 
 PATENT_DIR = os.path.join(os.path.dirname(__file__))
 MD_FILE = os.path.join(PATENT_DIR, 'provisional-application.md')
 HTML_FILE = os.path.join(PATENT_DIR, 'provisional-application.html')
+PDF_FILE = os.path.join(PATENT_DIR, 'provisional-application.pdf')
+PDF_PROTECTED = os.path.join(PATENT_DIR, 'provisional-application-CONFIDENTIAL.pdf')
 DRAWINGS_DIR = os.path.join(PATENT_DIR, 'drawings')
 
 # Read markdown
@@ -151,5 +155,56 @@ with open(HTML_FILE, 'w', encoding='utf-8') as f:
     f.write(html)
 
 print(f"Created {HTML_FILE}")
-print(f"  Open in Chrome/Edge -> Ctrl+P -> Save as PDF")
-print(f"  Upload to USPTO Patent Center as provisional application")
+
+# Generate PDF using playwright
+password = None
+if len(sys.argv) > 1:
+    password = sys.argv[1]
+
+try:
+    from playwright.sync_api import sync_playwright
+    print("Generating PDF...")
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page()
+        page.goto(f'file:///{os.path.abspath(HTML_FILE).replace(chr(92), "/")}')
+        page.wait_for_load_state('networkidle')
+        # Hide the no-print banner
+        page.evaluate('document.querySelectorAll(".no-print").forEach(e => e.style.display = "none")')
+        page.pdf(
+            path=PDF_FILE,
+            format='Letter',
+            margin={'top': '0.75in', 'right': '0.75in', 'bottom': '0.75in', 'left': '0.75in'},
+            print_background=True
+        )
+        browser.close()
+    print(f"Created {PDF_FILE}")
+
+    # Create password-protected version
+    if password:
+        from pypdf import PdfReader, PdfWriter
+        reader = PdfReader(PDF_FILE)
+        writer = PdfWriter()
+        for page in reader.pages:
+            writer.add_page(page)
+        # Add confidential watermark-style metadata
+        writer.add_metadata({
+            '/Title': 'CONFIDENTIAL - Provisional Patent Application',
+            '/Subject': 'Autonomously Reconfigurable Living Landscape Maze System',
+            '/Creator': 'Labyrinth Park LLC',
+            '/Keywords': 'CONFIDENTIAL, PATENT PENDING, DO NOT DISTRIBUTE'
+        })
+        writer.encrypt(user_password=password, owner_password=password,
+                      permissions_flag=0b0000)  # no permissions (no copy, no print without password)
+        with open(PDF_PROTECTED, 'wb') as f:
+            writer.write(f)
+        print(f"Created {PDF_PROTECTED}")
+        print(f"  Password: {password}")
+        print(f"  Encrypted, no-copy, no-print without password")
+    else:
+        print(f"  (Run with password argument to create encrypted version:")
+        print(f"   python build_pdf.py YourPassword123)")
+
+except ImportError as e:
+    print(f"  PDF generation requires playwright and pypdf: {e}")
+    print(f"  Fallback: Open {HTML_FILE} in Chrome -> Ctrl+P -> Save as PDF")
